@@ -1,0 +1,11 @@
+.installed.cfg
+bin
+develop-eggs
+downloads
+eggs
+parts
+*.pyc
+*.geany
+movie/custom_settings.py
+assets
+apache

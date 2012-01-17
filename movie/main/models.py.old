@@ -1,0 +1,44 @@
+from django.contrib.auth.models import User, Group
+from django.db import models
+from datetime import datetime
+from django.db.models.query import QuerySet
+
+class Genre(models.Model):
+	''''''
+	name 		= models.CharField(max_length=100,unique=True)
+	total_movie	= models.IntegerField(null=False, blank=False)
+	
+	def __unicode__(self):
+		return self.name
+		
+class movieurl(models.Model):
+	imdbid =models.SlugField(max_length=200,unique=True)
+	movie_name=models.CharField(max_length=500)
+	runcount 				=models.IntegerField(null=True, blank=True,default=0)
+	url 						= models.CharField(max_length=500)
+	filter_based_on	= models.ForeignKey('Genre',to_field='name', verbose_name=u'Genre name')
+	sucess_factor 	= models.IntegerField(null=True, blank=True,default=0)
+	run_date 				=models.DateTimeField(null=True, blank=True) 
+	last_rundate		=models.DateTimeField(null=True, blank=True) 
+	
+	def __unicode__(self):
+		return self.url
+		
+class Urllog(models.Model):
+	''''''
+	start_url_id 	=models.IntegerField(null=False, blank=False)
+	end_url_id		=models.IntegerField(null=False, blank=False)
+	end_date			=models.DateTimeField(null=True, blank=True)  
+	
+	def __unicode__(self):
+		return str(self.end_date)
+		
+class Errorlog(models.Model):
+	
+	function_name	= models.CharField(max_length=500)
+	message				= models.CharField(max_length=500)
+	date					= models.DateTimeField(null=True, blank=True) 
+	def __unicode__(self):
+		return self.message
+		
+
