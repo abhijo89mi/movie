@@ -1,7 +1,19 @@
 from movie.main.models import *
 from django.contrib import admin
-#from imdb import IMDb
+from django.contrib.admin.models import *
+from django.utils.html import escape
+from django.core.urlresolvers import reverse
+from imdb import IMDb
 
+def getmove (movieurlAdmin, request, queryset):
+	movie_id=queryset.imdbid.replace('tt','')
+	access = imdb.IMDb()
+	selected = request.POST.getlist(admin.ACTION_CHECKBOX_NAME)
+	for selected_id in selected:
+		movie = access.get_movie(queryset.get(id=selected_id).replace('tt',''))
+		self.message_user(request,movie['title'] )
+	getmove.short_description = "Get Movie"
+	
 class movieurlAdmin(admin.ModelAdmin):
 	
 	def Genre(self,obj):
@@ -15,6 +27,7 @@ class movieurlAdmin(admin.ModelAdmin):
 	search_fields = ['imdbid','url',]
 	date_hierarchy = 'run_date'
 	ordering = ('id',)
+	actions = [getmove]
 	
 class GenreAdmin(admin.ModelAdmin):
 	def refresh_btn(self, obj):
@@ -104,6 +117,60 @@ class PersonAdmin(admin.ModelAdmin):
 	filter_horizontal = ('photo',)
 
 
+# Admin log file
+class LogEntryAdmin(admin.ModelAdmin):
+
+	date_hierarchy = 'action_time'
+
+	readonly_fields = LogEntry._meta.get_all_field_names()
+
+	list_filter = [
+		'user',
+		'content_type',
+		'action_flag'
+	]
+
+	search_fields = [
+		'object_repr',
+		'change_message'
+	]
+
+
+	list_display = [
+		'action_time',
+		'user',
+		'content_type',
+		'object_link',
+		'action_flag',
+		'change_message',
+	]
+
+	def has_add_permission(self, request):
+		return False
+
+	def has_change_permission(self, request, obj=None):
+		return request.user.is_superuser and request.method != 'POST'
+
+	def has_delete_permission(self, request, obj=None):
+		return False
+
+	def object_link(self, obj):
+		if obj.action_flag == DELETION:
+			link = escape(obj.object_repr)
+		else:
+			ct = obj.content_type
+			link = u'<a href="%s">%s</a>' % (
+				reverse('admin:%s_%s_change' % (ct.app_label, ct.model), args=[obj.object_id]),
+				escape(obj.object_repr),
+			)
+		return link
+	object_link.allow_tags = True
+	object_link.admin_order_field = 'object_repr'
+	object_link.short_description = u'object'
+
+
+
+
 admin.site.register(Genre, GenreAdmin)
 admin.site.register(Movie, MovieAdmin)
 admin.site.register(Animation_department, Animation_departmentAdmin)
@@ -141,3 +208,6 @@ admin.site.register(Visual_effects, Visual_effectsAdmin)
 admin.site.register(Writer, WriterAdmin)
 admin.site.register(Person, PersonAdmin)
 admin.site.register(movieurl, movieurlAdmin)
+
+# Admin model registration 
+admin.site.register(LogEntry, LogEntryAdmin)
