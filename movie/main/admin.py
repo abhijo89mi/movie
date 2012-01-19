@@ -6,12 +6,11 @@ from django.core.urlresolvers import reverse
 from imdb import IMDb
 
 def getmove (movieurlAdmin, request, queryset):
-	movie_id=queryset.imdbid.replace('tt','')
-	access = imdb.IMDb()
+	access = IMDb()
 	selected = request.POST.getlist(admin.ACTION_CHECKBOX_NAME)
 	for selected_id in selected:
-		movie = access.get_movie(queryset.get(id=selected_id).replace('tt',''))
-		self.message_user(request,movie['title'] )
+		movie = access.get_movie(queryset.get(id=selected_id).imdbid.replace('tt',''))
+		movieurlAdmin.message_user(request,movie['title'] )
 	getmove.short_description = "Get Movie"
 	
 class movieurlAdmin(admin.ModelAdmin):
