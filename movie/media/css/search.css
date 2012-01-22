@@ -1,0 +1,44 @@
+body { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #000; background-color: #eeeeee;}
+h3 { padding: 0px; font-size: 23px; margin:  0px 0px 5px 0px; margin-top: 0px; color: #000000;}
+
+#container {
+	width: 250px;
+	margin: 25px auto 0px auto;
+	padding: 20px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+/*  Styling for Suggestion Box Container  */
+.suggestionsBox {
+	position: absolute;
+	width: 240px;
+	background-color: #212427;
+	border: 2px solid #000;
+	color: #fff;
+	padding: 5px;
+	margin:10px 80px 0px ;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+}
+/*  Individual Search Results 
+#inputString { width: 240px; padding: 5px; font-size: 18px;}
+ */
+.suggestionList { margin: 0px; padding: 0px; }
+
+
+.suggestionList li {
+	margin: 0px 0px 3px 0px;
+	padding: 7px;
+	cursor: pointer;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	list-style-type: none;
+}
+
+/*  Hover effect  */
+.suggestionList li:hover { background-color: #009900; font-weight: bold;}
+
+#search {
+	visibility:hidden;
+}
