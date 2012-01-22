@@ -386,19 +386,26 @@ def main ():
 			except Exception as e:
 				print e
 				pass
-			visual_effects=the_matrix.data['visual effects']
-			for person in visual_effects  :
-				
-				tblperson = fnPerson(person)
-				tblvisual_effects,c = Visual_effects.objects.get_or_create(name=tblperson)
-				tblmovie.visual_effects.add(tblvisual_effects)
-
-			writer=the_matrix.data['writer']
-			for person in visual_effects  :
-				
-				tblperson = fnPerson(person)
-				tblwriter,c = Writer.objects.get_or_create(name=tblperson)
-				tblmovie.writer.add(tblwriter)
+			try:
+				visual_effects=the_matrix.data['visual effects']
+				for person in visual_effects  :
+					
+					tblperson = fnPerson(person)
+					tblvisual_effects,c = Visual_effects.objects.get_or_create(name=tblperson)
+					tblmovie.visual_effects.add(tblvisual_effects)
+			except Exception as e:
+				print e
+				pass
+			try:
+				writer=the_matrix.data['writer']
+				for person in visual_effects  :
+					
+					tblperson = fnPerson(person)
+					tblwriter,c = Writer.objects.get_or_create(name=tblperson)
+					tblmovie.writer.add(tblwriter)
+			except Exception as e:
+				print e
+				pass
 			url.runcount+=1	
 			url.last_rundate=datetime.now()
 			url.save()
