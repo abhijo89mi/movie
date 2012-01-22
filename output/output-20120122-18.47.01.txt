@@ -1,0 +1,7 @@
+Get movie information :  Immortals
+'top 250 rank'
+Get movie information :  The Avengers
+'votes'
+'mpaa'
+'rating'
+'top 250 rank'
