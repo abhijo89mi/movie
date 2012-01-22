@@ -408,5 +408,6 @@ class Errorlog(models.Model):
 	date					= models.DateTimeField(null=True, blank=True) 
 	def __unicode__(self):
 		return self.message
-
-
+		
+		
+	
