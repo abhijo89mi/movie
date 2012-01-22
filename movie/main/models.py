@@ -92,71 +92,71 @@ class Languages(models.Model):
 		db_table = 'Languages'
 
 class Sound_mix(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Sound_mix")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Sound_mix")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Sound_mix'
 
 class Animation_department(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Animation_department")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Animation_department")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Animation_department'
 
 class Art_department(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Art_department")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Art_department")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Art_department'
 
 class Art_direction(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Art_direction")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Art_direction")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Art_direction'
 
 class Assistant_director(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Assistant_director")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Assistant_director")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Assistant_director'
 
 class Camera_and_electrical_department(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Camera_and_electrical_department")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Camera_and_electrical_department")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Camera_and_electrical_department'
 
 class Cast(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Cast")
-	charactor=models.ManyToManyField('Charactor', verbose_name=u'Charactor ID',related_name="Charactor_FK_Cast")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Cast")
+	charactor=models.ForeignKey('Charactor', verbose_name=u'Charactor ID',related_name="Charactor_FK_Cast")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Cast'
 	
 class Casting_department(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Casting_department")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Casting_department")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Casting_department'
 
 class Casting_director(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Casting_director")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Casting_director")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Casting_director'
 
 class Cinematographer(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Cinematographer")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Cinematographer")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
@@ -170,35 +170,35 @@ class Color_info(models.Model):
 		db_table = 'Color_info'
 
 class Costume_department(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Costume_department")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Costume_department")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Costume_department'
 
 class Costume_designer(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Costume_designer")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Costume_designer")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Costume_designer'
 
 class Director(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Director")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Director")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Director'
 
 class Distributors(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Distributors")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Distributors")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Distributors'
 
 class Editor(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Editor")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Editor")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
@@ -206,126 +206,126 @@ class Editor(models.Model):
 
 
 class Make_up(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Make_up")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Make_up")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Make_up'
 
 class Miscellaneous_companies(models.Model):
-	name= models.ManyToManyField('Company', verbose_name=u'Company ID',related_name="Company_FK_Miscellaneous_companies")
+	name= models.ForeignKey('Company', verbose_name=u'Company ID',related_name="Company_FK_Miscellaneous_companies")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Miscellaneous_companies'
 
 class Miscellaneous_crew(models.Model):
-	name= models.ManyToManyField('Company', verbose_name=u'Company ID',related_name="Company_FK_Miscellaneous_crew")
+	name= models.ForeignKey('Person', verbose_name=u'Company ID',related_name="Company_FK_Miscellaneous_crew")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Miscellaneous_crew'
 
 class Music_department(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Music_department")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Music_department")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Music_department'
 
 class Original_music(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Original_music")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Original_music")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Original_music'
 
 class Producer(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Producer")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Producer")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Producer'
 
 class Production_companies(models.Model):
-	name= models.ManyToManyField('Company', verbose_name=u'Company ID',related_name="Company_FK_Production_companies")
+	name= models.ForeignKey('Company', verbose_name=u'Company ID',related_name="Company_FK_Production_companies")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Production_companies'
 
 class Production_design(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Production_design")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Production_design")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Production_design'
 
 class Production_manager(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Production_manager")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Production_manager")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Production_manager'
 
 class Runtimes(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Runtimes")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Runtimes")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Runtimes'
 
 class Set_decoration(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Set_decoration")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Set_decoration")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Set_decoration'
 
 class Sound_crew(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Sound_crew")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Sound_crew")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Sound_crew'
 
 class Special_effects_companies(models.Model):
-	name= models.ManyToManyField('Company', verbose_name=u'Compny ID',related_name="Person_FK_Special_effects_companies")
+	name= models.ForeignKey('Company', verbose_name=u'Compny ID',related_name="Person_FK_Special_effects_companies")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Special_effects_companies'
 
 class Special_effects_department(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Special_effects_department")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Special_effects_department")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Special_effects_department'
 
 class Stunt_performer(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Stunt_performer")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Stunt_performer")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Stunt_performer'
 
 class Transportation_department(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Transportation_department")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Transportation_department")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Transportation_department'
 
 class Visual_effects(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Visual_effects")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Visual_effects")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
 		db_table = 'Visual_effects'
 
 class Writer(models.Model):
-	name= models.ManyToManyField('Person', verbose_name=u'Person ID',related_name="Person_FK_Writer")
+	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Writer")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
@@ -357,7 +357,7 @@ class Charactor(models.Model):
 	class Meta:
 		db_table = 'Charactor'
 class Plot(models.Model):
-	name=models.CharField(max_length=100,)
+	name=models.TextField(blank=True, null=True)
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
