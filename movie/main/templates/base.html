@@ -2,8 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     {% load metatag_tags %}
-    <title>{% block title %}MuviDB - HOME{% endblock %}</title>
+    
     {% metatag_populate %}
+    <title>{% if metatag.title  %}{{ metatag.title }}{%else%}{% block title %}{% endblock %}{% endif %}</title>
     <meta name="description" content="{{ metatag.description }}" />
     <meta name="keywords" content="{{ metatag.keywords }}" />
     {% if metatag.google_pagetrack_category  %}
