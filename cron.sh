@@ -1,4 +1,5 @@
+#!/bin/sh
 
-cd /home/abhilash/Documents/movie
+cd /usr/local/django/sites/movie/
 output_filename=output/output-`date +%Y%m%d-%H.%M.%S`.txt
-python muvidb.py > $output_filename
+python2.7 muvidb.py > $output_filename

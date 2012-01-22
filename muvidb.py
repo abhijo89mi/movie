@@ -1,4 +1,7 @@
-#!/usr/bin/env python
+#!/usr/local/bin/python2.7
+
+
+PYTHON_BIN = "/usr/local/bin/python2.7"
 import os, sys, getopt, cStringIO
 from imdb import IMDb
 sys.path[0:0] = [

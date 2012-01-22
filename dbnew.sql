@@ -1,5 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `imdbold` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `imdbold`;
+
 -- MySQL dump 10.13  Distrib 5.1.54, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: imdbold
