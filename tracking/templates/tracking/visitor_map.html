@@ -12,13 +12,13 @@
 {% endblock %}
 
 {% block content %}
-<h2>{% trans "Active Users" %}</h2>
+<h2>{% trans "Active Users" %} {{GEOIP_PATH}} </h2>
 
 <p>
     {% trans "Below is a map and a list of recently active users on this site.  It updates itself every 5 seconds or so, adding and removing pins in the map as necessary.  Stick around for a few minutes to see it in action!" %}
 </p>
 
-<div id="active-users-map" style="height: 500px;">{{ GOOGLE_MAPS_KEY }}</div>
+<div id="active-users-map" style="height: 500px;"></div>
 
 <div id="active-users-list"></div>
 {% endblock %}
