@@ -404,8 +404,8 @@ class Urllog(models.Model):
 class Errorlog(models.Model):
 	
 	function_name	= models.CharField(max_length=500)
-	message				= models.CharField(max_length=500)
-	date					= models.DateTimeField(null=True, blank=True) 
+	message		= models.CharField(max_length=500)
+	date		= models.DateTimeField(null=True, blank=True) 
 	def __unicode__(self):
 		return self.message
 		
