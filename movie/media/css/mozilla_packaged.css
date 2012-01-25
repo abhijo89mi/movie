@@ -1,11 +1,4 @@
-.menu {position:relative; background:url(images/bg.gif) no-repeat LightSlateGrey; height:35px; width:1100px}
-.menu ul {list-style:none; z-index:10; position:absolute; z-index:100; padding:9px 5px}
-.menu li {float:left}
-.menu a, .menu a:active, .menu a:visited {text-decoration:none; color:#FFF; padding:10px}
-.menu a:hover {color:#ebf0e6;text-decoration:none;}
-#slide {position:absolute; bottom:0; height:10px; background:#89957a; z-index:10}
-  
-  
+ 
   .ui-helper-hidden {display: none}
 .ui-helper-hidden-accessible {position: absolute; left: -99999999px}
 .ui-helper-reset {margin: 0; padding: 0; border: 0; outline: 0; line-height: 1.3; text-decoration: none; font-size: 100%; list-style: none}

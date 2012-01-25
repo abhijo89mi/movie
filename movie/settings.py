@@ -117,7 +117,8 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'metatag',
     'movie.main',
-    'tracking'
+    'tracking',
+    'movie.front_end',
     
 )
 
@@ -129,6 +130,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.media",
     "django.core.context_processors.static",
     "django.contrib.messages.context_processors.messages",
+    "movie.context_processors.menu"
 )
 
 

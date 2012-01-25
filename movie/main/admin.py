@@ -11,14 +11,12 @@ def getmove (movieurlAdmin, request, queryset):
 	
 class movieurlAdmin(admin.ModelAdmin):
 	
-	def Genre(self,obj):
-		return Genre.objects.get(name=obj.filter_based_on)
 		
 	def Movie_url(self,obj):
 		return "<a href=%s >%s</a>" %(obj.url,obj.url)
 	Movie_url.allow_tags = True
 	
-	list_display = ('id','imdbid','movie_name','runcount','Movie_url','sucess_factor','run_date','last_rundate','Genre')
+	list_display = ('id','imdbid','movie_name','runcount','Movie_url','sucess_factor','run_date','last_rundate',)
 	search_fields = ['imdbid','url',]
 	date_hierarchy = 'run_date'
 	ordering = ('id',)
@@ -31,7 +29,8 @@ class GenreAdmin(admin.ModelAdmin):
 	list_display = ('name','refresh_btn','total_movie')
 	search_fields = ['name',]
 	ordering = ('name',)
-
+class CastAdmin(admin.ModelAdmin):
+	filter_horizontal = ('charactor',)
   
 class MovieAdmin(admin.ModelAdmin):
 	filter_horizontal = ('akas_id','plot','certificates','countries','genres','languages','sound_mix','animation_department','art_department','art_direction','assistant_director','camera_and_electrical_department','cast','casting_department','casting_director','cinematographer','color_info','costume_department','costume_designer','director','distributors','editor','languages','make_up','miscellaneous_companies','miscellaneous_crew','music_department','original_music','producer','production_companies','production_design','production_manager',
@@ -41,6 +40,7 @@ class MovieAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Genre, GenreAdmin)
+admin.site.register(Cast, CastAdmin)
 admin.site.register(Movie, MovieAdmin)
 
 admin.site.register(movieurl, movieurlAdmin)
