@@ -8,6 +8,5 @@ from django.conf import settings
 from models import *
 
 def index(request):
-    data=''
-    context = {'data':data}
-    return render_to_response('index.html', context, context_instance = RequestContext(request))
+    context = {}
+    return render_to_response('main/index.html', context, context_instance = RequestContext(request))

@@ -92,7 +92,7 @@ class Languages(models.Model):
 		db_table = 'Languages'
 
 class Sound_mix(models.Model):
-	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Sound_mix")
+	name= models.CharField(max_length=100,)
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
@@ -135,7 +135,7 @@ class Camera_and_electrical_department(models.Model):
 
 class Cast(models.Model):
 	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Cast")
-	charactor=models.ForeignKey('Charactor', verbose_name=u'Charactor ID',related_name="Charactor_FK_Cast")
+	charactor=models.ManyToManyField('Charactor', verbose_name=u'Charactor ID',related_name="Charactor_FK_Cast")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
@@ -191,7 +191,7 @@ class Director(models.Model):
 		db_table = 'Director'
 
 class Distributors(models.Model):
-	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Distributors")
+	name= models.ForeignKey('Company', verbose_name=u'Person ID',related_name="Person_FK_Distributors")
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
@@ -269,7 +269,7 @@ class Production_manager(models.Model):
 		db_table = 'Production_manager'
 
 class Runtimes(models.Model):
-	name= models.ForeignKey('Person', verbose_name=u'Person ID',related_name="Person_FK_Runtimes")
+	name= models.CharField(max_length=100,)
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
@@ -351,7 +351,7 @@ class Company(models.Model):
 		db_table = 'Company'
 class Charactor(models.Model):
 	name=models.CharField(max_length=100,)
-	roleID=models.CharField(max_length=100,)
+	roleID=models.CharField(max_length=100,null=True)
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
@@ -368,13 +368,14 @@ class Photo(models.Model):
 		return u'%s' % (self.url)
 	class Meta:
 		db_table = 'Photo'
-		
+
 #-----------------------------------------------------------------
 
 class Genre(models.Model):
 	''''''
+	display_name= models.CharField(max_length=100,unique=True)
 	name 		= models.CharField(max_length=100,unique=True)
-	total_movie	= models.IntegerField(null=False, blank=False)
+	total_movie	= models.IntegerField(null=True, blank=True,default=0)
 	
 	def __unicode__(self):
 		return self.name
@@ -384,7 +385,7 @@ class movieurl(models.Model):
 	movie_name=models.CharField(max_length=500)
 	runcount 				=models.IntegerField(null=True, blank=True,default=0)
 	url 						= models.CharField(max_length=500)
-	filter_based_on	= models.ForeignKey('Genre',to_field='name', verbose_name=u'Genre name')
+	filter_based_on	= models.ForeignKey('Genre', verbose_name=u'Genre name')
 	sucess_factor 	= models.IntegerField(null=True, blank=True,default=0)
 	run_date 				=models.DateTimeField(null=True, blank=True) 
 	last_rundate		=models.DateTimeField(null=True, blank=True) 

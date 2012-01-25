@@ -6,7 +6,7 @@ from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
 autoregister('main')
-
+autoregister('front_end')
 urlpatterns = patterns('movie.main',
     # Examples:
     url(r'^$', 'views.index', name='home'),
