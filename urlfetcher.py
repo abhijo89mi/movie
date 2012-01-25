@@ -1,21 +1,21 @@
 import os, sys, getopt, cStringIO
 
 sys.path[0:0] = [
-	'/usr/local/django/sites/movie/eggs/ipython-0.12-py2.7.egg',
-	'/usr/local/django/sites/movie/eggs/South-0.7.1-py2.7.egg',
-	'/usr/local/django/sites/movie/eggs/django_markitup-0.5.2-py2.7.egg',
-	'/usr/local/django/sites/movie/eggs/django_robots-0.7.0-py2.7.egg',
-	'/usr/local/django/sites/movie/eggs/sorl_thumbnail-11.01-py2.7.egg',
-	'/usr/local/django/sites/movie/eggs/BeautifulSoup-3.2.0-py2.7.egg',
-	'/usr/local/django/sites/movie/eggs/Markdown-2.1.0-py2.7.egg',
-	'/usr/local/django/sites/movie/eggs/djangorecipe-1.1.2-py2.7.egg',
-	'/usr/local/django/sites/movie/eggs/Django-1.3-py2.7.egg',
-	'/usr/local/django/sites/movie/eggs/zc.recipe.egg-1.3.2-py2.7.egg',
-	'/usr/local/django/sites/movie/eggs/zc.buildout-1.5.2-py2.7.egg',
-	'/usr/local/django/sites/movie/eggs/setuptools-0.6c12dev_r88846-py2.7.egg',
-	'/usr/local/django/sites/movie/parts/django',
-	'/usr/local/django/sites/movie',
-	]
+		os.path.dirname(__file__)+'/eggs/ipython-0.10.2-py2.7.egg',
+		os.path.dirname(__file__)+'/eggs/South-0.7.1-py2.7.egg',
+		os.path.dirname(__file__)+'/eggs/django_markitup-0.5.2-py2.7.egg',
+		os.path.dirname(__file__)+'/eggs/django_robots-0.7.0-py2.7.egg',
+		os.path.dirname(__file__)+'/eggs/sorl_thumbnail-11.01-py2.7.egg',
+		os.path.dirname(__file__)+'/eggs/BeautifulSoup-3.2.0-py2.7.egg',
+		os.path.dirname(__file__)+'/eggs/Markdown-2.0.3-py2.7.egg',
+		os.path.dirname(__file__)+'/eggs/djangorecipe-0.99-py2.7.egg',
+		os.path.dirname(__file__)+'/eggs/Django-1.2.1-py2.7.egg',
+		os.path.dirname(__file__)+'/eggs/zc.recipe.egg-1.3.2-py2.7.egg',
+		os.path.dirname(__file__)+'/eggs/zc.buildout-1.5.2-py2.7.egg',
+		os.path.dirname(__file__)+'/eggs/setuptools-0.6c12dev_r88846-py2.7.egg',
+		os.path.dirname(__file__)+'/parts/django',
+		os.path.dirname(__file__),
+		]
 
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'movie.settings'

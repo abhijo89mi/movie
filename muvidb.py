@@ -1,6 +1,5 @@
 #!/usr/local/bin/python2.7
 
-
 PYTHON_BIN = "/usr/local/bin/python2.7"
 import os, sys, getopt, cStringIO
 from imdb import IMDb
@@ -25,6 +24,7 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'movie.development'
 from django.conf import settings
 from movie.main.models import *
 from datetime import datetime
+
 def fnPerson(person):
 	
 	name=person.data['name']
@@ -41,7 +41,18 @@ def fnPerson(person):
 	tblPerson ,Created =Person.objects.get_or_create(personID=personID,name=name,note=note,default_info=default_info,biodata=biodata)
 		
 	return tblPerson
-
+	
+def fnCompany(company):
+	name=company.data['name']
+	tblCompany ,Created =Company.objects.get_or_create(name=name)
+	return tblCompany
+	
+def fnCharactor(person):
+	name=person.currentRole
+	roleID=person.roleID
+	tblCharactor ,Created =Charactor.objects.get_or_create(name=name,roleID=roleID)
+	return tblCharactor
+	
 def fnMovie (the_matrix):
 	try :
 		title=the_matrix.data['title']
@@ -118,7 +129,7 @@ def main ():
 	
 		ia = IMDb()
 		# Get url from the tblmovieurl
-		url_object =movieurl.objects.filter(runcount__lt=1)[:100]
+		url_object =movieurl.objects.filter(runcount__lt=1)[:5]
 		for url in url_object :
 			imdbid=url.imdbid.replace('tt','')
 			
@@ -401,7 +412,7 @@ def main ():
 				pass
 			try:
 				writer=the_matrix.data['writer']
-				for person in visual_effects  :
+				for person in writer  :
 					
 					tblperson = fnPerson(person)
 					tblwriter,c = Writer.objects.get_or_create(name=tblperson)
@@ -409,6 +420,146 @@ def main ():
 			except Exception as e:
 				print e
 				pass
+			try:
+				distributors=the_matrix.data['distributors']
+				for company in distributors  :
+					
+					tblperson = fnCompany(company)
+					tbldistributors,c = Distributors.objects.get_or_create(name=tblperson)
+					tblmovie.distributors.add(tbldistributors)
+			except Exception as e:
+				print e
+				pass
+			try:
+				miscellaneous_companies=the_matrix.data['miscellaneous companies']
+				for company in miscellaneous_companies  :
+					
+					tblcompany = fnCompany(company)
+					tblmiscellaneous_companies,c = Miscellaneous_companies.objects.get_or_create(name=tblcompany)
+					tblmovie.miscellaneous_companies.add(tblmiscellaneous_companies)
+			except Exception as e:
+				print e
+				pass
+				
+			try:
+				production_companies=the_matrix.data['production companies']
+				for company in production_companies  :
+					
+					tblcompany = fnCompany(company)
+					tblproduction_companies,c = Production_companies.objects.get_or_create(name=tblcompany)
+					tblmovie.production_companies.add(tblproduction_companies)
+			except Exception as e:
+				print e
+				pass
+			try:
+				special_effects_companies=the_matrix.data['special effects companies']
+				for company in special_effects_companies  :
+					
+					tblcompany = fnCompany(company)
+					tblspecial_effects_companies,c = Special_effects_companies.objects.get_or_create(name=tblcompany)
+					tblmovie.special_effects_companies.add(tblspecial_effects_companies)
+			except Exception as e:
+				print e
+				pass
+			try:
+				cast=the_matrix.data['cast']
+				for person in cast:
+					
+					tblcharactor = fnCharactor(person)
+					tblperson = fnPerson(person)
+					tblcast,c = Cast.objects.get_or_create(name=tblperson)
+					tblcast.charactor.add(tblcharactor)
+					tblmovie.cast.add(tblcast)
+			except Exception as e:
+				print e
+				pass
+			try:
+				akas=the_matrix.data['akas']
+				for name in akas  :
+					tblakas,c = Akas.objects.get_or_create(name=name)
+					tblmovie.akas_id.add(tblakas)
+			except Exception as e:
+				print e
+				pass
+			try:
+				plot=the_matrix.data['plot']
+				for name in plot  :
+					tblplot,c = Plot.objects.get_or_create(name=name)
+					tblmovie.plot.add(tblplot)
+			except Exception as e:
+				print e
+				pass
+			try:
+				certificates=the_matrix.data['certificates']
+
+				for name in certificates  :
+					tblcertificates,c = Certificates.objects.get_or_create(name=name)
+					tblmovie.certificates.add(tblcertificates)
+			except Exception as e:
+				print e
+				pass
+			try:
+				color_info=the_matrix.data['color info']
+				for name in color_info  :
+					tblcolor_info,c = Color_info.objects.get_or_create(color=name)
+					tblmovie.color_info.add(tblcolor_info)
+			except Exception as e:
+				print e
+				pass
+
+			try:
+				genres=the_matrix.data['genres']
+				for display_name in genres  :
+					name=display_name.replace('-','_').lower()
+					tblgenres,c = Genre.objects.get_or_create(display_name=display_name,name=name)
+					tblmovie.genres.add(tblgenres)
+			except Exception as e:
+				print e
+				pass
+
+
+			try:
+				runtimes=the_matrix.data['runtimes']
+				for name in runtimes  :
+					tblruntimes,c = Runtimes.objects.get_or_create(name=name)
+					tblmovie.runtimes.add(tblruntimes)
+			except Exception as e:
+				print e
+				pass
+
+			try:
+				countries=the_matrix.data['countries']
+				code=the_matrix.data['country codes']
+				i=0
+				for name in countries  :
+					tblcountries,c = Countries.objects.get_or_create(name=name,code=code[i])
+					tblmovie.countries.add(tblcountries)
+					i=i+1
+			except Exception as e:
+				print e
+				pass
+
+			try:
+				sound_mix=the_matrix.data['sound mix']
+				for name in sound_mix :
+					tblsound_mix,c = Sound_mix.objects.get_or_create(name=name)
+					tblmovie.sound_mix.add(tblsound_mix)
+			except Exception as e:
+				print e
+				pass
+
+			try:
+				languages=the_matrix.data['languages']
+				code=the_matrix.data['language codes']
+				i=0
+				for name in languages  :
+					tbllanguages,c = Languages.objects.get_or_create(name=name,code=code[i])
+					tblmovie.languages.add(tbllanguages)
+					i=i+1
+			except Exception as e:
+				print e
+				pass
+
 			url.runcount+=1	
 			url.last_rundate=datetime.now()
 			url.save()
