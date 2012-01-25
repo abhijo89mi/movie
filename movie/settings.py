@@ -163,13 +163,11 @@ KEY :
 http://maps.google.com/maps/geo?q=1600+Amphitheatre+Parkway,+Mountain+View,+CA&output=json&oe=utf8\
 &sensor=true_or_false&key=ABQIAAAAAQa3kAaMAAcZ6woWBCwSYBS-YFg-aKw0dFNA-SxSKMMT_2DJaRRgUHdpl9eytO-ELAnlCo5BK3_JdQ
 
-'''
+
 GOOGLE_MAPS_KEY='ABQIAAAAAQa3kAaMAAcZ6woWBCwSYBS-YFg-aKw0dFNA-SxSKMMT_2DJaRRgUHdpl9eytO-ELAnlCo5BK3_JdQ'
 TRACKING_USE_GEOIP=True
 DEFAULT_TRACKING_TEMPLATE='tracking/visitor_map.html'
 TRACKING_USE_GEOIP=True
-#GEOIP_PATH=os.path.join(os.path.dirname(__file__), "geoip/GeoIP.dat")
 GEOIP_CACHE_TYPE=0
-
-
+'''
 
