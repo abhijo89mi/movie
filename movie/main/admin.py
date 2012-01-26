@@ -31,13 +31,16 @@ class GenreAdmin(admin.ModelAdmin):
 	ordering = ('name',)
 class CastAdmin(admin.ModelAdmin):
 	filter_horizontal = ('charactor',)
-  
+	filter_horizontal = ('charactor',)
 class MovieAdmin(admin.ModelAdmin):
-	filter_horizontal = ('akas_id','plot','certificates','countries','genres','languages','sound_mix','animation_department','art_department','art_direction','assistant_director','camera_and_electrical_department','cast','casting_department','casting_director','cinematographer','color_info','costume_department','costume_designer','director','distributors','editor','languages','make_up','miscellaneous_companies','miscellaneous_crew','music_department','original_music','producer','production_companies','production_design','production_manager',
+
+	list_display = ('id','title','votes','year','imdbid','rating',)
+	search_fields = ['imdbid','title','year']
+	readonly_fields = ('akas_id','plot','certificates','countries','genres','languages','sound_mix','animation_department','art_department','art_direction','assistant_director','camera_and_electrical_department','cast','casting_department','casting_director','cinematographer','color_info','costume_department','costume_designer','director','distributors','editor','languages','make_up','miscellaneous_companies','miscellaneous_crew','music_department','original_music','producer','production_companies','production_design','production_manager',
 	'runtimes','set_decoration','sound_crew','special_effects_companies','special_effects_department','stunt_performer','transportation_department','visual_effects','writer')
 	
-
-
+	ordering = ('id',)
+	
 
 admin.site.register(Genre, GenreAdmin)
 admin.site.register(Cast, CastAdmin)
