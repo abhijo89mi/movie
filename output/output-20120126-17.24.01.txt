@@ -1,0 +1,362 @@
+Get movie information :  Hard to Kill
+'mpaa'
+'top 250 rank'
+'animation department'
+'costume designer'
+'visual effects'
+'special effects companies'
+sucess_factor :  4
+Total Completed : 0 
+Get movie information :  Young Sherlock Holmes
+'mpaa'
+'top 250 rank'
+'animation department'
+'casting department'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0744068', 'note': u'optical lineup', 'name': u'Rosseter, Thomas', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+sucess_factor :  3
+Total Completed : 0 
+Get movie information :  Rosewood
+'top 250 rank'
+'animation department'
+'special effects companies'
+sucess_factor :  2
+Total Completed : 0 
+Get movie information :  The Order
+'top 250 rank'
+'animation department'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  Cutthroat Island
+'top 250 rank'
+'animation department'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  Harley Davidson and the Marlboro Man
+'top 250 rank'
+'animation department'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  3 Ninjas
+'top 250 rank'
+'animation department'
+'casting director'
+'costume department'
+'music department'
+'production manager'
+'visual effects'
+'special effects companies'
+sucess_factor :  7
+Total Completed : 0 
+Get movie information :  The Beastmaster
+'mpaa'
+'top 250 rank'
+'animation department'
+'art direction'
+'casting department'
+get() returned more than one Person -- it returned 3! Lookup parameters were {'personID': '0005633', 'note': u'', 'name': u'Alcott, John', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0922079', 'note': u'sound re-recording mixer', 'name': u'West, Ray', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0768073', 'note': u'stunts (uncredited)', 'name': u'Sawaya, Rick', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+sucess_factor :  6
+Total Completed : 0 
+Get movie information :  Westworld
+'mpaa'
+'top 250 rank'
+'animation department'
+'casting department'
+'costume designer'
+'production design'
+'transportation department'
+'miscellaneous companies'
+sucess_factor :  6
+Total Completed : 0 
+Get movie information :  Lempire des loups
+'top 250 rank'
+'art direction'
+'transportation department'
+'miscellaneous companies'
+sucess_factor :  3
+Total Completed : 0 
+Get movie information :  The Way of the Gun
+'top 250 rank'
+'animation department'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  The Courier
+'votes'
+'aspect ratio'
+'rating'
+'top 250 rank'
+'cover url'
+'animation department'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '2682181', 'note': u'camera operator', 'name': u'Herrera, Christian', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+'special effects department'
+'special effects companies'
+'plot'
+'sound mix'
+sucess_factor :  6
+Total Completed : 0 
+Get movie information :  Fortress of War
+'aspect ratio'
+'mpaa'
+'top 250 rank'
+'animation department'
+'art department'
+'assistant director'
+'camera and electrical department'
+'casting department'
+'casting director'
+'costume department'
+'costume designer'
+'make up'
+'miscellaneous crew'
+'music department'
+'set decoration'
+'special effects department'
+'stunt performer'
+'transportation department'
+'special effects companies'
+'certificates'
+'sound mix'
+sucess_factor :  18
+Total Completed : 0 
+Get movie information :  The Sweeney
+'votes'
+'aspect ratio'
+'mpaa'
+'rating'
+'top 250 rank'
+'cover url'
+'animation department'
+'casting department'
+'editor'
+'original music'
+'production manager'
+'set decoration'
+'visual effects'
+'akas'
+'plot'
+'certificates'
+'runtimes'
+'sound mix'
+sucess_factor :  12
+Total Completed : 0 
+Get movie information :  Paid in Full
+'top 250 rank'
+'animation department'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  Spy Hard
+'top 250 rank'
+sucess_factor :  0
+Total Completed : 0 
+Get movie information :  The Baytown Disco
+'votes'
+'aspect ratio'
+'rating'
+'top 250 rank'
+'animation department'
+'art direction'
+'set decoration'
+'distributors'
+'special effects companies'
+'akas'
+'color info'
+'runtimes'
+'sound mix'
+'languages'
+sucess_factor :  10
+Total Completed : 0 
+Get movie information :  Assault on Precinct 13
+'mpaa'
+'top 250 rank'
+'animation department'
+'casting department'
+'casting director'
+'costume designer'
+'production design'
+'set decoration'
+'visual effects'
+'special effects companies'
+sucess_factor :  8
+Total Completed : 0 
+Get movie information :  The Adventures of Robin Hood
+'top 250 rank'
+'animation department'
+'casting department'
+'production design'
+'set decoration'
+'special effects department'
+'transportation department'
+'visual effects'
+'miscellaneous companies'
+'special effects companies'
+sucess_factor :  9
+Total Completed : 0 
+Get movie information :  Hindsight
+'aspect ratio'
+'mpaa'
+'top 250 rank'
+'cover url'
+'plot outline'
+'animation department'
+'art department'
+'art direction'
+'assistant director'
+'casting department'
+'casting director'
+'costume department'
+'music department'
+'production manager'
+'set decoration'
+'special effects department'
+'stunt performer'
+'transportation department'
+'visual effects'
+'miscellaneous companies'
+'special effects companies'
+'plot'
+sucess_factor :  17
+Total Completed : 0 
+Get movie information :  Overdrive
+'votes'
+'aspect ratio'
+'mpaa'
+'rating'
+'top 250 rank'
+'cover url'
+'animation department'
+'art department'
+'art direction'
+'camera and electrical department'
+'casting department'
+'cinematographer'
+'costume department'
+'costume designer'
+'editor'
+'make up'
+'miscellaneous crew'
+'music department'
+'original music'
+'production design'
+'sound crew'
+'special effects department'
+'stunt performer'
+'visual effects'
+'miscellaneous companies'
+'special effects companies'
+'akas'
+'plot'
+'certificates'
+'runtimes'
+'sound mix'
+sucess_factor :  25
+Total Completed : 0 
+Get movie information :  Resident Evil: Damnation
+'votes'
+'aspect ratio'
+'mpaa'
+'rating'
+'top 250 rank'
+'cover url'
+'plot outline'
+'animation department'
+'art department'
+'art direction'
+'assistant director'
+'camera and electrical department'
+'casting department'
+'casting director'
+'cinematographer'
+'costume department'
+'costume designer'
+'editor'
+'make up'
+'miscellaneous crew'
+'music department'
+'original music'
+'production design'
+'production manager'
+'set decoration'
+'sound crew'
+'special effects department'
+'stunt performer'
+'transportation department'
+'visual effects'
+'writer'
+'distributors'
+'miscellaneous companies'
+'special effects companies'
+'cast'
+'plot'
+'certificates'
+'runtimes'
+'sound mix'
+'languages'
+sucess_factor :  33
+Total Completed : 0 
+Get movie information :  The Rookie
+'mpaa'
+'top 250 rank'
+'animation department'
+'costume designer'
+'visual effects'
+'special effects companies'
+sucess_factor :  4
+Total Completed : 0 
+Get movie information :  Freelancers
+'votes'
+'aspect ratio'
+'mpaa'
+'rating'
+'top 250 rank'
+'cover url'
+'animation department'
+'original music'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0723450', 'note': u'executive producer', 'name': u'Rice, Jeff', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+'akas'
+'plot'
+'certificates'
+'runtimes'
+'sound mix'
+sucess_factor :  8
+Total Completed : 0 
+Get movie information :  Cyborg
+'mpaa'
+'top 250 rank'
+'animation department'
+'art direction'
+'production manager'
+sucess_factor :  3
+Total Completed : 0 
+Get movie information :  D3: The Mighty Ducks
+'top 250 rank'
+'animation department'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  The Golden Child
+'mpaa'
+'top 250 rank'
+'animation department'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  A Sound of Thunder
+'top 250 rank'
+'animation department'
+'casting department'
+sucess_factor :  2
+Total Completed : 0 
+Get movie information :  Year of the Dragon
+'mpaa'
+'top 250 rank'
+'animation department'
+'visual effects'
+'special effects companies'
+sucess_factor :  3
+Total Completed : 0 
+Get movie information :  Striking Distance
+'top 250 rank'
+'animation department'
+'visual effects'
+'special effects companies'
+sucess_factor :  3
+Total Completed : 100 

@@ -1,0 +1,429 @@
+Get movie information :  Highlander II
+'top 250 rank'
+'animation department'
+'casting department'
+'set decoration'
+sucess_factor :  3
+Total Completed : 0 
+Get movie information :  Man of Tai Chi
+'votes'
+'aspect ratio'
+'mpaa'
+'rating'
+'top 250 rank'
+'cover url'
+'animation department'
+'art direction'
+'assistant director'
+'camera and electrical department'
+'costume department'
+'costume designer'
+'editor'
+'make up'
+'music department'
+'original music'
+'set decoration'
+'sound crew'
+'special effects department'
+'transportation department'
+'visual effects'
+'special effects companies'
+'akas'
+'plot'
+'certificates'
+'color info'
+'runtimes'
+'sound mix'
+'languages'
+sucess_factor :  23
+Total Completed : 0 
+Get movie information :  Superman IV: The Quest for Peace
+'mpaa'
+'top 250 rank'
+'animation department'
+'art direction'
+'casting director'
+'production manager'
+'set decoration'
+'transportation department'
+sucess_factor :  6
+Total Completed : 0 
+Get movie information :  The Medallion
+'top 250 rank'
+'casting department'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  Outlaw
+'top 250 rank'
+'animation department'
+'casting department'
+'special effects companies'
+'plot'
+sucess_factor :  4
+Total Completed : 0 
+Get movie information :  Dungeons  Dragons
+'top 250 rank'
+sucess_factor :  0
+Total Completed : 0 
+Get movie information :  Hancock 2
+'votes'
+'aspect ratio'
+'mpaa'
+'rating'
+'top 250 rank'
+'cover url'
+'plot outline'
+'animation department'
+'art department'
+'art direction'
+'assistant director'
+'camera and electrical department'
+'casting department'
+'casting director'
+'cinematographer'
+'costume department'
+'costume designer'
+'director'
+'editor'
+'make up'
+'miscellaneous crew'
+'music department'
+'original music'
+'producer'
+'production design'
+'production manager'
+'set decoration'
+'sound crew'
+'special effects department'
+'stunt performer'
+'transportation department'
+'visual effects'
+'writer'
+'distributors'
+'miscellaneous companies'
+'production companies'
+'special effects companies'
+'cast'
+'akas'
+'plot'
+'certificates'
+'color info'
+'genres'
+'runtimes'
+'countries'
+'sound mix'
+'languages'
+sucess_factor :  40
+Total Completed : 0 
+Get movie information :  Victory
+'mpaa'
+'top 250 rank'
+'animation department'
+'art department'
+'art direction'
+'casting department'
+'casting director'
+'transportation department'
+'visual effects'
+'miscellaneous companies'
+sucess_factor :  8
+Total Completed : 0 
+Get movie information :  The Killer Elite
+'mpaa'
+'top 250 rank'
+'animation department'
+'art direction'
+'casting department'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0838772', 'note': u'', 'name': u'Summers, Ray', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+'transportation department'
+'visual effects'
+'miscellaneous companies'
+'special effects companies'
+sucess_factor :  8
+Total Completed : 0 
+Get movie information :  Fists of Fury
+'mpaa'
+'top 250 rank'
+'animation department'
+'art department'
+'art direction'
+'camera and electrical department'
+'casting department'
+'casting director'
+'costume designer'
+'miscellaneous crew'
+'music department'
+'set decoration'
+'sound crew'
+'special effects department'
+'transportation department'
+'visual effects'
+'miscellaneous companies'
+'special effects companies'
+sucess_factor :  16
+Total Completed : 0 
+Get movie information :  Exit Wounds
+'top 250 rank'
+'animation department'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  Hollywood Homicide
+'top 250 rank'
+'animation department'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0847431', 'note': u'interactive compositor: SPI', 'name': u'Takayama, David', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+sucess_factor :  2
+Total Completed : 0 
+Get movie information :  Maximum Conviction
+'votes'
+'aspect ratio'
+'mpaa'
+'rating'
+'top 250 rank'
+'cover url'
+'animation department'
+'art department'
+'casting department'
+'casting director'
+'costume designer'
+'editor'
+'music department'
+'original music'
+'set decoration'
+'transportation department'
+'visual effects'
+'special effects companies'
+'akas'
+'certificates'
+'runtimes'
+'sound mix'
+sucess_factor :  16
+Total Completed : 0 
+Get movie information :  Renaissance
+'top 250 rank'
+'cinematographer'
+'costume designer'
+'make up'
+'set decoration'
+'special effects companies'
+sucess_factor :  5
+Total Completed : 0 
+Get movie information :  Transformers: The Ride - 3D
+'aspect ratio'
+'mpaa'
+'top 250 rank'
+'cover url'
+'plot outline'
+'art direction'
+'assistant director'
+'casting department'
+'casting director'
+'cinematographer'
+'costume department'
+'costume designer'
+'editor'
+'make up'
+'music department'
+'production design'
+'set decoration'
+'special effects department'
+'transportation department'
+'writer'
+'akas'
+'plot'
+'certificates'
+'runtimes'
+'sound mix'
+sucess_factor :  20
+Total Completed : 0 
+Get movie information :  Lionheart
+'top 250 rank'
+'animation department'
+'visual effects'
+'special effects companies'
+sucess_factor :  3
+Total Completed : 0 
+Get movie information :  The Karate Kid, Part III
+'mpaa'
+'top 250 rank'
+'animation department'
+'casting department'
+'costume designer'
+'miscellaneous companies'
+sucess_factor :  4
+Total Completed : 0 
+Get movie information :  The Driver
+'mpaa'
+'top 250 rank'
+'animation department'
+'art department'
+'casting department'
+'costume department'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0389776', 'note': u'driver', 'name': u'Hogue, William', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+'visual effects'
+'special effects companies'
+sucess_factor :  7
+Total Completed : 0 
+Get movie information :  Speed 2: Cruise Control
+'top 250 rank'
+'animation department'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  Mighty Joe Young
+'top 250 rank'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0179749', 'note': u'', 'name': u'Corenblith, Michael', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0426736', 'note': u'stunts (uncredited)', 'name': u'Johnston, Kevin N.', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+sucess_factor :  2
+Total Completed : 0 
+Get movie information :  Taxi 4
+'mpaa'
+'top 250 rank'
+'animation department'
+'art direction'
+'casting director'
+'cinematographer'
+'costume department'
+'original music'
+'set decoration'
+'transportation department'
+sucess_factor :  8
+Total Completed : 0 
+Get movie information :  The Black Hole
+'mpaa'
+'top 250 rank'
+'animation department'
+'casting department'
+'casting director'
+'transportation department'
+sucess_factor :  4
+Total Completed : 0 
+Get movie information :  El Dorado
+'mpaa'
+'top 250 rank'
+'animation department'
+'casting department'
+'casting director'
+'costume department'
+'production design'
+'special effects department'
+'transportation department'
+'miscellaneous companies'
+'special effects companies'
+sucess_factor :  9
+Total Completed : 0 
+Get movie information :  Midnight Chronicles
+'mpaa'
+'top 250 rank'
+'animation department'
+'casting department'
+'casting director'
+'music department'
+'set decoration'
+'special effects department'
+'transportation department'
+'special effects companies'
+'sound mix'
+sucess_factor :  9
+Total Completed : 0 
+Get movie information :  The Grandmasters
+'votes'
+'mpaa'
+'rating'
+'top 250 rank'
+'cover url'
+'animation department'
+'art department'
+'art direction'
+'assistant director'
+'camera and electrical department'
+'casting department'
+'casting director'
+'costume department'
+'make up'
+'music department'
+'set decoration'
+'sound crew'
+'special effects department'
+'transportation department'
+'plot'
+'certificates'
+'runtimes'
+'sound mix'
+sucess_factor :  18
+Total Completed : 0 
+Get movie information :  The In-Laws
+'top 250 rank'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '1512539', 'note': u'picture car captain', 'name': u'Boyd, Bill', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  Lone Survivor
+'votes'
+'aspect ratio'
+'mpaa'
+'rating'
+'top 250 rank'
+'cover url'
+'animation department'
+'art department'
+'art direction'
+'assistant director'
+'camera and electrical department'
+'casting department'
+'casting director'
+'cinematographer'
+'costume department'
+'costume designer'
+'editor'
+'make up'
+'miscellaneous crew'
+'music department'
+'original music'
+'production design'
+'production manager'
+'set decoration'
+'sound crew'
+'special effects department'
+'stunt performer'
+'transportation department'
+'visual effects'
+'miscellaneous companies'
+'special effects companies'
+'akas'
+'plot'
+'certificates'
+'color info'
+'runtimes'
+'sound mix'
+'languages'
+sucess_factor :  32
+Total Completed : 0 
+Get movie information :  The Monster Squad
+'mpaa'
+'top 250 rank'
+'costume designer'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  Beyond the Border
+'mpaa'
+'top 250 rank'
+'cover url'
+'animation department'
+'casting department'
+'casting director'
+'costume department'
+'costume designer'
+'make up'
+'miscellaneous crew'
+'music department'
+'production design'
+'production manager'
+'set decoration'
+get() returned more than one Person -- it returned 3! Lookup parameters were {'personID': '2099943', 'note': u'special effects technician', 'name': u'Blick, Robin', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+'transportation department'
+'production companies'
+'certificates'
+sucess_factor :  15
+Total Completed : 0 
+Get movie information :  Osmosis Jones
+'top 250 rank'
+sucess_factor :  0
+Total Completed : 100 

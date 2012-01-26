@@ -1,0 +1,372 @@
+Get movie information :  Bodyguards and Assassins
+'mpaa'
+'top 250 rank'
+'cover url'
+'animation department'
+'art direction'
+'assistant director'
+'camera and electrical department'
+'casting director'
+'costume department'
+'editor'
+'miscellaneous crew'
+'music department'
+'production manager'
+'set decoration'
+'sound crew'
+'special effects department'
+'transportation department'
+'plot'
+sucess_factor :  15
+Total Completed : 0 
+Get movie information :  Critters
+'mpaa'
+'top 250 rank'
+'animation department'
+'costume designer'
+'transportation department'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0000708', 'note': u'', 'name': u'Zane, Billy', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+sucess_factor :  4
+Total Completed : 0 
+Get movie information :  Dragon Eyes
+'votes'
+'aspect ratio'
+'rating'
+'top 250 rank'
+'cover url'
+'animation department'
+'casting director'
+'original music'
+'special effects companies'
+'akas'
+'runtimes'
+'sound mix'
+sucess_factor :  7
+Total Completed : 0 
+Get movie information :  Catch That Kid
+'top 250 rank'
+'animation department'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0295518', 'note': u'hair department head', 'name': u'Friend, Camille', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+sucess_factor :  2
+Total Completed : 0 
+Get movie information :  Saints and Soldiers
+'aspect ratio'
+'top 250 rank'
+'animation department'
+'art direction'
+'casting department'
+'costume designer'
+'set decoration'
+'visual effects'
+'sound mix'
+sucess_factor :  7
+Total Completed : 0 
+Get movie information :  Shank
+'aspect ratio'
+'mpaa'
+'top 250 rank'
+'animation department'
+'casting department'
+'costume department'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '1122421', 'note': u'unit publicist', 'name': u'Gregory, Nicole', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+'set decoration'
+'special effects department'
+'transportation department'
+'akas'
+'plot'
+'sound mix'
+sucess_factor :  10
+Total Completed : 0 
+Get movie information :  Kites
+'aspect ratio'
+'mpaa'
+'top 250 rank'
+'animation department'
+'art direction'
+'casting director'
+'costume department'
+'set decoration'
+sucess_factor :  5
+Total Completed : 0 
+Get movie information :  The Enforcer
+'mpaa'
+'top 250 rank'
+'animation department'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0591417', 'note': u'auditor', 'name': u'Mink, Don', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+'production design'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0354717', 'note': u'sound', 'name': u'Hallberg, Bert', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+'visual effects'
+'special effects companies'
+sucess_factor :  6
+Total Completed : 0 
+Get movie information :  Outpost
+'top 250 rank'
+'set decoration'
+'transportation department'
+sucess_factor :  2
+Total Completed : 0 
+Get movie information :  Loaded Weapon 1
+'top 250 rank'
+'animation department'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  Henry V
+'top 250 rank'
+'animation department'
+'casting department'
+'set decoration'
+'special effects companies'
+sucess_factor :  4
+Total Completed : 0 
+Get movie information :  The Flash
+'votes'
+'aspect ratio'
+'mpaa'
+'rating'
+'top 250 rank'
+'cover url'
+'plot outline'
+'animation department'
+'art department'
+'art direction'
+'assistant director'
+'camera and electrical department'
+'casting department'
+'casting director'
+'cinematographer'
+'costume department'
+'costume designer'
+'director'
+'editor'
+'make up'
+'miscellaneous crew'
+'music department'
+'original music'
+'producer'
+'production design'
+'production manager'
+'set decoration'
+'sound crew'
+'special effects department'
+'stunt performer'
+'transportation department'
+'visual effects'
+'writer'
+'distributors'
+'miscellaneous companies'
+'production companies'
+'special effects companies'
+'cast'
+'akas'
+'plot'
+'certificates'
+'color info'
+'genres'
+'runtimes'
+'countries'
+'sound mix'
+'languages'
+sucess_factor :  40
+Total Completed : 0 
+Get movie information :  Breakdown
+'top 250 rank'
+'animation department'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  Any Which Way You Can
+'mpaa'
+'top 250 rank'
+'animation department'
+'art direction'
+'casting director'
+'costume designer'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0230019', 'note': u'motorcycles furnisher', 'name': u'Dockstader, George', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+'original music'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0354717', 'note': u'sound', 'name': u'Hallberg, Bert', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+'visual effects'
+'special effects companies'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0516800', 'note': u'', 'name': u'Locke, Sondra', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+sucess_factor :  10
+Total Completed : 0 
+Get movie information :  The Skulls
+'top 250 rank'
+'animation department'
+'special effects companies'
+sucess_factor :  2
+Total Completed : 0 
+Get movie information :  Dhoom 3
+'votes'
+'aspect ratio'
+'mpaa'
+'rating'
+'top 250 rank'
+'cover url'
+'plot outline'
+'animation department'
+'art department'
+'art direction'
+'camera and electrical department'
+'casting department'
+'casting director'
+'cinematographer'
+'costume department'
+'costume designer'
+'editor'
+'make up'
+'production manager'
+'set decoration'
+'sound crew'
+'special effects department'
+'transportation department'
+'visual effects'
+'miscellaneous companies'
+'production companies'
+'special effects companies'
+'akas'
+'plot'
+'certificates'
+'runtimes'
+'sound mix'
+sucess_factor :  25
+Total Completed : 0 
+Get movie information :  Guadalcanal Diary
+'mpaa'
+'top 250 rank'
+'animation department'
+'assistant director'
+'camera and electrical department'
+'casting department'
+'casting director'
+'costume designer'
+'make up'
+'production design'
+'transportation department'
+'visual effects'
+'special effects companies'
+sucess_factor :  11
+Total Completed : 0 
+Get movie information :  Hardwired
+'aspect ratio'
+'top 250 rank'
+'animation department'
+'sound mix'
+sucess_factor :  2
+Total Completed : 0 
+Get movie information :  Repeaters
+'aspect ratio'
+'mpaa'
+'top 250 rank'
+'cover url'
+'animation department'
+'art direction'
+'set decoration'
+'special effects department'
+'special effects companies'
+'akas'
+'plot'
+'sound mix'
+sucess_factor :  8
+Total Completed : 0 
+Get movie information :  Coursier
+'mpaa'
+'top 250 rank'
+'animation department'
+'art direction'
+'casting director'
+'costume department'
+'costume designer'
+'editor'
+'set decoration'
+'transportation department'
+'miscellaneous companies'
+'special effects companies'
+'sound mix'
+sucess_factor :  11
+Total Completed : 0 
+Get movie information :  9th Company
+'top 250 rank'
+'animation department'
+'art department'
+'art direction'
+'assistant director'
+'casting department'
+'casting director'
+'costume department'
+'costume designer'
+'set decoration'
+'special effects department'
+'transportation department'
+sucess_factor :  11
+Total Completed : 0 
+Get movie information :  The Delta Force
+'mpaa'
+'top 250 rank'
+'animation department'
+'art direction'
+'casting director'
+'costume department'
+'visual effects'
+'special effects companies'
+sucess_factor :  6
+Total Completed : 0 
+Get movie information :  Highlander: The Final Dimension
+'top 250 rank'
+'art direction'
+'casting department'
+'casting director'
+sucess_factor :  3
+Total Completed : 0 
+Get movie information :  The Phantom
+'top 250 rank'
+'animation department'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0000708', 'note': u'', 'name': u'Zane, Billy', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+sucess_factor :  2
+Total Completed : 0 
+Get movie information :  Blown Away
+'top 250 rank'
+'animation department'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  Escape from the Planet of the Apes
+'mpaa'
+'top 250 rank'
+'animation department'
+'camera and electrical department'
+'casting department'
+'casting director'
+'costume department'
+'costume designer'
+'production design'
+'miscellaneous companies'
+sucess_factor :  8
+Total Completed : 0 
+Get movie information :  Anacondas: The Hunt for the Blood Orchid
+'top 250 rank'
+'casting department'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0749166', 'note': u'stunt coordinator', 'name': u'Ruehland, Glenn', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+'transportation department'
+sucess_factor :  3
+Total Completed : 0 
+Get movie information :  The Shootist
+'mpaa'
+'top 250 rank'
+'animation department'
+'art direction'
+'casting department'
+'casting director'
+'costume designer'
+'visual effects'
+'special effects companies'
+sucess_factor :  7
+Total Completed : 0 
+Get movie information :  Krull
+'mpaa'
+'top 250 rank'
+'casting department'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  Biker Boyz
+'top 250 rank'
+'animation department'
+sucess_factor :  1
+Total Completed : 100 
