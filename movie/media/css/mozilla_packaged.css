@@ -355,7 +355,7 @@ caption, th, td {text-align : left; font-weight : normal}
 blockquote:before, blockquote:after, q:before, q:after {content : ""}
 blockquote, q {quotes : "" ""}
  @font-face {font-family: "Neo Sans-Medium"; src: url("NeoSans-Medium.otf") format("opentype"); font-weight: bold}
-body {margin: 0px; padding:0px 0px 0px 0px; color: #4F4F4F; font-family:"Arial" ,Liberation Sans,DejaVu Sans,sans-serif; font-variant: normal; font-weight: normal; font-size: 12px; border-top:3px solid #303747;  background: Beige url(images/bg.jpg) no-repeat top center;}
+body {margin: 0px; padding:0px 0px 0px 0px; color: #4F4F4F; font-family:"Arial" ,Liberation Sans,DejaVu Sans,sans-serif; font-variant: normal; font-weight: normal; font-size: 12px;  background: Beige url(images/bg.jpg) no-repeat top center;}
 
 input[type="submit"]{cursor: pointer;}
 h1,h2,h3,h4{font-weight:bold;}
@@ -367,7 +367,7 @@ p{line-height: 1.5em;}
 a{text-decoration:none;color:#196EA4;}
 a:hover{text-decoration:underline;}
 .main{ min-height:600px;}
-#header{ margin:0px auto; padding:0px; width:1100px; clear:both;border-top:3px solid #303747; }
+#header{ margin:0px auto; padding:0px; width:1100px; clear:both;}
 .logo {margin-top:15px;height:76px;}
 .topLinks{width:266px;}
 .linkLeft{background:url(images/linkLeftBg.png) no-repeat left;width:18px;height:34px;}

@@ -1,4 +1,4 @@
-#!/usr/local/bin/python2.7
+#!/usr/bin/env python
 
 PYTHON_BIN = "/usr/local/bin/python2.7"
 import os, sys, getopt, cStringIO

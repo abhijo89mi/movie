@@ -200,6 +200,7 @@ span.reference a:hover{
     padding: 10px 12px;
     position: relative;
     width: auto;
+    min-height: 300px;
 }
 
 .twtr-ft{
