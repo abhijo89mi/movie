@@ -129,7 +129,7 @@ def main ():
 	
 		ia = IMDb()
 		# Get url from the tblmovieurl
-		url_object =movieurl.objects.filter(runcount__lt=1)[:5]
+		url_object =movieurl.objects.filter(runcount__lt=2)[:100]
 		for url in url_object :
 			imdbid=url.imdbid.replace('tt','')
 			
