@@ -20,6 +20,7 @@
         <script type="text/javascript" src="{{ MEDIA_URL }}js/themes/grid.js"></script>
         <script type="text/javascript" src="{{ MEDIA_URL }}js/modules/exporting.js"></script>
         <link rel="stylesheet" href="{{ MEDIA_URL }}css/menu.css" type="text/css" media="screen">
+        <link rel="stylesheet" href="{{ MEDIA_URL }}css/style.css" type="text/css" media="screen">
         <script type="text/javascript" src=" {{ MEDIA_URL }}js/menu.js"></script>
         <style>
             #container {
@@ -68,7 +69,9 @@
                 css_file += "opera";
             } else css_file += "chrome";
             document.write('<link href="{{ MEDIA_URL }}css/' + css_file + '_packaged.css" media="screen" rel="stylesheet" type="text/css" />');
-        </script>{% block extra-head %}{% endblock %}</head>
+        </script>
+    {% block extra-head %}{% endblock %}
+    </head>
     
     <body>
         <div class="main">
@@ -117,10 +120,29 @@
                 <h3>Our team</h3>
                 <hr>
                 <ul>
-                    <li>Sanil PS</li>
-                    <li>Abhilash Joseph C</li>
-                    <li>Nithish</li>
-                    <li>Mebin Varghese</li>
+                  {%for name in members %}
+                    <li>{{name}}</li>
+                  {% endfor %}
+                </ul>
+            </div>
+             <div class="col left">
+                <h3>Statistics</h3>
+                <hr>
+                <ul>
+                    <li>Total user visit :</li>
+                    <li>Total Movie : </li>
+                    <li>Total Rewiew :</li>
+                    <li>Total Users :</li>
+                </ul>
+            </div>
+             <div class="col left">
+                <h3>Dovelopers</h3>
+                <hr>
+                <ul>
+                    <li>Get API </li>
+                    <li>Documentation</li>
+                    <li>FAQ</li>
+                    <li>Blog</li>
                 </ul>
             </div>
             <div class="footerBottom"></div>

@@ -1,10 +1,97 @@
 {% extends "main/base.html" %}
 {% load tracking_tags %}
+{% block extra-head %}
+<style>
+.container{margin-top: 5px; width: 620px;}
+.submain{margin-top: 15px; margin-left: 5px; border-right-width: 1px; margin-right: 5px;min-height: 200px;}
+</style>
+{% endblock %}
 {% block content %}
-<h1>Site Under Construction Contact Mr : Abhilash Joseph C(+917204785003) OR Sanil PS(+919526526637) </h1>
-{% visitors_on_page as same_page %}
-<p>
-    {{ same_page }} of {{ visitors }} active user{{ visitors|pluralize }}
-    {% ifequal same_page 1 %}is{% else %}are{% endifequal %} reading this page
-</p>
+
+<div class="sidebar left">
+	  {% block sidebar-left %}
+  <div class="aux-content-widget-2">
+    <h2> Top Box Office </h2>
+    
+  </div>
+  {% endblock %}
+</div>
+
+<div class="container left">
+  <div class="breadcrumb"> </div>
+  {% block main-container %}
+  
+  	<h2>WE ARE FREE TO SHARE ALL MOVIE INFORMATIONS </h2>
+    <div class="clear"></div>
+    <div id="msg_slideshow" class="msg_slideshow">
+		<div id="msg_wrapper" class="msg_wrapper">
+		</div>
+		<div id="msg_controls" class="msg_controls"><!-- right has to animate to 15px, default -110px -->
+			
+			<a href="#" id="msg_prev" class="msg_prev"></a>
+			<a href="#" id="msg_pause_play" class="msg_pause"></a><!-- has to change to msg_play if paused-->
+			<a href="#" id="msg_next" class="msg_next"></a>
+		</div>
+		<div id="msg_thumbs" class="msg_thumbs"><!-- top has to animate to 0px, default -230px -->
+				<div class="msg_thumb_wrapper">
+					<a href="#"><img src="images/1.jpg" alt="images/1.jpg"/></a>
+					<a href="#"><img src="images/2.jpg" alt="images/2.jpg"/></a>
+					<a href="#"><img src="images/3.jpg" alt="images/3.jpg"/></a>
+					<a href="#"><img src="images/4.jpg" alt="images/4.jpg"/></a>
+					<a href="#"><img src="images/5.jpg" alt="images/5.jpg"/></a>
+					<a href="#"><img src="images/6.jpg" alt="images/6.jpg"/></a>
+				</div>
+				
+			<a href="#" id="msg_thumb_next" class="msg_thumb_next"></a>
+			<a href="#" id="msg_thumb_prev" class="msg_thumb_prev"></a>
+			<a href="#" id="msg_thumb_close" class="msg_thumb_close"></a>
+			<span class="msg_loading"></span><!-- show when next thumb wrapper loading -->
+		</div>
+	</div>
+  {% endblock %}
+    <div class="clear"></div>
+    <div class="aux-content-widget-2 submain">
+     {% block sbmain-1%}
+     
+     {% endblock %}
+    </div>
+    <div class="clear"></div>
+    <div class="aux-content-widget-2 submain">
+     {% block sbmain-2%}
+     
+     {% endblock %}
+    </div>
+    <div class="clear"></div>
+    <div class="aux-content-widget-2 submain">
+     {% block sbmain-3%}
+     
+     {% endblock %}
+    </div>
+    <div class="clear"></div>
+    <div class="aux-content-widget-2 submain">
+     {% block sbmain-4%}
+     
+     {% endblock %}
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="sidebar right">
+  <div class="aux-content-widget-2">
+		<h2> Connect with Muvidb </h2>
+		<div style="overflow: hidden; width: 170px; height: 330px;">
+		<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2Fmuvidbcom%2F301172446575832&amp;width=190&amp;height=355&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=false&amp;appId=122567377834742" scrolling="no" frameborder="0px" style="border:none; overflow:hidden; width:190px; height:355px; margin: -4px -10px;" allowTransparency="true"></iframe>
+		</div>
+		<br>
+		<a href="https://twitter.com/muvidb" class="twitter-follow-button">Follow @muvidb</a>
+		<script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
+	</div>
+  {% block sidebar-right %}
+  <div class="aux-content-widget-2">
+    kghdfkgh
+  </div>
+  {% endblock %}
+	
+</div>
+
+
 {% endblock %}

@@ -72,3 +72,21 @@ class SubNavigation(models.Model):
         except Exception:
             pass
 
+class Team_Members(models.Model):
+  name=models.CharField(max_length=200)
+  slug = models.SlugField(unique=True)
+  order = models.IntegerField(null=True, blank=True, unique=True)
+  image= RemovableImageField(upload_to='images/team_memders/', null=True, blank=True)
+  email=models.CharField(max_length=200)
+  phone= models.CharField(max_length=200)
+  address=models.TextField(null=True, blank=True)
+  about= models.TextField(null=True, blank=True)
+  note= models.TextField(null=True, blank=True)
+  publish = models.BooleanField(default=True)
+  publish_date = models.DateTimeField(default=datetime.datetime.now())
+  
+  def __unicode__(self):
+    return self.name
+    
+  def get_absolute_url(self):
+    return '%s/' % (self.slug)
