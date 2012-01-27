@@ -626,9 +626,7 @@ def main ():
 			data_fetched+=1
 			progress=(data_fetched/int(count))*100
 			print "Total Completed : %d "%(progress) 
-			url.sucess_factor=sucess_factor
-			url.last_rundate=datetime.now()
-			url.save()
+			url.remove()
 
 		return 0
 		
