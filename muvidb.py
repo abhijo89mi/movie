@@ -131,6 +131,8 @@ def fnMovie (the_matrix,sucess_factor):
 		print str(e)
 		sucess_factor=sucess_factor+1
 		pass
+	if title=='':
+		exit(0)
 	tblmovie, created =Movie.objects.get_or_create(title=title,votes=votes,year=year,aspect_ration=aspect_ratio,mpaa=mpaa,
 	rating=rating,imdbid=imdbid,top_250_rank=top_250_rank,cover_url=cover_url,plot_outline=plot_outline,summary=summary)
 	
