@@ -617,16 +617,14 @@ def main ():
 			except Exception as e:
 				print e
 				sucess_factor=sucess_factor+1
-				pass
-
-			url.runcount+=1	
+				pass	
 			#Getting sucess_factor
 			print "sucess_factor : ",sucess_factor
 			#Printing the progress ...
 			data_fetched+=1
 			progress=(data_fetched/int(count))*100
 			print "Total Completed : %d "%(progress) 
-			url.remove()
+			url.delete()
 
 		return 0
 		
