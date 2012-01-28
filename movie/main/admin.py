@@ -1,13 +1,10 @@
 from movie.main.models import *
 from django.contrib import admin
-from imdb import IMDb
-def getmove (movieurlAdmin, request, queryset):
-	access = IMDb()
-	selected = request.POST.getlist(admin.ACTION_CHECKBOX_NAME)
-	for selected_id in selected:
-		movie = access.get_movie(queryset.get(id=selected_id).imdbid.replace('tt',''))
-		movieurlAdmin.message_user(request,movie['title'] )
-	getmove.short_description = "Get Movie"
+
+from django.core.urlresolvers import reverse
+from django.contrib.admin.models import *
+from django.utils.html import escape
+
 	
 class movieurlAdmin(admin.ModelAdmin):
 	
@@ -20,18 +17,21 @@ class movieurlAdmin(admin.ModelAdmin):
 	search_fields = ['imdbid','url',]
 	date_hierarchy = 'run_date'
 	ordering = ('id',)
-	actions = [getmove]
+
 class GenreAdmin(admin.ModelAdmin):
 	def refresh_btn(self, obj):
 		return "<button onclick=foo('%s')>refresh</button>" % (obj.name)
 	refresh_btn.short_description = 'Refresh'
 	refresh_btn.allow_tags = True
-	list_display = ('name','refresh_btn','total_movie')
+	list_display = ('display_name','name','refresh_btn','total_movie')
 	search_fields = ['name',]
 	ordering = ('name',)
+class CharactorAdmin(admin.ModelAdmin):
+	list_display = ('name','roleID',)
+		
 class CastAdmin(admin.ModelAdmin):
 	filter_horizontal = ('charactor',)
-	filter_horizontal = ('charactor',)
+	
 class MovieAdmin(admin.ModelAdmin):
 
 	list_display = ('id','title','votes','year','imdbid','rating',)
@@ -40,10 +40,83 @@ class MovieAdmin(admin.ModelAdmin):
 	'runtimes','set_decoration','sound_crew','special_effects_companies','special_effects_department','stunt_performer','transportation_department','visual_effects','writer')
 	
 	ordering = ('id',)
+class Movie_Fetch_StatisticsAdmin(admin.ModelAdmin):
+	list_display = ('id','start_date','end_date','total_count','total_run_count','start_movie_imdbid','end_movie_imdbid')	
+
+class PersonAdmin(admin.ModelAdmin):
+	list_display = ('name','personID',)
+		
+class LanguagesAdmin(admin.ModelAdmin):
+	list_display = ('name','code',)
 	
+class CountriesAdmin(admin.ModelAdmin):
+	list_display = ('name','code',)
+
+# Admin log file
+class LogEntryAdmin(admin.ModelAdmin):
+
+	date_hierarchy = 'action_time'
+
+	readonly_fields = LogEntry._meta.get_all_field_names()
+
+	list_filter = [
+		'user',
+		'content_type',
+		'action_flag'
+	]
+
+	search_fields = [
+		'object_repr',
+		'change_message'
+	]
+
+
+	list_display = [
+		'action_time',
+		'user',
+		'content_type',
+		'object_link',
+		'action_flag',
+		'change_message',
+	]
+
+	def has_add_permission(self, request):
+		return False
+
+	def has_change_permission(self, request, obj=None):
+		return request.user.is_superuser and request.method != 'POST'
+
+	def has_delete_permission(self, request, obj=None):
+		return False
+
+	def object_link(self, obj):
+		if obj.action_flag == DELETION:
+			link = escape(obj.object_repr)
+		else:
+			ct = obj.content_type
+			link = u'<a href="%s">%s</a>' % (
+				reverse('admin:%s_%s_change' % (ct.app_label, ct.model), args=[obj.object_id]),
+				escape(obj.object_repr),
+			)
+		return link
+	object_link.allow_tags = True
+	object_link.admin_order_field = 'object_repr'
+	object_link.short_description = u'object'
+
+
+
+
+# Admin model registration 
+admin.site.register(LogEntry, LogEntryAdmin)
+
+
 
 admin.site.register(Genre, GenreAdmin)
 admin.site.register(Cast, CastAdmin)
 admin.site.register(Movie, MovieAdmin)
-
+admin.site.register(Movie_Fetch_Statistics, Movie_Fetch_StatisticsAdmin)
 admin.site.register(movieurl, movieurlAdmin)
+admin.site.register(Charactor, CharactorAdmin)
+admin.site.register(Person, PersonAdmin)
+admin.site.register(Languages, LanguagesAdmin)
+admin.site.register(Countries, CountriesAdmin)
