@@ -116,6 +116,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
     'metatag',
+    'recaptcha_works',
     'movie.main',
     'tracking',
     'movie.front_end',
@@ -166,7 +167,15 @@ http://maps.google.com/maps/geo?q=1600+Amphitheatre+Parkway,+Mountain+View,+CA&o
 &sensor=true_or_false&key=ABQIAAAAAQa3kAaMAAcZ6woWBCwSYBS-YFg-aKw0dFNA-SxSKMMT_2DJaRRgUHdpl9eytO-ELAnlCo5BK3_JdQ
 
 '''
+RECAPTCHA_PUBLIC_KEY='6Lc87cwSAAAAAIaNOBZdAWw4w38jCqMLoddz32W7'
+RECAPTCHA_PRIVATE_KEY='6Lc87cwSAAAAAFsJNSh1_md7VmCYAB4weO9PA-tK'
 
+RECAPTCHA_USE_SSL = False
+RECAPTCHA_OPTIONS = {
+    'theme': 'white',
+    'lang': 'en',
+    'tabindex': 0,
+}
 
 
 

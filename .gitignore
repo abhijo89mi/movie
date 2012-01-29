@@ -9,3 +9,5 @@ parts
 movie/custom_settings.py
 assets
 apache
+muvidb.py
+urlfetcher.py

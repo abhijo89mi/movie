@@ -23,13 +23,10 @@
         <link rel="stylesheet" href="{{ MEDIA_URL }}css/style.css" type="text/css" media="screen">
         <script type="text/javascript" src=" {{ MEDIA_URL }}js/menu.js"></script>
         <style>
-            #container {
-                -moz-border-radius: 11px;
-                -webkit-border-radius: 11px;
-                border-radius: 11px;
-                behavior:url("{{ MEDIA_URL }}css/PIE.htc");
-            }
-	    ul.menu{width: 1079px;}
+            #container {-moz-border-radius: 11px;-webkit-border-radius: 11px;border-radius: 11px;behavior:url("{{ MEDIA_URL }}css/PIE.htc");}
+            ul.menu{width: 1079px;}
+            body { margin: 0px; padding:0px 0px 0px 0px; font-family: verdana; font-size: 12px; color: #4d4d4d; line-height: 20px;  background-color: #7dcafc;  }
+
         </style>
 	{% if metatag.google_pagetrack_customvar %}
         <script type="text/javascript">
@@ -74,6 +71,7 @@
     </head>
     
     <body>
+      <div id="top">
         <div class="main">
             <div id='header'>
                 <div class='left logo'>
@@ -86,8 +84,7 @@
                     <div class='hidden' id='registration'></div>
                 </div>
                 <div class="right">
-                    <a href="https://twitter.com/muvidb" class="twitter-follow-button">Follow @muvidb</a>
-                    <script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
+                    
                 </div>
                 <div class='clear'></div>
                 <div id="menu">
@@ -147,5 +144,5 @@
             </div>
             <div class="footerBottom"></div>
         </div>
-
+    </div>
 </html>

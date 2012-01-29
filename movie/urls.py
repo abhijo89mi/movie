@@ -8,20 +8,26 @@ admin.autodiscover()
 autoregister('main')
 autoregister('front_end')
 urlpatterns = patterns('movie.main',
-    # Examples:
-    url(r'^$', 'views.index', name='home'),
-    # url(r'^movie/', include('movie.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    # ============= MAIN URL ===============================
+    url(r'^$', 'views.index', name='index'),
+    url(r'^home/$', 'views.home', name='home'),
+    
     # ============ URL FOR USER TRACKING=====================
     (r'^tracking/', include('tracking.urls')),
-
-    # Uncomment the next line to enable the admin:
+    
+    # =========== ADMIN URL ================================
     url(r'^admin/', include(admin.site.urls)),
     (r'^grappelli/', include('grappelli.urls')),
 )
 
+urlpatterns += patterns('movie.front_end',
+      #TEmplate view
+      url(r'^new_account$','views.register_view',name='register_view'),
+      #From submit
+      url(r'^register$','views.register',name='register'),
+      
+
+)
 if settings.DEBUG:
     urlpatterns += patterns('',
         (r'^media/(?P<path>.*)$', 'django.views.static.serve',

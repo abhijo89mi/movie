@@ -355,7 +355,6 @@ caption, th, td {text-align : left; font-weight : normal}
 blockquote:before, blockquote:after, q:before, q:after {content : ""}
 blockquote, q {quotes : "" ""}
  @font-face {font-family: "Neo Sans-Medium"; src: url("NeoSans-Medium.otf") format("opentype"); font-weight: bold}
-body {margin: 0px; padding:0px 0px 0px 0px; color: #4F4F4F; font-family:"Arial" ,Liberation Sans,DejaVu Sans,sans-serif; font-variant: normal; font-weight: normal; font-size: 12px;  background: Beige url(images/bg.jpg) no-repeat top center;}
 
 input[type="submit"]{cursor: pointer;}
 h1,h2,h3,h4{font-weight:bold;}
