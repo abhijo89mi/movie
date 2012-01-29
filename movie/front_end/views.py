@@ -34,4 +34,9 @@ def register(request,to_return=''):
 			else:
 				to_return={'message':form.errors,}
 	return HttpResponse(simplejson.dumps(to_return), mimetype='application/json')
+	
+def myaccount(request):
+	context={}
+	
+	return render_to_response('main/myaccount.html', context, context_instance = RequestContext(request))
 

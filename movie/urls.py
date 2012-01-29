@@ -11,6 +11,8 @@ urlpatterns = patterns('movie.main',
     # ============= MAIN URL ===============================
     url(r'^$', 'views.index', name='index'),
     url(r'^home/$', 'views.home', name='home'),
+    url(r'^logout/$', 'views.logout_view', name='logout'),
+    
     
     # ============ URL FOR USER TRACKING=====================
     (r'^tracking/', include('tracking.urls')),
@@ -25,6 +27,7 @@ urlpatterns += patterns('movie.front_end',
       url(r'^new_account$','views.register_view',name='register_view'),
       #From submit
       url(r'^register$','views.register',name='register'),
+      url(r'^myaccount$','views.myaccount',name='myaccount'),
       
 
 )

@@ -26,6 +26,10 @@
             #container {-moz-border-radius: 11px;-webkit-border-radius: 11px;border-radius: 11px;behavior:url("{{ MEDIA_URL }}css/PIE.htc");}
             ul.menu{width: 1079px;}
             body { margin: 0px; padding:0px 0px 0px 0px; font-family: verdana; font-size: 12px; color: #4d4d4d; line-height: 20px;  background-color: #7dcafc;  }
+            .my_account_link{display:block; float:right; width: 130px; height: 34px;background: url("{{ MEDIA_URL }}images/main/buttons/MyAccount.png") no-repeat 0 0;}
+            .my_account_link:hover{background-position: 0 -34px;}
+            .logout_link{float:right;display:block;width: 130px; height: 34px;background: url("{{ MEDIA_URL }}images/main/buttons/Logout.png") no-repeat 0 0;}
+            .logout_link:hover{background-position: 0 -34px;}
 
         </style>
 	{% if metatag.google_pagetrack_customvar %}
@@ -84,7 +88,10 @@
                     <div class='hidden' id='registration'></div>
                 </div>
                 <div class="right">
-                    
+                    {% if not user.is_anonymous %}
+                      <a class="my_account_link" href="{% url myaccount %}" alt="My Account"></a>
+                      <a class="logout_link" href="{% url logout %}" alt="Logout"></a>
+                    {% endif %}
                 </div>
                 <div class='clear'></div>
                 <div id="menu">
@@ -109,9 +116,7 @@
         </div>
         <div class="footer">
             <div class="likeBox left">
-                <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2Fmuvidbcom%2F301172446575832&amp;width=292&amp;height=158&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=false&amp;appId=122567377834742"
-                scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:292px; height:158px;"
-                allowTransparency="true"></iframe>
+                
             </div>
             <div class="col left">
                 <h3>Our team</h3>
