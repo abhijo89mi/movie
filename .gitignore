@@ -11,6 +11,7 @@ assets
 apache
 muvidb.py
 urlfetcher.py
+tracking.log
 output
 *.log
 
