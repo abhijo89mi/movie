@@ -73,7 +73,7 @@
 	     #login{float:left;display:block; margin-top: 10px; width: 206px; height: 34px; background: url("{{ MEDIA_URL }}images/main/buttons/orangeButton_Login.png") no-repeat 0 0;}
 		   span{position: absolute;top: -999em;}
 		   #account{float:left;display:block; margin-top: 10px; margin-bottom: 10px;  width: 206px; height: 34px;background: url("{{ MEDIA_URL }}images/main/subscribe_new.png") no-repeat 0 0;}
-		   .no_border{border:0px !important; }
+		   .no_border{border:none !important; }
 		   #fid_subscribe-form-error { background: #ffe4b4 none repeat scroll 0 0;  font-size: 13px;font-weight: Verdana; font-style:italic; border: 1px solid #ff6a00;color: #ff6a00;list-style-type: none;padding: 6px; margin: 2px 0;}
 		   
 		   
@@ -123,9 +123,6 @@
 								<div class="clear"></div>
 								<input type='image'  class='no_border' id="login" value=''/>
 								<a href="{% url register_view %}" id="account"><span> Login </span></a>
-								
-				
-
 							</div>
 							<div class="clear"></div>
 							{% if error %}
@@ -134,7 +131,7 @@
 						</form>
 					</div>
 				</div>
-				
+				<div id="main_container_bottom"></div>
 			</div>
 		</div>
 	</body>
