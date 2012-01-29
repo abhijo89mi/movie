@@ -10,7 +10,9 @@ from form import *
 from django.core.mail import send_mail
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from recaptcha_works.decorators import fix_recaptcha_remote_ip
 
+@fix_recaptcha_remote_ip
 def index(request,template=''):
   error=''
   if request.user.is_anonymous():

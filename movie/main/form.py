@@ -21,7 +21,7 @@ class LoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput(attrs=attrs_dict, render_value=False),
                                 label=_(u'password'))
     
-    #recaptcha = RecaptchaField(label='We are not allow any automated system', required=True)
+    recaptcha = RecaptchaField(label='We are not allow any automated system', required=True)
     
 class RegistrationForm(forms.Form):
     """
