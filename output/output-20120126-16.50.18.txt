@@ -1,0 +1,336 @@
+Get movie information :  Osmosis Jones
+'top 250 rank'
+sucess_factor :  0
+Total Completed : 0 
+Get movie information :  Zulu
+'mpaa'
+'top 250 rank'
+'animation department'
+'casting department'
+'casting director'
+'costume designer'
+'production design'
+'set decoration'
+'special effects department'
+'transportation department'
+'visual effects'
+'special effects companies'
+sucess_factor :  10
+Total Completed : 0 
+Get movie information :  Skinwalkers
+'top 250 rank'
+'sound mix'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  Dead West
+'aspect ratio'
+'mpaa'
+'top 250 rank'
+'animation department'
+'art department'
+'art direction'
+'casting department'
+'casting director'
+'costume department'
+'costume designer'
+'director'
+'music department'
+'production design'
+'production manager'
+'set decoration'
+'sound crew'
+'stunt performer'
+'transportation department'
+'visual effects'
+'miscellaneous companies'
+'production companies'
+'special effects companies'
+'sound mix'
+sucess_factor :  20
+Total Completed : 0 
+Get movie information :  The Killer
+'top 250 rank'
+'animation department'
+'casting department'
+'casting director'
+'production design'
+'special effects department'
+'transportation department'
+'visual effects'
+sucess_factor :  7
+Total Completed : 0 
+Get movie information :  Something Wicked
+'aspect ratio'
+'mpaa'
+'top 250 rank'
+'cover url'
+'animation department'
+'costume designer'
+'editor'
+'special effects department'
+'transportation department'
+'distributors'
+'special effects companies'
+'akas'
+'color info'
+'sound mix'
+'languages'
+sucess_factor :  11
+Total Completed : 0 
+Get movie information :  Singham
+'mpaa'
+'top 250 rank'
+'animation department'
+'make up'
+'production design'
+'production manager'
+'set decoration'
+'transportation department'
+'special effects companies'
+'akas'
+sucess_factor :  8
+Total Completed : 0 
+Get movie information :  Sukiyaki Western Django
+'top 250 rank'
+'animation department'
+'art department'
+'assistant director'
+'casting director'
+'costume department'
+'make up'
+'music department'
+'production manager'
+'set decoration'
+'special effects department'
+'stunt performer'
+'transportation department'
+'visual effects'
+'plot'
+sucess_factor :  14
+Total Completed : 0 
+Get movie information :  Death Race 2000
+'mpaa'
+'top 250 rank'
+'animation department'
+'casting department'
+'casting director'
+'costume designer'
+'music department'
+'production design'
+'set decoration'
+'transportation department'
+'visual effects'
+sucess_factor :  9
+Total Completed : 0 
+Get movie information :  Hard Boiled
+'top 250 rank'
+'animation department'
+'art department'
+'art direction'
+'camera and electrical department'
+'casting department'
+'casting director'
+'costume department'
+'make up'
+'production manager'
+'set decoration'
+'special effects department'
+'transportation department'
+'special effects companies'
+sucess_factor :  13
+Total Completed : 0 
+Get movie information :  No Escape
+'top 250 rank'
+'animation department'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0668894', 'note': u'special effects', 'name': u'Pearce, Brian', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+sucess_factor :  2
+Total Completed : 0 
+Get movie information :  Air America
+'mpaa'
+'top 250 rank'
+'animation department'
+'casting department'
+'set decoration'
+'special effects companies'
+sucess_factor :  4
+Total Completed : 0 
+Get movie information :  The Devils Rock
+'mpaa'
+'top 250 rank'
+'animation department'
+'casting department'
+'music department'
+'transportation department'
+'akas'
+'plot'
+'sound mix'
+sucess_factor :  7
+Total Completed : 0 
+Get movie information :  To Live and Die in L.A.
+'mpaa'
+'top 250 rank'
+'animation department'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0006416', 'note': u'hair stylist', 'name': u'Tothpal, Peter', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+'visual effects'
+sucess_factor :  3
+Total Completed : 0 
+Get movie information :  Memphis Belle
+'mpaa'
+'top 250 rank'
+'animation department'
+'stunt performer'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0000708', 'note': u'', 'name': u'Zane, Billy', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+sucess_factor :  3
+Total Completed : 0 
+Get movie information :  Hero Wanted
+'top 250 rank'
+'animation department'
+'casting department'
+'costume designer'
+get() returned more than one Producer -- it returned 2! Lookup parameters were {'name': <Person: Ornston, David E.>}
+'special effects companies'
+sucess_factor :  5
+Total Completed : 0 
+Get movie information :  Hudson Hawk
+'top 250 rank'
+'animation department'
+'set decoration'
+sucess_factor :  2
+Total Completed : 0 
+Get movie information :  Maximum Overdrive
+'mpaa'
+'top 250 rank'
+'animation department'
+'art direction'
+'set decoration'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0225226', 'note': u'sound re-recording mixer', 'name': u'Dichter, Lee', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+'transportation department'
+'miscellaneous companies'
+'special effects companies'
+sucess_factor :  7
+Total Completed : 0 
+Get movie information :  Fire Down Below
+'top 250 rank'
+'animation department'
+'visual effects'
+'special effects companies'
+sucess_factor :  3
+Total Completed : 0 
+Get movie information :  Lone Wolf McQuade
+'mpaa'
+'top 250 rank'
+'animation department'
+'art direction'
+'costume designer'
+'visual effects'
+'special effects companies'
+sucess_factor :  5
+Total Completed : 0 
+Get movie information :  The Man Who Would Be King
+'mpaa'
+'top 250 rank'
+'animation department'
+'casting department'
+'set decoration'
+'special effects companies'
+sucess_factor :  4
+Total Completed : 0 
+Get movie information :  The Devils Tomb
+'top 250 rank'
+'animation department'
+'sound mix'
+sucess_factor :  2
+Total Completed : 0 
+Get movie information :  The Art of War
+'top 250 rank'
+'animation department'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  Gone in 60 Seconds
+'mpaa'
+'top 250 rank'
+'animation department'
+'art department'
+'art direction'
+'casting department'
+'casting director'
+'costume department'
+'costume designer'
+'make up'
+'music department'
+'production design'
+'set decoration'
+'special effects department'
+'visual effects'
+'special effects companies'
+sucess_factor :  14
+Total Completed : 0 
+Get movie information :  Battle for the Planet of the Apes
+'mpaa'
+'top 250 rank'
+'animation department'
+'costume designer'
+'music department'
+'production design'
+'transportation department'
+'special effects companies'
+sucess_factor :  6
+Total Completed : 0 
+Get movie information :  Abbott and Costello Meet the Mummy
+'mpaa'
+'top 250 rank'
+'animation department'
+'art department'
+'camera and electrical department'
+'casting department'
+'casting director'
+'costume department'
+'production design'
+'production manager'
+'transportation department'
+'visual effects'
+'miscellaneous companies'
+'special effects companies'
+sucess_factor :  12
+Total Completed : 0 
+Get movie information :  The Omega Man
+'mpaa'
+'top 250 rank'
+'animation department'
+'casting department'
+'costume designer'
+'production design'
+'visual effects'
+'special effects companies'
+sucess_factor :  6
+Total Completed : 0 
+Get movie information :  Conquest of the Planet of the Apes
+'mpaa'
+'top 250 rank'
+'animation department'
+'casting department'
+'casting director'
+'costume designer'
+'music department'
+'transportation department'
+'special effects companies'
+sucess_factor :  7
+Total Completed : 0 
+Get movie information :  Stakeout
+'mpaa'
+'top 250 rank'
+'animation department'
+'visual effects'
+'special effects companies'
+sucess_factor :  3
+Total Completed : 0 
+Get movie information :  Captain America
+'mpaa'
+'top 250 rank'
+'cover url'
+'animation department'
+'costume department'
+'set decoration'
+'special effects companies'
+sucess_factor :  4
+Total Completed : 100 

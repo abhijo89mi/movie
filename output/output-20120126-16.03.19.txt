@@ -1,0 +1,393 @@
+Get movie information :  Virtuosity
+'top 250 rank'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0536691', 'note': u'score mixer', 'name': u'Mah, Larry', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  Postal
+'top 250 rank'
+'animation department'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  Cross of Iron
+'mpaa'
+'top 250 rank'
+'animation department'
+'casting department'
+'casting director'
+'costume designer'
+'set decoration'
+'transportation department'
+'visual effects'
+'special effects companies'
+sucess_factor :  8
+Total Completed : 0 
+Get movie information :  Executive Decision
+'top 250 rank'
+'animation department'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  The Princess of Montpensier
+'mpaa'
+'top 250 rank'
+'animation department'
+'art direction'
+'casting director'
+'costume designer'
+'editor'
+'production design'
+'set decoration'
+'transportation department'
+'special effects companies'
+sucess_factor :  9
+Total Completed : 0 
+Get movie information :  Gods and Generals
+'top 250 rank'
+'plot'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  Nothing to Lose
+'top 250 rank'
+sucess_factor :  0
+Total Completed : 0 
+Get movie information :  Naked Weapon
+'top 250 rank'
+'animation department'
+'art direction'
+'casting department'
+'casting director'
+'music department'
+'set decoration'
+'special effects department'
+'transportation department'
+sucess_factor :  8
+Total Completed : 0 
+Get movie information :  The Great Raid
+'top 250 rank'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0860383', 'note': u'costume supervisor', 'name': u'Thompson, Kerry', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  Stag Night of the Dead
+'mpaa'
+'top 250 rank'
+'animation department'
+'art department'
+'casting department'
+'casting director'
+'costume designer'
+'music department'
+'production design'
+'production manager'
+'set decoration'
+'transportation department'
+'miscellaneous companies'
+'special effects companies'
+'akas'
+sucess_factor :  13
+Total Completed : 0 
+Get movie information :  Eight Legged Freaks
+'top 250 rank'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0075732', 'note': u'producer', 'name': u'Berman, Bruce', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  Battle Angel
+'votes'
+'aspect ratio'
+'mpaa'
+'rating'
+'top 250 rank'
+'cover url'
+'animation department'
+'art direction'
+'assistant director'
+'camera and electrical department'
+'casting department'
+'casting director'
+'cinematographer'
+'costume department'
+'costume designer'
+'editor'
+'make up'
+'music department'
+'original music'
+'production design'
+'production manager'
+'set decoration'
+'sound crew'
+'special effects department'
+'stunt performer'
+'transportation department'
+'miscellaneous companies'
+'special effects companies'
+'cast'
+'akas'
+'certificates'
+'runtimes'
+'sound mix'
+sucess_factor :  27
+Total Completed : 0 
+Get movie information :  Taxi 3
+'mpaa'
+'top 250 rank'
+'animation department'
+'art direction'
+'set decoration'
+'transportation department'
+sucess_factor :  4
+Total Completed : 0 
+Get movie information :  Hamburger Hill
+'mpaa'
+'top 250 rank'
+'animation department'
+'costume designer'
+'set decoration'
+'transportation department'
+sucess_factor :  4
+Total Completed : 0 
+Get movie information :  Dance Flick
+'top 250 rank'
+'plot'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  The Game of Death
+'mpaa'
+'top 250 rank'
+'animation department'
+'art department'
+'art direction'
+'assistant director'
+'camera and electrical department'
+'casting department'
+'casting director'
+'costume department'
+'costume designer'
+'make up'
+'production design'
+'production manager'
+'set decoration'
+'special effects department'
+'transportation department'
+'miscellaneous companies'
+'special effects companies'
+sucess_factor :  17
+Total Completed : 0 
+Get movie information :  Yakuza Weapon
+'aspect ratio'
+'mpaa'
+'top 250 rank'
+'cover url'
+'plot outline'
+'animation department'
+'art department'
+'art direction'
+'casting department'
+'casting director'
+'costume department'
+'costume designer'
+'music department'
+'set decoration'
+'stunt performer'
+'transportation department'
+'plot'
+'sound mix'
+sucess_factor :  13
+Total Completed : 0 
+Get movie information :  2 Guns
+'votes'
+'aspect ratio'
+'mpaa'
+'rating'
+'top 250 rank'
+'cover url'
+'animation department'
+'art department'
+'art direction'
+'assistant director'
+'camera and electrical department'
+'casting department'
+'casting director'
+'cinematographer'
+'costume department'
+'costume designer'
+'editor'
+'make up'
+'miscellaneous crew'
+'music department'
+'original music'
+'production design'
+'production manager'
+'set decoration'
+'sound crew'
+'special effects department'
+'stunt performer'
+'transportation department'
+'visual effects'
+'miscellaneous companies'
+'special effects companies'
+'akas'
+'plot'
+'certificates'
+'color info'
+'runtimes'
+'sound mix'
+'languages'
+sucess_factor :  32
+Total Completed : 0 
+Get movie information :  Spartan
+'top 250 rank'
+'animation department'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  Bulletproof
+'top 250 rank'
+'animation department'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0226728', 'note': u'music supervisor', 'name': u'Dilbeck, Michael', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+'production design'
+'special effects companies'
+sucess_factor :  4
+Total Completed : 0 
+Get movie information :  Good Time Gang
+'votes'
+'aspect ratio'
+'mpaa'
+'rating'
+'top 250 rank'
+'cover url'
+'animation department'
+'art department'
+'art direction'
+'assistant director'
+'camera and electrical department'
+'casting department'
+'casting director'
+'cinematographer'
+'costume department'
+'costume designer'
+'director'
+'editor'
+'make up'
+'miscellaneous crew'
+'music department'
+'original music'
+'production design'
+'production manager'
+'set decoration'
+'sound crew'
+'special effects department'
+'stunt performer'
+'transportation department'
+'visual effects'
+'distributors'
+'miscellaneous companies'
+'special effects companies'
+'akas'
+'plot'
+'certificates'
+'runtimes'
+'sound mix'
+sucess_factor :  32
+Total Completed : 0 
+Get movie information :  Redbelt
+'top 250 rank'
+'animation department'
+get() returned more than one Person -- it returned 2! Lookup parameters were {'personID': '0262700', 'note': u'stunt driver', 'name': u'Evans, Debbie', 'default_info': ('main', 'filmography', 'biography'), 'biodata': ''}
+sucess_factor :  2
+Total Completed : 0 
+Get movie information :  Hard Target
+'top 250 rank'
+'animation department'
+'casting department'
+'casting director'
+sucess_factor :  3
+Total Completed : 0 
+Get movie information :  Taxi 2
+'mpaa'
+'top 250 rank'
+'animation department'
+'casting department'
+'costume department'
+'set decoration'
+'miscellaneous companies'
+sucess_factor :  5
+Total Completed : 0 
+Get movie information :  Men at Arms
+'mpaa'
+'top 250 rank'
+'cover url'
+'animation department'
+'art direction'
+'assistant director'
+'casting department'
+'casting director'
+'costume department'
+'make up'
+'music department'
+'production manager'
+'set decoration'
+'special effects department'
+'stunt performer'
+'transportation department'
+'visual effects'
+'miscellaneous companies'
+'special effects companies'
+'certificates'
+sucess_factor :  17
+Total Completed : 0 
+Get movie information :  House of the Dead
+'top 250 rank'
+'animation department'
+sucess_factor :  1
+Total Completed : 0 
+Get movie information :  Hang Em High
+'mpaa'
+'top 250 rank'
+'animation department'
+'camera and electrical department'
+'casting department'
+'costume designer'
+'production design'
+'visual effects'
+'special effects companies'
+sucess_factor :  7
+Total Completed : 0 
+Get movie information :  Kill Speed
+'mpaa'
+'top 250 rank'
+'plot outline'
+'animation department'
+'set decoration'
+'special effects companies'
+'plot'
+sucess_factor :  4
+Total Completed : 0 
+Get movie information :  A Bittersweet Life
+'mpaa'
+'top 250 rank'
+'animation department'
+'art department'
+'art direction'
+'assistant director'
+'camera and electrical department'
+'casting department'
+'casting director'
+'costume department'
+'costume designer'
+'make up'
+'miscellaneous crew'
+'music department'
+'production manager'
+'set decoration'
+'sound crew'
+'special effects department'
+'transportation department'
+'visual effects'
+'special effects companies'
+'plot'
+sucess_factor :  20
+Total Completed : 0 
+Get movie information :  Young Guns II
+'mpaa'
+'top 250 rank'
+'animation department'
+'visual effects'
+sucess_factor :  2
+Total Completed : 100 

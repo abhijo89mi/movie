@@ -59,6 +59,8 @@ class Movie(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.title)
 	class Meta:
+		verbose_name = 'Movie'
+		verbose_name_plural = 'Movies'
 		db_table = 'movie'
 
 class Akas(models.Model):
@@ -66,6 +68,8 @@ class Akas(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Other Movie Title'
+		verbose_name_plural = 'Other Movie Titles'
 		db_table = 'Akas'
 
 class Certificates(models.Model):
@@ -73,6 +77,8 @@ class Certificates(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Certificate'
+		verbose_name_plural = 'Certificates'
 		db_table = 'Certificates'
 
 class Countries(models.Model):
@@ -81,6 +87,8 @@ class Countries(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Country'
+		verbose_name_plural = 'Countries'
 		db_table = 'Countries'
 
 class Languages(models.Model):
@@ -89,6 +97,8 @@ class Languages(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Language'
+		verbose_name_plural = 'Languages'
 		db_table = 'Languages'
 
 class Sound_mix(models.Model):
@@ -96,6 +106,8 @@ class Sound_mix(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Sound Mix'
+		verbose_name_plural = 'Sound Mix'
 		db_table = 'Sound_mix'
 
 class Animation_department(models.Model):
@@ -103,6 +115,8 @@ class Animation_department(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Animation Department'
+		verbose_name_plural = 'Animation Department'
 		db_table = 'Animation_department'
 
 class Art_department(models.Model):
@@ -110,6 +124,8 @@ class Art_department(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Art Department'
+		verbose_name_plural = 'Art Department'
 		db_table = 'Art_department'
 
 class Art_direction(models.Model):
@@ -117,6 +133,8 @@ class Art_direction(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Art Direction'
+		verbose_name_plural = 'Art Direction'
 		db_table = 'Art_direction'
 
 class Assistant_director(models.Model):
@@ -124,6 +142,8 @@ class Assistant_director(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Assistant Director'
+		verbose_name_plural = 'Assistant Directors'
 		db_table = 'Assistant_director'
 
 class Camera_and_electrical_department(models.Model):
@@ -131,6 +151,8 @@ class Camera_and_electrical_department(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Camera And Electrical Department'
+		verbose_name_plural = 'Camera And Electrical Departments'
 		db_table = 'Camera_and_electrical_department'
 
 class Cast(models.Model):
@@ -139,6 +161,8 @@ class Cast(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Cast'
+		verbose_name_plural = 'Casts'
 		db_table = 'Cast'
 	
 class Casting_department(models.Model):
@@ -146,6 +170,8 @@ class Casting_department(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Casting Department'
+		verbose_name_plural = 'Casting Department'
 		db_table = 'Casting_department'
 
 class Casting_director(models.Model):
@@ -153,6 +179,8 @@ class Casting_director(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Casting Director'
+		verbose_name_plural = 'Casting Directors'
 		db_table = 'Casting_director'
 
 class Cinematographer(models.Model):
@@ -160,6 +188,8 @@ class Cinematographer(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Cinematographer'
+		verbose_name_plural = 'Cinematographeres'
 		db_table = 'Cinematographer'
 
 class Color_info(models.Model):
@@ -167,6 +197,8 @@ class Color_info(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.color)
 	class Meta:
+		verbose_name = 'Color Information'
+		verbose_name_plural = 'Color Information'
 		db_table = 'Color_info'
 
 class Costume_department(models.Model):
@@ -174,6 +206,8 @@ class Costume_department(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Costume Department'
+		verbose_name_plural = 'Costume Department'
 		db_table = 'Costume_department'
 
 class Costume_designer(models.Model):
@@ -181,6 +215,8 @@ class Costume_designer(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Costume Designer'
+		verbose_name_plural = 'Costume Designers'
 		db_table = 'Costume_designer'
 
 class Director(models.Model):
@@ -210,6 +246,8 @@ class Make_up(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Make Up'
+		verbose_name_plural = 'Make Up'
 		db_table = 'Make_up'
 
 class Miscellaneous_companies(models.Model):
@@ -217,6 +255,8 @@ class Miscellaneous_companies(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Miscellaneous Companey'
+		verbose_name_plural = 'Miscellaneous Companies'
 		db_table = 'Miscellaneous_companies'
 
 class Miscellaneous_crew(models.Model):
@@ -224,6 +264,8 @@ class Miscellaneous_crew(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Miscellaneous Crew'
+		verbose_name_plural = 'Miscellaneous Crew'
 		db_table = 'Miscellaneous_crew'
 
 class Music_department(models.Model):
@@ -231,6 +273,8 @@ class Music_department(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Music Department'
+		verbose_name_plural = 'Music Department'
 		db_table = 'Music_department'
 
 class Original_music(models.Model):
@@ -238,6 +282,8 @@ class Original_music(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Original Music'
+		verbose_name_plural = 'Original Music'
 		db_table = 'Original_music'
 
 class Producer(models.Model):
@@ -245,6 +291,7 @@ class Producer(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+
 		db_table = 'Producer'
 
 class Production_companies(models.Model):
@@ -252,6 +299,8 @@ class Production_companies(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Production Companey'
+		verbose_name_plural = 'Production Companies'
 		db_table = 'Production_companies'
 
 class Production_design(models.Model):
@@ -259,6 +308,8 @@ class Production_design(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Production Design'
+		verbose_name_plural = 'Production Designers'
 		db_table = 'Production_design'
 
 class Production_manager(models.Model):
@@ -266,6 +317,8 @@ class Production_manager(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Production Manager'
+		verbose_name_plural = 'Production Managers'
 		db_table = 'Production_manager'
 
 class Runtimes(models.Model):
@@ -273,6 +326,8 @@ class Runtimes(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Run Time'
+		verbose_name_plural = 'Run Times'
 		db_table = 'Runtimes'
 
 class Set_decoration(models.Model):
@@ -280,6 +335,8 @@ class Set_decoration(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Set Decoration'
+		verbose_name_plural = 'Set Decorations'
 		db_table = 'Set_decoration'
 
 class Sound_crew(models.Model):
@@ -287,6 +344,8 @@ class Sound_crew(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Sound Crew'
+		verbose_name_plural = 'Sound Crew'
 		db_table = 'Sound_crew'
 
 class Special_effects_companies(models.Model):
@@ -294,6 +353,8 @@ class Special_effects_companies(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Special Effects Companey'
+		verbose_name_plural = 'Special Effects Companies'
 		db_table = 'Special_effects_companies'
 
 class Special_effects_department(models.Model):
@@ -301,6 +362,8 @@ class Special_effects_department(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Special Effects Department'
+		verbose_name_plural = 'Special Effects Departments'
 		db_table = 'Special_effects_department'
 
 class Stunt_performer(models.Model):
@@ -308,6 +371,8 @@ class Stunt_performer(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Stunt Performer'
+		verbose_name_plural = 'Stunt Performers'
 		db_table = 'Stunt_performer'
 
 class Transportation_department(models.Model):
@@ -315,6 +380,8 @@ class Transportation_department(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Transportation Department'
+		verbose_name_plural = 'Transportation Departments'
 		db_table = 'Transportation_department'
 
 class Visual_effects(models.Model):
@@ -322,6 +389,8 @@ class Visual_effects(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		verbose_name = 'Visual Effect'
+		verbose_name_plural = 'Visual Effects'
 		db_table = 'Visual_effects'
 
 class Writer(models.Model):
@@ -329,6 +398,7 @@ class Writer(models.Model):
 	def __unicode__(self):
 		return u'%s' % (self.name)
 	class Meta:
+		
 		db_table = 'Writer'
 
 class Person(models.Model):
@@ -411,4 +481,17 @@ class Errorlog(models.Model):
 		return self.message
 		
 		
+class Movie_Fetch_Statistics(models.Model):
+	start_date= models.DateTimeField(null=True, blank=True) 
+	end_date= models.DateTimeField(null=True, blank=True) 
+	total_count =models.IntegerField(null=False, blank=False,default=0)
+	total_run_count =models.IntegerField(null=False, blank=False,default=0)
+	start_movie_imdbid= models.CharField(max_length=100)
+	end_movie_imdbid= models.CharField(max_length=100)
+	
+	class Meta:
+		verbose_name = 'Movie Extractor Statistics'
+		verbose_name_plural = 'Movie Extractor Statistics'
+
+	
 	

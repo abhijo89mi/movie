@@ -162,11 +162,8 @@ LOGGING = {
 
 
 '''
-KEY :
-http://maps.google.com/maps/geo?q=1600+Amphitheatre+Parkway,+Mountain+View,+CA&output=json&oe=utf8\
-&sensor=true_or_false&key=ABQIAAAAAQa3kAaMAAcZ6woWBCwSYBS-YFg-aKw0dFNA-SxSKMMT_2DJaRRgUHdpl9eytO-ELAnlCo5BK3_JdQ
-
 '''
+
 RECAPTCHA_PUBLIC_KEY='6Lc87cwSAAAAAIaNOBZdAWw4w38jCqMLoddz32W7'
 RECAPTCHA_PRIVATE_KEY='6Lc87cwSAAAAAFsJNSh1_md7VmCYAB4weO9PA-tK'
 
@@ -176,6 +173,4 @@ RECAPTCHA_OPTIONS = {
     'lang': 'en',
     'tabindex': 0,
 }
-
-
 

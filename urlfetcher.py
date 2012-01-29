@@ -54,14 +54,16 @@ def HTMLFM(data):
 	return re.sub("(&#*\w+;)","",data)
   
 def main():
+	count=0
 	if (len(sys.argv) > 1):
 		genres=sys.argv[1]
 		print "===",genres
 		totalhit=Genre.objects.filter(name=genres).get().total_movie
+		genres_id==Genre.objects.filter(name=genres).get().id
 		try :
-			url_start_id=movieurl.objects.filter(filter_based_on__name=genres).order_by('-id')[:1].get().id
-			end=movieurl.objects.filter(filter_based_on__name=genres).order_by('id')[:1].get().id
-			count= (url_start_id-end)+1
+			count=movieurl.objects.filter(filter_based_on__name=genres_id).count()
+			url_start_id=movieurl.objects.filter(filter_based_on__name=genres_id).order_by('-id')[:1].get().id
+			end=movieurl.objects.filter(filter_based_on__name=genres_id).order_by('id')[:1].get().id
 			print "====== Summory ======"
 			print "Start :",end
 			print "End   :",url_start_id
@@ -79,7 +81,7 @@ def main():
 		exit(0)
 		
 	genre=Genre.objects.get(name=genres)
-	for page_no in xrange(0,totalhit,50):
+	for page_no in xrange(count,totalhit,50):
 		url='http://www.imdb.com/search/title?genres='+str(genre)+'&sort=moviemeter,asc&start='+str(page_no)+'&title_type=feature'
 		print url
 		try :

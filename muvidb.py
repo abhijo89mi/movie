@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 PYTHON_BIN = "/usr/local/bin/python2.7"
 import os, sys, getopt, cStringIO
 from imdb import IMDb
@@ -142,14 +141,16 @@ def fnMovie (the_matrix,sucess_factor):
 def main ():
 	
 		count=1
-		sucess_factor =0
+		
 		data_fetched=0
 		if (len(sys.argv) > 1):
 			count=sys.argv[1]
 		ia = IMDb()
 		# Get url from the tblmovieurl
 		url_object =movieurl.objects.filter(runcount__lt=1)[:count]
+
 		for url in url_object :
+			sucess_factor =0
 			imdbid=url.imdbid.replace('tt','')
 			
 			print "Get movie information : " , url.movie_name
@@ -628,7 +629,7 @@ def main ():
 			data_fetched+=1
 			progress=(data_fetched/int(count))*100
 			print "Total Completed : %d "%(progress) 
-			url.sucess_factor=sucess_factor
+			url.sucess_factor=(100-sucess_factor)
 			url.last_rundate=datetime.now()
 			url.save()
 

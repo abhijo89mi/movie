@@ -40,3 +40,8 @@ if settings.DEBUG:
         url(r'^static/(?P<path>.*)$', 'serve'),
     )
 
+
+if settings.DEBUG:
+    urlpatterns += patterns('django.views.static',
+        (r'static/(?P<path>.*)$', 'serve', {'document_root': settings.MEDIA_ROOT}),
+    )
