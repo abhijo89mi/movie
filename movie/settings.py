@@ -164,13 +164,3 @@ LOGGING = {
 '''
 '''
 
-RECAPTCHA_PUBLIC_KEY='6Lc87cwSAAAAAIaNOBZdAWw4w38jCqMLoddz32W7'
-RECAPTCHA_PRIVATE_KEY='6Lc87cwSAAAAAFsJNSh1_md7VmCYAB4weO9PA-tK'
-
-RECAPTCHA_USE_SSL = False
-RECAPTCHA_OPTIONS = {
-    'theme': 'white',
-    'lang': 'en',
-    'tabindex': 0,
-}
-
