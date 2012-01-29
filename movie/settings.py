@@ -1,7 +1,7 @@
 # Django settings for movie project.
 import os
 from custom_settings import *
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (

@@ -31,17 +31,15 @@ urlpatterns += patterns('movie.front_end',
       
 
 )
-if settings.DEBUG:
-    urlpatterns += patterns('',
+
+urlpatterns += patterns('',
         (r'^media/(?P<path>.*)$', 'django.views.static.serve',
          {'document_root': settings.MEDIA_ROOT}),
     )
-    urlpatterns += patterns('django.contrib.staticfiles.views',
-        url(r'^static/(?P<path>.*)$', 'serve'),
-    )
+    
+urlpatterns += patterns('django.contrib.staticfiles.views',
+    url(r'^static/(?P<path>.*)$', 'serve'),
+)
+    
+    
 
-
-if settings.DEBUG:
-    urlpatterns += patterns('django.views.static',
-        (r'static/(?P<path>.*)$', 'serve', {'document_root': settings.MEDIA_ROOT}),
-    )
