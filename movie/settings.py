@@ -158,7 +158,7 @@ LOGGING = {
     }
 }
 
-AUTH_PROFILE_MODULE = 'front_end.UserProfile'
+AUTH_PROFILE_MODULE = 'movie.front_end.UserProfile'
 #=============== USER TRACKING SYSTEM =================
 
 
