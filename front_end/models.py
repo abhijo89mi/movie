@@ -176,6 +176,9 @@ class Address(models.Model):
     def __unicode__(self):
         return self.name
     
-
-
+class Friend(models.Model):
+    user_requesting = models.ForeignKey(User, related_name='user_requesting')
+    user_accepting = models.ForeignKey(User, related_name='user_accepting')
+    are_friends = models.BooleanField(default=False)
+    
 
