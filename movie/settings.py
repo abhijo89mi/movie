@@ -1,9 +1,8 @@
 # Django settings for movie project.
 import os
 from custom_settings import *
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-
 ADMINS = (
     ('Abhilash Joseph C', 'abhi.jo89@gmail.com'),
 )
@@ -119,7 +118,7 @@ INSTALLED_APPS = (
     'recaptcha_works',
     'movie.main',
     'tracking',
-    'movie.front_end',
+    'front_end',
     
 )
 
@@ -158,7 +157,7 @@ LOGGING = {
     }
 }
 
-AUTH_PROFILE_MODULE = 'movie.front_end.UserProfile'
+AUTH_PROFILE_MODULE = 'front_end.UserProfile'
 #=============== USER TRACKING SYSTEM =================
 
 

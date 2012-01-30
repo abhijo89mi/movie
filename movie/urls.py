@@ -22,7 +22,7 @@ urlpatterns = patterns('movie.main',
     (r'^grappelli/', include('grappelli.urls')),
 )
 
-urlpatterns += patterns('movie.front_end',
+urlpatterns += patterns('front_end',
       #TEmplate view
       url(r'^new_account$','views.register_view',name='register_view'),
       #From submit

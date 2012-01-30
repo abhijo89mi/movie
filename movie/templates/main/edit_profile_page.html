@@ -28,7 +28,7 @@
 {% block main-container %}
 <h2> Welcome  {{user}} , Finish your registration !</h2>
 <div id="main-div" class="rounded_corner">
-	<form name="myform" id="myform" action="." method="POST">{% csrf_token %}
+	<form name="myform" id="myform" action="{% url edit_profile_page %}" method="POST">{% csrf_token %}
     <div >
 			<form action="." method="post">{% csrf_token %}
 	    <div class="main_details_first">

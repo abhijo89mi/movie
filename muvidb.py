@@ -141,14 +141,18 @@ def fnMovie (the_matrix,sucess_factor):
 def main ():
 	
 		count=1
-		
 		data_fetched=0
 		if (len(sys.argv) > 1):
 			count=sys.argv[1]
 		ia = IMDb()
 		# Get url from the tblmovieurl
 		url_object =movieurl.objects.filter(runcount__lt=1)[:count]
-
+		
+		start_movie_id =url_object[0].id
+		total_count=int(count)
+		total_run_count=0
+		extractor_statistics=Movie_Fetch_Statistics(start_date=datetime.now(),total_count=total_count,start_movie_imdbid=start_movie_id,total_run_count=total_run_count,end_date=datetime.now(),end_movie_imdbid=0)
+		extractor_statistics.save()
 		for url in url_object :
 			sucess_factor =0
 			imdbid=url.imdbid.replace('tt','')
@@ -622,16 +626,17 @@ def main ():
 				sucess_factor=sucess_factor+1
 				pass
 
-			url.runcount+=1	
-			#Getting sucess_factor
-			print "sucess_factor : ",sucess_factor
-			#Printing the progress ...
-			data_fetched+=1
-			progress=(data_fetched/int(count))*100
-			print "Total Completed : %d "%(progress) 
-			url.sucess_factor=(100-sucess_factor)
+			url.runcount+=1
 			url.last_rundate=datetime.now()
 			url.save()
+			
+			#Update Statistics 
+			extractor_statistics.total_run_count+=1
+			extractor_statistics.end_date=datetime.now()
+			extractor_statistics.end_movie_imdbid =url.id
+			extractor_statistics.save()
+			
+			
 
 		return 0
 		

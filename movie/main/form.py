@@ -13,7 +13,7 @@ from django.utils.translation import ugettext_lazy as _
 from recaptcha_works.fields import RecaptchaField
 from django.utils.translation import ugettext_lazy as _
 
-from movie.front_end.models import *
+from front_end.models import *
 
 attrs_dict = {'class': 'required'}
 
