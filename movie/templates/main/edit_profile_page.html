@@ -1,0 +1,142 @@
+{% extends "main/index.html" %}
+
+{% block extra-head %}
+{{ block.super }}
+<style>
+
+	.category_option { margin: 10px 0; width: 235px; padding-right: 25px; float: left; height: 65px; }	
+	.category_option input { margin: 5px 7px 0 0; float: left; }
+	.category_option .blue { font-size: 18px; }
+ 	#main-locations { float: left;width:940px;}
+	.locations { margin: 10px 0;float:left;width: 225px; font-weight:bold;font-size:16px;}
+	.location_border {  background: url({{ MEDIA_URL }}images/main/loc_border.png) no-repeat scroll transparent; border: 0; width:800px;height:30px;float:left; padding-left: 10px; }
+	.edit_loc { margin: 2px 0;float:left;width: 220px;font-size:13px; }  
+	.editremove {float:left;margin-top: 7px}
+     #space {margin: 7px 10px 0 0;}
+    #save { margin-top:15px; margin-left:324px;}
+    .selected { color: #45B6FB; }
+	.selected:hover { color: #45B6FB; text-decoration: none; }	    
+    .bluecolor {  color:#0099ff; font-weight:bold;font-size:14px}
+    .black { display: block; line-height: 15px; }
+	.add {display: block;height: 34px;line-height: 30px;text-align: center; margin-left: 296px;}
+    .city_option { margin: 10px 0; width: 225px; padding-right: 25px; float: left; height: 20px; }
+    .background-color {background-color:white;padding:0 20px 0 20px }
+	#glu{overflow-x: hidden; }
+	
+</style>
+{% endblock %}
+{% block main-container %}
+<h2> Welcome  {{user}} , Finish your registration !</h2>
+<div id="main-div" class="rounded_corner">
+	<form name="myform" id="myform" action="." method="POST">{% csrf_token %}
+    <div >
+			<form action="." method="post">{% csrf_token %}
+	    <div class="main_details_first">
+        <table class="main_details_table">
+					<tr>
+							<td colspan="2">
+						<h4 class="bottom-border margin_top_spacer">Edit your profile</h4>
+							</td>
+					</tr>
+					<tr>
+							<td><h6>First Name</h6></td>
+							<td><input class="textbox" name="first_name" type="text" value="{% if user.first_name %}{{ user.first_name }}{% endif %}" maxlength="30" /></td>
+					</tr>
+					<tr>
+							<td><h6>Last Name</h6></td>
+							<td><input class="textbox" name="last_name" type="text" value="{% if user.last_name %}{{ user.last_name }}{% endif %}" maxlength="30" /></td>
+					</tr>
+					<tr>
+							<td colspan="2">
+						<h5 class="bottom-border-line">&nbsp;</h5>
+							</td>
+					</tr>
+					<tr>
+							<td><h6>Email</h6></td>
+							<td><input class="textbox" name="email" type="text" value="{% if user.email %}{{ user.email }}{% endif %}" /></td>
+					</tr>
+					<tr>
+							<td colspan="2">
+						<h5 class="bottom-border-line">&nbsp;</h5>
+							</td>
+					</tr>
+					<tr>
+							<td><h6>Gender</h6></td>
+							<td>
+									<input name="gender" type="radio" value="M" {% if user.get_profile.gender = 'M' %}checked=yes{% endif %} /><span class="grey">Male</span>
+									<input name="gender" type="radio" value="F" {% if user.get_profile.gender = 'F' %}checked=yes{% endif %} /><span class="grey">Female</span>
+							</td>
+					</tr>
+					<tr>
+							<td><h6>Birthday</h6></td>
+							<td>
+									<select name="day">
+											<option>Day</option>
+											{% for d in days %}
+													<option {% if user.get_profile.birthday.day == d %}selected=selected{% endif %}>{{ d }}</option>                                
+											{% endfor %}
+									</select>
+									<select name="month">
+											<option>Month</option>
+											{% for m, full_month in months %}
+													<option {% if user.get_profile.birthday.month == forloop.counter %}selected=selected{% endif %} value="{{ m }}">{{ full_month }}</option>
+											{% endfor %}                            
+									</select>
+									<select name="year">
+											<option>Year</option>
+											{% for y in years reversed %}
+													<option {% if user.get_profile.birthday.year == y %}selected=selected{% endif %}>{{ y }}</option>
+											{% endfor %}                                
+									</select>                        
+							</td>
+					</tr>                
+        </table>
+	    </div>
+
+	    <div class="main_details">
+        <div class="clear"></div>
+				<div class="main_details_first">
+	        <table class="main_details_table">
+						<tr>
+							<td colspan="2">
+									<h4 class="bottom-border margin_top_spacer">Change your password</h4>
+							</td>
+						</tr>		    
+						<tr>
+							<td><h6>Current Password</h6></td>
+							<td><input class="textbox" name="current_password" type="password" value="{{ current_password }}" /></td>
+						</tr>
+						<tr>
+							<td><h6>New Password</h6></td>
+							<td><input class="textbox" name="new_password" type="password" value="{{ new_password }}" /></td>
+						</tr>
+						<tr>
+							<td><h6>Confirm Password</h6></td>
+							<td><input class="textbox" name="confirm_password" type="password" value="{{ confirm_password }}" /></td>
+						</tr>		    
+	    	    <tr>
+							<td colspan="2" >
+								{% if password_error %}
+									<div id="fid_subscribe-form-error">{{password_error}}</div>
+								{% endif %}
+							</td>
+						</tr>
+	        </table>
+	        <div class="clear"></div>
+	      </div>
+	    </div>
+	    
+			<div class="main_details">
+				<h4 class="bottom-border margin_top_spacer hearder">View your profile</h4>
+					<div class="profile_icon">
+				
+					</div>
+				 
+			</div>	    
+	  </div>
+	<div class="clear"></div>
+        <input type="submit" class="save-changes-button" value="" />
+        </form>       
+    </form>
+</div>
+{% endblock %}

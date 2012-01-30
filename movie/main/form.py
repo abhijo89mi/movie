@@ -13,6 +13,8 @@ from django.utils.translation import ugettext_lazy as _
 from recaptcha_works.fields import RecaptchaField
 from django.utils.translation import ugettext_lazy as _
 
+from movie.front_end.models import *
+
 attrs_dict = {'class': 'required'}
 
 class LoginForm(forms.Form):
@@ -73,3 +75,5 @@ class RegistrationForm(forms.Form):
             if self.cleaned_data['password1'] != self.cleaned_data['password2']:
                 raise forms.ValidationError(_(u'You must type the same password each time'))
         return self.cleaned_data
+
+

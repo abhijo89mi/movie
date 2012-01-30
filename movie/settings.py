@@ -158,6 +158,7 @@ LOGGING = {
     }
 }
 
+AUTH_PROFILE_MODULE = 'front_end.UserProfile'
 #=============== USER TRACKING SYSTEM =================
 
 

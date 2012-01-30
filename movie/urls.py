@@ -28,6 +28,7 @@ urlpatterns += patterns('movie.front_end',
       #From submit
       url(r'^register$','views.register',name='register'),
       url(r'^myaccount$','views.myaccount',name='myaccount'),
+      url(r'^edit_profile_page$','views.edit_profile_page',name='edit_profile_page'),
       
 
 )
