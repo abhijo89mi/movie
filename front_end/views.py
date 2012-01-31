@@ -12,6 +12,22 @@ from django.contrib.auth import authenticate, login, logout
 from movie.helper import *
 from models import *
 from django.contrib.auth.models import User, Group
+from django.core.mail import EmailMessage
+
+#Functions 
+def sendusermail(email):
+	body = '''
+			Hi, 
+
+			Thank you for subscribing with MuviDB. Your login link is http://www.muvidb.com
+
+			Thanks,
+			MuviDB team
+			'''
+	email = EmailMessage('Thank you for subscribing to MuviDB', body, 'noreply@muvidb.com',[email])
+	email.send(fail_silently=True)
+	return True
+	
 
 def register_view(request,template='popup/register.html'):
 	form = RegistrationForm()
@@ -28,6 +44,7 @@ def register(request,to_return=''):
 					profile = UserProfile.objects.create(user=new_user) 
 					profile.send_me_daily_email=False
 					profile.save()
+					sendusermail(form.cleaned_data['email'])
 					login(request, user)
 					return HttpResponseRedirect(reverse('edit_profile_page'))
 			else:

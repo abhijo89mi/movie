@@ -15,3 +15,5 @@ tracking.log
 output
 *.log
 
+logs
+tracking.log.*

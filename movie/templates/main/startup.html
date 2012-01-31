@@ -3,6 +3,9 @@
 	<head>{% load metatag_tags %} {% metatag_populate %}
         <title>{% if metatag.title %}{{ metatag.title }}{%else%}{% block title %}{% endblock %}{% endif %}</title>
         <meta name="description" content="{{ metatag.description }}"/>
+	<link rel="icon" href="{{ MEDIA_URL }}images/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="{{ MEDIA_URL }}images/favicon.ico" type="image/x-icon"> 
+	<link rel="shortcut icon" href="{{ MEDIA_URL }}images/favicon.ico" type="image/x-icon"> 
         <meta name="keywords" content="{{ metatag.keywords }}" />{% if metatag.google_pagetrack_category %}
         <meta name="google-site-verification"content="{{ metatag.google_pagetrack_category }}">{% endif %}
         <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>

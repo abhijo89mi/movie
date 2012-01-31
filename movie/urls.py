@@ -27,8 +27,8 @@ urlpatterns += patterns('front_end',
       url(r'^new_account$','views.register_view',name='register_view'),
       #From submit
       url(r'^register$','views.register',name='register'),
-      url(r'^myaccount$','views.myaccount',name='myaccount'),
-      url(r'^edit_profile_page$','views.edit_profile_page',name='edit_profile_page'),
+      url(r'^home/myaccount/$','views.myaccount',name='myaccount'),
+      url(r'^home/myaccount/edit_profile_page/$','views.edit_profile_page',name='edit_profile_page'),
       
 
 )
