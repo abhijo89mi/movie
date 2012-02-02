@@ -17,3 +17,8 @@ output
 
 logs
 tracking.log.*
+person.py
+video.py
+svideo.py
+movie/media/actors
+
