@@ -44,13 +44,21 @@ class Movie_Fetch_StatisticsAdmin(admin.ModelAdmin):
 	list_display = ('id','start_date','end_date','total_count','total_run_count','start_movie_imdbid','end_movie_imdbid')	
 
 class PersonAdmin(admin.ModelAdmin):
-	list_display = ('name','personID',)
+	list_display = ('id','name','personID',)
 		
 class LanguagesAdmin(admin.ModelAdmin):
 	list_display = ('name','code',)
 	
 class CountriesAdmin(admin.ModelAdmin):
 	list_display = ('name','code',)
+	
+class PhotoAdmin(admin.ModelAdmin):
+	def person(self,obj):
+		return obj.Photo_M2M_Person.all()[0].name
+	
+	def personID(self,obj):
+		return obj.Photo_M2M_Person.all()[0].personID
+	list_display = ('id','url','person','personID')
 
 # Admin log file
 class LogEntryAdmin(admin.ModelAdmin):
@@ -120,3 +128,4 @@ admin.site.register(Charactor, CharactorAdmin)
 admin.site.register(Person, PersonAdmin)
 admin.site.register(Languages, LanguagesAdmin)
 admin.site.register(Countries, CountriesAdmin)
+admin.site.register(Photo, PhotoAdmin)
