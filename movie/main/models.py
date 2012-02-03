@@ -14,7 +14,7 @@ class Movie(models.Model):
 	cover_url=models.CharField(max_length=500,)
 	plot_outline=models.TextField(blank=True, null=True)
 	summary= models.TextField(blank=True, null=True)
-
+	
 	#M2M Tables
 	akas_id  		= models.ManyToManyField('Akas', verbose_name=u'Akas ID',related_name="Akas_M2M_Movie")
 	plot=models.ManyToManyField('Plot', verbose_name=u'Plot ID',related_name="Plot_M2M_Movie")
@@ -56,6 +56,8 @@ class Movie(models.Model):
 	transportation_department=models.ManyToManyField('Transportation_department', verbose_name=u'Transportation_department ID',related_name="Transportation_department_M2M_Movie",blank=True)
 	visual_effects=models.ManyToManyField('Visual_effects', verbose_name=u'Visual_effects ID',related_name="Visual_effects_M2M_Movie",blank=True)
 	writer=models.ManyToManyField('Writer', verbose_name=u'Writer ID',related_name="Writer_M2M_Movie",blank=True)
+	Video=models.ManyToManyField('Video', verbose_name=u'Video url',related_name="Video_M2M_Movie",blank=True)
+	release_date = models.ManyToManyField('Release_date', verbose_name=u'Release Date',related_name="Release_date_M2M_Movie",blank=True)
 	def __unicode__(self):
 		return u'%s' % (self.title)
 	class Meta:
@@ -71,6 +73,14 @@ class Akas(models.Model):
 		verbose_name = 'Other Movie Title'
 		verbose_name_plural = 'Other Movie Titles'
 		db_table = 'Akas'
+class Release_date(models.Model):
+	date=models.CharField(max_length=100,)
+	def __unicode__(self):
+		return u'%s' % (self.date)
+	class Meta:
+		verbose_name = 'Release Date'
+		verbose_name_plural = 'Release Dates'
+		db_table = 'Release_date'
 
 class Certificates(models.Model):
 	name=models.CharField(max_length=200,)
@@ -402,7 +412,7 @@ class Writer(models.Model):
 		db_table = 'Writer'
 
 class Person(models.Model):
-	personID=models.CharField(max_length=100,)
+	personID=models.CharField(max_length=100,unique=True)
 	name=models.CharField(max_length=100,)
 	note=models.TextField(blank=True, null=True)
 	default_info=models.TextField(blank=True, null=True)
@@ -499,3 +509,8 @@ class Video(models.Model):
 	imdbid=models.CharField(max_length=100)
 	video_url= models.CharField(max_length=255,unique=True)
 	movie_url= models.CharField(max_length=500)
+	
+	class Meta:
+		verbose_name = 'Video'
+		verbose_name_plural = 'Videos'
+		db_table = 'Video'
