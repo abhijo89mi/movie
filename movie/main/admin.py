@@ -60,6 +60,18 @@ class PhotoAdmin(admin.ModelAdmin):
 		return obj.Photo_M2M_Person.all()[0].personID
 	list_display = ('id','url','person','personID')
 
+class PhotoAdmin(admin.ModelAdmin):
+	def person(self,obj):
+		return obj.Photo_M2M_Person.all()[0].name
+	
+	def personID(self,obj):
+		return obj.Photo_M2M_Person.all()[0].personID
+	def image(self,obj):
+		return "<img src=\"/media/actors/"+obj.url+"\">"
+	image.allow_tags = True
+
+	list_display = ('image','url','person','personID')
+
 # Admin log file
 class LogEntryAdmin(admin.ModelAdmin):
 
@@ -75,6 +87,7 @@ class LogEntryAdmin(admin.ModelAdmin):
 
 	search_fields = [
 		'object_repr',
+
 		'change_message'
 	]
 
@@ -111,7 +124,8 @@ class LogEntryAdmin(admin.ModelAdmin):
 	object_link.admin_order_field = 'object_repr'
 	object_link.short_description = u'object'
 
-
+class VideoAdmin(admin.ModelAdmin):
+	list_display = ('movie_id','imdbid','video_url','movie_url')
 
 
 # Admin model registration 
@@ -128,4 +142,5 @@ admin.site.register(Charactor, CharactorAdmin)
 admin.site.register(Person, PersonAdmin)
 admin.site.register(Languages, LanguagesAdmin)
 admin.site.register(Countries, CountriesAdmin)
+admin.site.register(Video, VideoAdmin)
 admin.site.register(Photo, PhotoAdmin)

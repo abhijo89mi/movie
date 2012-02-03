@@ -39,6 +39,9 @@ def index(request,template=''):
   return render_to_response('main/startup.html', context, context_instance = RequestContext(request))
   
 def home(request,template='main/index.html'):
+  if request.user.is_anonymous():
+	return HttpResponseRedirect(reverse('index'))
+ 
   context={}
   return render_to_response('main/index.html', context, context_instance = RequestContext(request))
 

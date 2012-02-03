@@ -26,8 +26,8 @@
 </style>
 {% endblock %}
 {% block main-container %}
-<h2> Welcome  {{user}} , Finish your registration !</h2>
-<div id="main-div" class="rounded_corner">
+<h2> Welcome {% if user.first_name %} {{user.first_name}} {{ user.last_name }} {% else %} {{ user }} {% endif %}, Finish your registration !</h2>
+<div id="main-div" class="rounded_corner"> 
 	<form name="myform" id="myform" action="{% url edit_profile_page %}" method="POST">{% csrf_token %}
     <div >
 			<form action="." method="post">{% csrf_token %}

@@ -494,4 +494,8 @@ class Movie_Fetch_Statistics(models.Model):
 		verbose_name_plural = 'Movie Extractor Statistics'
 
 	
-	
+class Video(models.Model):
+	movie_id=models.IntegerField(null=False, blank=False,default=0)
+	imdbid=models.CharField(max_length=100)
+	video_url= models.CharField(max_length=255,unique=True)
+	movie_url= models.CharField(max_length=500)
