@@ -34,6 +34,26 @@
             .logout_link{float:right;display:block;width: 130px; height: 34px;background: url("{{ MEDIA_URL }}images/main/buttons/Logout.png") no-repeat 0 0;}
             .logout_link:hover{background-position: 0 -34px;}
             .edit_account_link{float:right;display:block; margin-top: 15px; width: 130px; height: 34px;background: url("{{ MEDIA_URL }}images/main/buttons/edit.png") no-repeat 0 0;}
+            h1 {float: left; font-size: 22px;font-weight:bold; height: 40px; color:#0099ff; line-height: 40px; text-align: center; margin: 0; }
+            /*Error box styling*/
+            #error { display: none; }
+            #errorbox { padding: 26px; float: left; }
+            #errorbox h1 { color: #27a9ff !important; width: 100%; }
+            .bottom-gray-border { text-align: center; width: 100%; background: url({{ MEDIA_URL }}images/main/border.png) center bottom repeat-x transparent; padding-bottom: 10px; margin-bottom: 10px; color: #666; font-weight: bold; font-size: 16px; }
+            #errorbox .grey-div { width: 563px; padding: 10px; }
+            #errorbox p { margin: 5px 10px; }
+            #errorbox .buttons { margin: 2px auto; }
+            #errorbox .buttons .ok-button { float: left; }
+            #errorbox .buttons .cancel-button { float: right; }
+            
+            /* Buttons */
+            .ok-button, .cancel-button, .buy-now-button, .print-button ,.orangeButton_ViewDeals{ float: left; border: 0; margin:0; padding: 0; display: block; height: 34px; width: 104px; cursor: pointer;  }
+            .ok-button:hover, .cancel-button:hover, .buy-now-button:hover, .print-button:hover ,.orangeButton_ViewDeals:hover{ background-position: 0 -34px; }
+            
+            .ok-button{ background: url({{ MEDIA_URL }}images/main/buttons/orangeButton_OK.png) 0 0 no-repeat transparent;}
+            .cancel-button{ background: url({{ MEDIA_URL }}images/main/buttons/orangeButton_Cancel.png) 0 0 no-repeat transparent;}
+
+		
 
         </style>
 	{% if metatag.google_pagetrack_customvar %}
@@ -74,7 +94,55 @@
                 css_file += "opera";
             } else css_file += "chrome";
             document.write('<link href="{{ MEDIA_URL }}css/' + css_file + '_packaged.css" media="screen" rel="stylesheet" type="text/css" />');
-        </script>
+            
+            function error(title, subject, body, buttons, callback){
+              //error popup
+              if (title) {
+                $('#error-title').html(title);
+              }	
+              
+              if (subject) {
+                $('#error-subject').html(subject).css('display, block');
+              } else {
+                $('#error-subject').css('display', 'none');
+              }
+              
+              if (body) {
+                $('#error-body').html(body);
+              }
+              
+              if (buttons == 'ok') {
+                $('.buttons').html('<div class="ok-button"></div>').css('width', '107px');
+              } else {
+                $('.buttons').html('<div class="ok-button"></div><div class="cancel-button"></div>').css('width', '217px');
+              }
+              
+              $('#error').fancybox({
+                'padding'			: 0,
+                 'width'			: 635, 
+                 'autoDimensions'	: true,
+                'opacity'			: true,
+                'overlayShow'		: true,
+                'showCloseButton' 	:false,
+                'hideOnOverlayClick' : false,
+                'transitionIn'		: 'fade',
+                'transitionOut'		: 'fade',
+                'overlayColor'  	: '#4fb9ff',
+              }).trigger('click');
+          
+            }
+    $(document).ready(function(){
+			$('.ok-button').live('click', function(){
+				$.fancybox.close();
+        {% block error_box_ok %}
+
+				{% endblock %}
+			});		
+      $('.cancel-button').live('click', function(){
+				$.fancybox.close();
+			});		
+    });
+    </script>
     {% block extra-head %}{% endblock %}
     </head>
     
@@ -154,4 +222,20 @@
             <div class="footerBottom"></div>
         </div>
     </div>
+    <a id="error" href="#errorbox">Error</a>
+	<div style="display: none;">
+		<div id="errorbox">
+			<h1 id="error-title">Oops! Something Happened Here</h1>
+			<div class="clear"></div>
+			<div class="rounded_corner grey-div">
+				<h2 class="bottom-gray-border" id="error-subject">Title or name of the error goes here</h2>
+				<div class="clear"></div>
+				<p id="error-body">Lorem ipsum text here</p>
+			</div>
+			<div class="buttons">
+				<div class="ok-button"></div>
+				<div class="cancel-button"></div>
+			</div>
+		</div>
+	</div>
 </html>

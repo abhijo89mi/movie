@@ -46,7 +46,7 @@ def register(request,to_return=''):
 					profile = UserProfile.objects.create(user=new_user) 
 					profile.send_me_daily_email=False
 					profile.save()
-					#sendusermail(form.cleaned_data['email'])
+					sendusermail(form.cleaned_data['email'])
 					login(request, user)
 					to_return={'success':True ,'url':reverse('edit_profile_page')}
 					#return HttpResponseRedirect(reverse('edit_profile_page'))
@@ -110,3 +110,30 @@ def edit_profile_page(request):
 			   'confirm_password' : confirm_password, 'password_error' : password_error, }
 	
 	return render_to_response('main/edit_profile_page.html', context, context_instance = RequestContext(request))
+
+
+def profile_pic(request):
+	profile = request.user.get_profile()
+	profile_pic_changed = False
+	default_pic = False
+
+	if request.method == 'POST':
+		if request.FILES['profile_pic']:
+			profile.profile_pic = request.FILES['profile_pic']
+			profile.save()
+			profile_pic_changed = True
+
+	if profile.profile_pic == 'images/profile_pics/profile.png':
+		default_pic = True
+
+	context = {'profile_pic_changed': profile_pic_changed, 'default_pic' : default_pic }
+	return render_to_response('main/profile_pic.html', context, context_instance = RequestContext(request))
+	
+def delete_pic(request):
+	profile = request.user.get_profile()
+	profile.profile_pic = 'images/profile_pics/profile.png'
+	profile.save()
+
+	import json
+	to_return = {'message' : 'Profile picture reset ...', 'success' : True }
+	return HttpResponse(json.dumps(to_return), mimetype='application/json')
