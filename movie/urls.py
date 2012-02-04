@@ -29,6 +29,8 @@ urlpatterns += patterns('front_end',
       url(r'^register$','views.register',name='register'),
       url(r'^home/myaccount/$','views.myaccount',name='myaccount'),
       url(r'^home/myaccount/edit_profile_page/$','views.edit_profile_page',name='edit_profile_page'),
+      url(r'home/myaccount/edit_profile_page/delete-pic/$', 'views.delete_pic', name='delete_pic'),
+      url(r'home/myaccount/edit_profile_page/profile-pic/$', 'views.profile_pic', name='profile_pic'),
       
 
 )

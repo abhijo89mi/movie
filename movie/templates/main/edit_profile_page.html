@@ -1,8 +1,12 @@
 {% extends "main/index.html" %}
-
+{% block error_box_ok %}
+{{ block.super }}
+    $('iframe.upload_box')[0].contentWindow.delete_photo();
+{% endblock %}
 {% block extra-head %}
 {{ block.super }}
 <style>
+
 
 	.category_option { margin: 10px 0; width: 235px; padding-right: 25px; float: left; height: 65px; }	
 	.category_option input { margin: 5px 7px 0 0; float: left; }
@@ -21,9 +25,16 @@
 	.add {display: block;height: 34px;line-height: 30px;text-align: center; margin-left: 296px;}
     .city_option { margin: 10px 0; width: 225px; padding-right: 25px; float: left; height: 20px; }
     .background-color {background-color:white;padding:0 20px 0 20px }
-	#glu{overflow-x: hidden; }
+    
+    .save-changes-button{ border: 0 none;float:right;display:block;width: 230px; height: 34px;background: url("{{ MEDIA_URL }}images/main/buttons/orangeButton_SaveChanges.png") no-repeat 0 0;}
+    .save-changes-button:hover{background-position: 0 -34px;}
+    .pbox{height:auto;width:97%}
+    .upload_box{width: 97%; height: 200px;}
+    
+    h6 {float: left; font-size: 14px; line-height: 18px;color:#696969; margin: 0; }
 	
 </style>
+
 {% endblock %}
 {% block main-container %}
 <h2> Welcome {% if user.first_name %} {{user.first_name}} {{ user.last_name }} {% else %} {{ user }} {% endif %}, Finish your registration !</h2>
@@ -31,7 +42,9 @@
 	<form name="myform" id="myform" action="{% url edit_profile_page %}" method="POST">{% csrf_token %}
     <div >
 			<form action="." method="post">{% csrf_token %}
-	    <div class="main_details_first">
+	    <div class="aux-content-widget-2">
+				<iframe src="{% url profile_pic %}" frameborder="0" scrolling="no" class="upload_box" ></iframe>
+				<div class="pbox left">
         <table class="main_details_table">
 					<tr>
 							<td colspan="2">
@@ -91,9 +104,14 @@
 							</td>
 					</tr>                
         </table>
+        </div>
+        <div class="clear"></div>
+        <div class="pbox right">
+        
+        </div>
 	    </div>
 
-	    <div class="main_details">
+	    <div class="aux-content-widget-2">
         <div class="clear"></div>
 				<div class="main_details_first">
 	        <table class="main_details_table">
@@ -124,15 +142,7 @@
 	        </table>
 	        <div class="clear"></div>
 	      </div>
-	    </div>
-	    
-			<div class="main_details">
-				<h4 class="bottom-border margin_top_spacer hearder">View your profile</h4>
-					<div class="profile_icon">
-				
-					</div>
-				 
-			</div>	    
+	    </div>  
 	  </div>
 	<div class="clear"></div>
         <input type="submit" class="save-changes-button" value="" />

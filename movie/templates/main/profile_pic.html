@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+	    body, html, table { margin-top: 0;background-color:#EDEDED }
+            h4.bottom-border { font-size: 18px; background: url({{ MEDIA_URL }}images/main/border.png) repeat-x scroll 0 bottom transparent; width: 100%; font-family: verdana; font-weight:900; color: #666666 !important;margin-bottom:20px; padding-bottom:18px; margin-top: 15px !important; }
+            body { margin: 0; }
+            .clear{clear:both;}
+            .blue { color:#0099ff; }
+            #upload{float:left; margin-right:10px; margin-top:5px; width: 79px; }
+            #delete-photo{ margin-top:5px; float:left; }
+            .notify{ background: #ffe4b4 none repeat scroll 0 0;font-size: 13px;font-weight: Verdana; font-style:italic; border: 1px solid #ff6a00;color: #ff6a00;list-style-type: none;padding: 6px; margin: 2px 0;width:100%}
+            .notify-box {visibility: hidden;}
+            #profile-pic{ border: 3px solid #7fcafc; border-radius: 3px; margin-right:20px; }
+            #profile_pic{margin-bottom:9px;}
+            .bottom-border-line{background: url({{ MEDIA_URL }}images/main/border.png) repeat-x scroll 0 bottom transparent; padding:0px !important; margin-top:0 !important; margin-bottom:0 !important; width: 100%; }
+            
+            /* class that fakes anchor tag ... */
+            .a_fake{color:#0000ff; text-decoration:underline; cursor:pointer;}
+            
+            body { margin-top:0px;}
+            form#upload-photo {margin:0px 14px 5px 5px;}
+            .light_grey{ color:#999999; font-size:10px; width:235px; font-family: verdana; }
+            table { background: url("/media/images/main/border.png") repeat-x scroll 0 bottom transparent; padding-bottom: 23px; }
+            #profile-pic { max-height: 83px; }
+        </style>
+    <script src="{{MEDIA_URL}}js/jquery-1.6.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript">	
+	function delete_photo() {
+	    /* Place a synchronus Ajax call to reset the profile image ... */
+	    $.ajax({
+		url: '{% url delete_pic %}',
+		type: 'GET',
+		data: $(this).serialize(),
+		dataType: 'json',
+		success: function(data) {
+		    if (data.success ) {
+			$('.notify-box').css('visibility', 'visible');
+			$('.notify').css('color','#ff6a00');
+			$('.notify').text('Profile picture deleted...');
+		
+			$('#profile-pic').attr('src','{{ MEDIA_URL }}images/profile_pics/profile.png');
+			$('#delete-photo').hide();
+			
+		    } else {
+			$('.notify-box').css('visibility', 'visible');
+			$('.notify').css('color','#ff6a00');
+			$('.notify').text('Profile picture deletion failed, please re-try.');
+		    }
+		}
+	    });	    
+	}
+	
+        $(document).ready(function(){
+            /* validating before submitting ... */
+            $('#upload-photo').submit(function(event){
+                /*check whether image is selected or not ... */
+                if ( $('#profile_pic').val() == '' )
+                {
+                    event.preventDefault();
+                    $('.notify-box').css('visibility', 'visible');
+                    $('.notify').css('color','#ff6a00');
+                    $('.notify').text('You have not selected profile picture to upload.');
+                }
+            });
+
+            /*to clear notification,if any, selecting a new image ... */
+            $('input[type="file"]').change(function(){
+                if ( $('#profile_pic').val() != '' ){
+		    $('.notify-box').css('visibility', 'hidden');
+                    $('.notify').hide();
+                }
+            });
+
+            /* To delete the current user image ...
+             * actually it resets to default profile image ...
+             */
+            $('#delete-photo').click(function(){
+		parent.error('Confirm Delete', false, 'Are you sure you want to delete your profile picture?', function(){
+		    alert('done');        
+		});
+            });
+
+            /* notify when profile picture change was successfull. */
+            {% if profile_pic_changed %}
+		$('.notify-box').css('visibility', 'visible');
+                $('.notify').css('color','#B04539');
+                $('.notify').text('Profile picture uploaded...');
+            {% endif %}
+
+        });
+
+
+    </script>
+    
+    </head>
+    <body>
+        <form id="upload-photo" action="." method="post" enctype="multipart/form-data">{% csrf_token %}
+            <table id="photo_upload">
+                <tr>
+                    <td colspan="2">
+                        <h4 class="bottom-border">Your photo</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img id="profile-pic" width="97" height="140" src="{{ MEDIA_URL }}{{ user.get_profile.profile_pic }}" />
+                    </td>
+                    <td>
+                        <div class="clear"></div>
+                        <input type="file" id="profile_pic" name="profile_pic" size="10"><br/>
+                        <div class="light_grey">Accepted formats include: jpg, gif, bmp, png</div>
+                        <div class="light_grey">Preferred size: 97 x 140 pixels</div>
+                        <input id="upload" type="submit" value="Upload" />
+                        {% if not default_pic %}
+                            <button type="button" id="delete-photo">Delete Photo</button>
+                        {% endif %}
+                        <div class="clear"></div>
+                        <div class="clear"></div>
+                    </td>
+                </tr>
+            </table>
+
+	    <div class="notify-box">
+		<div class="notify"></div>
+            </div>
+		<div class="clear"></div>
+        </form>
+    </body>
+</html>

@@ -3,7 +3,7 @@
 {{ block.super }}
 	<style>
 		
-		.profile_photo{display:block;width: 150px; height: 200px;float:left}
+		.profile_photo{display:block;width: 97px; height: 140px;float:left}
 		.profile_basic_info{display:block;width: 350px; height: 200px;float:left}
 	</style>
 {%endblock%}
@@ -12,7 +12,7 @@
 <div class="aux-content-widget-2">
 	<div class="profile_photo">
 	{# User Profile Pic #}
-	<img src="{{MEDIA_URL}}{{profile.profile_pic}}">
+	<img src="{{MEDIA_URL}}{{profile.profile_pic}}" class="profile_photo">
 	</div>
 	<div class="profile_basic_info">
 	{# Put All user Basic information Such as Recent visited Movie , Friend List , Last Reviewd Movie , Friend Last Reviewed movie etc#}
