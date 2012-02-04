@@ -34,6 +34,7 @@
     h6 {float: left; font-size: 14px; line-height: 18px;color:#696969; margin: 0; }
 	
 </style>
+
 {% endblock %}
 {% block main-container %}
 <h2> Welcome {% if user.first_name %} {{user.first_name}} {{ user.last_name }} {% else %} {{ user }} {% endif %}, Finish your registration !</h2>
