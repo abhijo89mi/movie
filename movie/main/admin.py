@@ -51,6 +51,14 @@ class LanguagesAdmin(admin.ModelAdmin):
 	
 class CountriesAdmin(admin.ModelAdmin):
 	list_display = ('name','code',)
+	
+class PhotoAdmin(admin.ModelAdmin):
+	def person(self,obj):
+		return obj.Photo_M2M_Person.all()[0].name
+	
+	def personID(self,obj):
+		return obj.Photo_M2M_Person.all()[0].personID
+	list_display = ('id','url','person','personID')
 
 class PhotoAdmin(admin.ModelAdmin):
 	def person(self,obj):

@@ -417,6 +417,7 @@ class Person(models.Model):
 	note=models.TextField(blank=True, null=True)
 	default_info=models.TextField(blank=True, null=True)
 	biodata=models.TextField(blank=True, null=True)
+	date_of_birth=models.CharField(max_length=100,)
 	photo=models.ManyToManyField('Photo', verbose_name=u'Photo',related_name="Photo_M2M_Person",blank=True)
 	
 	def __unicode__(self):
