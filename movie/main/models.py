@@ -515,3 +515,18 @@ class Video(models.Model):
 		verbose_name = 'Video'
 		verbose_name_plural = 'Videos'
 		db_table = 'Video'
+
+class Person_Statistics(models.Model):
+	date  = models.DateTimeField(null=True, blank=True)
+	person= models.ForeignKey('Person', verbose_name=u'Person')
+	name=models.BooleanField(default=False)
+	note=models.BooleanField(default=False)
+	default_info=models.BooleanField(default=False)
+	biodata=models.BooleanField(default=False)
+	date_of_birth=models.BooleanField(default=False)
+	photo=models.BooleanField(default=False)
+	
+	class Meta:
+		verbose_name = 'Person_Statistics'
+		verbose_name_plural = 'Person_Statistics'
+		db_table = 'Person_Statistics'

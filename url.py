@@ -76,6 +76,7 @@ def main():
 		except Exception as e:
 			print e
 			url_start_id=0
+			pass
 		url_end_id=0
 	else:
 		exit(0)
@@ -99,13 +100,14 @@ def main():
 				movie, created = movieurl.objects.get_or_create(imdbid=imdbid,movie_name=movie_name,url=m_url,filter_based_on=genre,run_date=run_date,)
 				#print 'Movie url'+m_url+' Saved '+'Start from  :'+str(page_no)
 			  except Exception as e:
+				  print e
 				  pass
 		except Exception as e:
 		  error, created = Errorlog.objects.get_or_create(function_name='Imdburlparser',message=e,date=datetime.now())
-		  print 'Error :'+str(page_no)
+		  print 'Error :'+str(e)
 		  pass
-		url_end_id =movieurl.objects.order_by('-id')[:1].get().id
-		log, created = Urllog.objects.get_or_create(start_url_id=url_start_id,end_url_id=url_end_id,end_date=datetime.now())
+		#url_end_id =movieurl.objects.order_by('-id')[:1].get().id
+		#log, created = Urllog.objects.get_or_create(start_url_id=url_start_id,end_url_id=url_end_id,end_date=datetime.now())
 
 	return 0
 
