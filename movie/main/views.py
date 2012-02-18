@@ -60,6 +60,8 @@ def logout_view(request):
   return HttpResponseRedirect(reverse('index'))
 
 def movie_info(request , movie_id):
+  if request.user.is_anonymous():
+	return HttpResponseRedirect(reverse('index'))
   movie=Movie.objects.get(id=movie_id)
   context={'movie':movie}
   return render_to_response('main/movie_info.html', context, context_instance = RequestContext(request))
