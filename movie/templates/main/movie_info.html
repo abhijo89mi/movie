@@ -4,7 +4,9 @@
 {% block keywords %} {% endblock %}
 {% block extra-head %}
 	<style>
-		.container {margin-right: 20px; width: 800px; margin-top: 6px;}
+		.container {margin-right: 20px; width: 800px; margin-top: 6px;padding-top: 10px;}
+		.movie_info_content{width:774px;float: none;}
+		.content-widget {width:200px; float: none;}
 	</style>
 {% endblock %}
 
@@ -12,11 +14,47 @@
 {# MAIN BLOCK TO SHOW ALL INFORMARION #}
 <div class="sidebar left">
   {% block sidebar-left %}
-		<div class="aux-content-widget-2">
-			
+		<div class="aux-content-widget-2 content-widget">
+			{# COUNT INFORMATION and RELATED movies#}
+			<div>
+					{# Basic information ablot movie such as name,rating,year, mapp,total vote,totalreview,total vitited users ect#}
+			</div>
+			<div>
+					{# Person information Cast list , diractor, writer etc #}
+			</div>
+			<div>
+					{# Person information Cast list , diractor, writer etc #}
+			</div>
 		</div>
+		
   {% endblock %}
 </div>
 <div class="container right">
+			<div class="aux-content-widget-2 movie_info_content">
+			{# Movie info #}
+			<div>
+					{# Basic information ablot movie such as name,rating,year, mapp,total vote,totalreview,total vitited users ect#}
+					<div class='movie_photo'>
+					<img src="{{ movie.cover_url}}" >
+					</div>
+			</div>
+			<div class="aux-content-widget-2 movie_info_content">
+			{# Video list #}
+			<div>
+					{# Basic information ablot movie such as name,rating,year, mapp,total vote,totalreview,total vitited users ect#}
+			</div>
+		</div>
+		<div class="aux-content-widget-2 movie_info_content">
+			{# Cast and charactor #}
+			<div>
+					{# Basic information ablot movie such as name,rating,year, mapp,total vote,totalreview,total vitited users ect#}
+			</div>
+		</div>
+		<div class="aux-content-widget-2 movie_info_content">
+			{# Other information #}
+			<div>
+					{# Basic information ablot movie such as name,rating,year, mapp,total vote,totalreview,total vitited users ect#}
+			</div>
+		</div>
 </div>
 {% endblock %}
