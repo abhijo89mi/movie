@@ -54,23 +54,46 @@ def register(request,to_return=''):
 				to_return={'success':False,'message':''}
 	return HttpResponse(simplejson.dumps(to_return), mimetype='application/json')
 	
-def myaccount(request):
-	if not request.user.is_anonymous():
-		user=request.user
-		profile=user.get_profile()
+def myaccount(request,user_id=None):
+	user = request.user
+	if user.is_anonymous():
+			return HttpResponseRedirect(reverse('index'))
+	profile=user.get_profile()
+	city = False
+	if user_id == None:
+		if user.is_anonymous():
+			return HttpResponseRedirect(reverse('index'))
 	else:
-		return HttpResponseRedirect(reverse('index'))
-		
-	context={'profile':profile}
+		user = User.objects.get(id=int(user_id))
+		#city = user.get_profile().city
+	context={'profile':profile ,'page_user':user}
 	return render_to_response('main/myaccount.html', context, context_instance = RequestContext(request))
+	
+def friend_request(request, user_id):
+	user = request.user
+	requested_user = User.objects.get(id=user_id)
+	friend, created = Friend.objects.get_or_create(user_requesting=user, user_accepting=requested_user)
+	to_return = { 'message' : 'success', 'success' : True }
+	return HttpResponse(simplejson.dumps(to_return), mimetype='application/json')
+	
+def friend_accept(request, user_id):
+	user = request.user
+	requesting_user = User.objects.get(username=user_id)
+	friend = Friend.objects.get(user_requesting=requesting_user, user_accepting=user)
+	friend.are_friends = True
+	friend.save()
+	profile = user.get_profile()
+	profile.friends.add(requesting_user)
+	profile.save()
+	to_return = { 'message' : 'success', 'success' : True }
+	return HttpResponse(simplejson.dumps(to_return), mimetype='application/json')
 
 def edit_profile_page(request):
-
 	current_password = request.POST.get('current_password', '')
 	new_password = request.POST.get('new_password', '')
 	confirm_password = request.POST.get('confirm_password', '')
 	password_error = ''
-
+	country=Countries.objects.all()
 	if request.POST:
 		gender = request.POST.get('gender', '')
 		first_name = request.POST.get('first_name', '')
@@ -79,11 +102,17 @@ def edit_profile_page(request):
 		day = request.POST.get('day', '')
 		month = request.POST.get('month', '')
 		year = request.POST.get('year', '')
+		city= request.POST.get('city')
+		country= request.POST.get('country')
 		user = request.user
 		user.first_name = first_name
 		user.last_name = last_name
 		user.email = email
 		user.get_profile().gender = gender
+		country_obj=Countries.objects.get(name=country)
+		city_name,c = City.objects.get_or_create(name=city,country=country_obj,slug=country+'_'+city)
+		user.get_profile().city=city_name
+		
 		
 		if day.isdigit() and month.isdigit() and year.isdigit():
 			date = datetime.date(int(year), int(month), int(day))
@@ -107,7 +136,7 @@ def edit_profile_page(request):
 		user.get_profile().save()
 
 	context = { 'days' : range(1, 32), 'months' : MONTHS, 'years' : range(1900, 2012), 'current_password' : current_password, 'new_password' : new_password,
-			   'confirm_password' : confirm_password, 'password_error' : password_error, }
+			   'confirm_password' : confirm_password, 'password_error' : password_error,'country':country }
 	
 	return render_to_response('main/edit_profile_page.html', context, context_instance = RequestContext(request))
 
@@ -133,7 +162,6 @@ def delete_pic(request):
 	profile = request.user.get_profile()
 	profile.profile_pic = 'images/profile_pics/profile.png'
 	profile.save()
-
 	import json
 	to_return = {'message' : 'Profile picture reset ...', 'success' : True }
 	return HttpResponse(json.dumps(to_return), mimetype='application/json')

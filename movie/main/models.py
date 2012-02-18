@@ -417,6 +417,7 @@ class Person(models.Model):
 	note=models.TextField(blank=True, null=True)
 	default_info=models.TextField(blank=True, null=True)
 	biodata=models.TextField(blank=True, null=True)
+	date_of_birth=models.CharField(max_length=100,)
 	photo=models.ManyToManyField('Photo', verbose_name=u'Photo',related_name="Photo_M2M_Person",blank=True)
 	
 	def __unicode__(self):
@@ -514,3 +515,122 @@ class Video(models.Model):
 		verbose_name = 'Video'
 		verbose_name_plural = 'Videos'
 		db_table = 'Video'
+
+class Boxoffice(models.Model):
+	imdbid  = models.ForeignKey('Movie', verbose_name=u'Movie')
+	country= models.ManyToManyField('Countries', verbose_name=u'country')
+	date		= models.DateField(null=True, blank=True)
+	
+	class Meta:
+		verbose_name = 'Boxoffice'
+		verbose_name_plural = 'Boxoffice'
+		db_table = 'Boxoffice'
+		 
+class Upcoming(models.Model):
+	imdbid  = models.ForeignKey('Movie', verbose_name=u'Movie')
+	country= models.ManyToManyField('Countries', verbose_name=u'country')
+	date		= models.DateField(null=True, blank=True) 
+	
+	class Meta:
+		verbose_name = 'Upcoming'
+		verbose_name_plural = 'Upcoming'
+		db_table = 'Upcoming'
+class Opening(models.Model):
+	imdbid  = models.ForeignKey('Movie', verbose_name=u'Movie')
+	country= models.ManyToManyField('Countries', verbose_name=u'country')
+	date		= models.DateField(null=True, blank=True) 
+	
+	class Meta:
+		verbose_name = 'Opening'
+		verbose_name_plural = 'Opening'
+		db_table = 'Opening'
+		
+class Intheaters(models.Model):
+	imdbid  = models.ForeignKey('Movie', verbose_name=u'Movie')
+	country= models.ManyToManyField('Countries', verbose_name=u'country')
+	date		= models.DateField(null=True, blank=True) 
+	
+	class Meta:
+		verbose_name = 'Intheaters'
+		verbose_name_plural = 'Intheaters'
+		db_table = 'Intheaters'
+
+
+
+
+class Updatehistory(models.Model):
+	
+	date  = models.DateTimeField(null=True, blank=True)
+	boxoffice  = models.IntegerField(null=True, blank=True,default=0)
+	upcoming  = models.IntegerField(null=True, blank=True,default=0)
+	intheaters  = models.IntegerField(null=True, blank=True,default=0)
+	opening  = models.IntegerField(null=True, blank=True,default=0)
+	user  = models.IntegerField(null=True, blank=True,default=0)
+	movie  = models.IntegerField(null=True, blank=True,default=0)
+	akas  	= models.IntegerField(null=True, blank=True,default=0)
+	
+	plot= models.IntegerField(null=True, blank=True,default=0)
+	certificates= models.IntegerField(null=True, blank=True,default=0)
+	countries= models.IntegerField(null=True, blank=True,default=0)
+	genres= models.IntegerField(null=True, blank=True,default=0)
+	sound_mix= models.IntegerField(null=True, blank=True,default=0)
+	animation_department= models.IntegerField(null=True, blank=True,default=0)
+	art_department= models.IntegerField(null=True, blank=True,default=0)
+	art_direction= models.IntegerField(null=True, blank=True,default=0)
+	assistant_director= models.IntegerField(null=True, blank=True,default=0)
+	camera_and_electrical_department= models.IntegerField(null=True, blank=True,default=0)
+	cast= models.IntegerField(null=True, blank=True,default=0)
+	casting_department= models.IntegerField(null=True, blank=True,default=0)
+	casting_director= models.IntegerField(null=True, blank=True,default=0)
+	cinematographer= models.IntegerField(null=True, blank=True,default=0)
+	color_info= models.IntegerField(null=True, blank=True,default=0)
+	costume_department= models.IntegerField(null=True, blank=True,default=0)
+	costume_designer= models.IntegerField(null=True, blank=True,default=0)
+	director= models.IntegerField(null=True, blank=True,default=0)
+	distributors= models.IntegerField(null=True, blank=True,default=0)
+	editor= models.IntegerField(null=True, blank=True,default=0)
+	languages= models.IntegerField(null=True, blank=True,default=0)
+	make_up= models.IntegerField(null=True, blank=True,default=0)
+	miscellaneous_companies= models.IntegerField(null=True, blank=True,default=0)
+	miscellaneous_crew= models.IntegerField(null=True, blank=True,default=0)
+	music_department= models.IntegerField(null=True, blank=True,default=0)
+	original_music= models.IntegerField(null=True, blank=True,default=0)
+	producer= models.IntegerField(null=True, blank=True,default=0)
+	production_companies= models.IntegerField(null=True, blank=True,default=0)
+	production_design= models.IntegerField(null=True, blank=True,default=0)
+	production_manager= models.IntegerField(null=True, blank=True,default=0)
+	runtimes= models.IntegerField(null=True, blank=True,default=0)
+	set_decoration= models.IntegerField(null=True, blank=True,default=0)
+	sound_crew= models.IntegerField(null=True, blank=True,default=0)
+	special_effects_companies= models.IntegerField(null=True, blank=True,default=0)
+	special_effects_department= models.IntegerField(null=True, blank=True,default=0)
+	stunt_performer= models.IntegerField(null=True, blank=True,default=0)
+	transportation_department= models.IntegerField(null=True, blank=True,default=0)
+	visual_effects= models.IntegerField(null=True, blank=True,default=0)
+	writer= models.IntegerField(null=True, blank=True,default=0)
+	Video= models.IntegerField(null=True, blank=True,default=0)
+	release_date = models.IntegerField(null=True, blank=True,default=0)
+
+	
+	def __unicode__(self):
+		return u'%s' % (self.date)
+	class Meta:
+		verbose_name = 'Updatehistory'
+		verbose_name_plural = 'Updatehistory'
+		db_table = 'Updatehistory'
+
+
+class Person_Statistics(models.Model):
+	date  = models.DateTimeField(null=True, blank=True)
+	person= models.ForeignKey('Person', verbose_name=u'Person')
+	name=models.BooleanField(default=False)
+	note=models.BooleanField(default=False)
+	default_info=models.BooleanField(default=False)
+	biodata=models.BooleanField(default=False)
+	date_of_birth=models.BooleanField(default=False)
+	photo=models.BooleanField(default=False)
+	
+	class Meta:
+		verbose_name = 'Person_Statistics'
+		verbose_name_plural = 'Person_Statistics'
+		db_table = 'Person_Statistics'

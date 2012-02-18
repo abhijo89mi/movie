@@ -126,6 +126,14 @@ class LogEntryAdmin(admin.ModelAdmin):
 
 class VideoAdmin(admin.ModelAdmin):
 	list_display = ('movie_id','imdbid','video_url','movie_url')
+class Person_StatisticsAdmin(admin.ModelAdmin):
+	def person_name(self,obj):
+		return obj.person.name
+	
+	list_display = ('person_name','date','name','note','default_info','biodata','date_of_birth','photo')
+	
+class UpdatehistoryAdmin(admin.ModelAdmin):
+	list_display = ('date','boxoffice','upcoming','intheaters','opening','user','movie','akas','plot','certificates','countries','genres','sound_mix','animation_department','art_department','art_direction','assistant_director','camera_and_electrical_department','cast','casting_department','casting_director','cinematographer','color_info','costume_department','costume_designer','director','distributors','editor','languages','make_up','miscellaneous_companies','miscellaneous_crew','music_department','original_music','producer','production_companies','production_design','production_manager','runtimes','set_decoration','sound_crew','special_effects_companies','special_effects_department','stunt_performer','transportation_department','visual_effects','writer','Video','release_date')
 
 
 # Admin model registration 
@@ -144,3 +152,4 @@ admin.site.register(Languages, LanguagesAdmin)
 admin.site.register(Countries, CountriesAdmin)
 admin.site.register(Video, VideoAdmin)
 admin.site.register(Photo, PhotoAdmin)
+admin.site.register(Person_Statistics, Person_StatisticsAdmin)
