@@ -67,7 +67,7 @@
 					
 					{%for cast in movie.cast.all %}
 					<tr>
-						<td><img class='cast_photo' src="{{MEDIA_URL}}person/"{{cast.name|get_cast_photo}}></td>
+						<td><img class='cast_photo' src="{{MEDIA_URL}}person/{{cast.name|get_cast_photo}}"></td>
 						<td>{{cast.name}}</td>
 						<td>{{cast.charactor|get_cast_charactor_name}}</td>
 					</tr>
