@@ -47,7 +47,7 @@
 						</div>
 						<div class='movie_basic_info'>
 								<h2>{{ movie.title|title }}</h2>
-								<label class='label-div'>Genre(s)</label> :{% for genre in movie.genre.all%} {{ genre }}, {% endfor %} <br>
+								<label class='label-div'>Genre(s)</label> :{% for genre in movie.genres.all%} {{ genre }}, {% endfor %} <br>
 								<label class='label-div'>Language(s)</label> :{% for language in movie.languages.all%} {{ language }}, {% endfor %} <br>
 								<label class='label-div'>Countrie(s)</label> :{% for countrie in movie.countries.all%} {{ countrie }}, {% endfor %} <br>
 								<label class='label-div'>Year</label> : {{ movie.year }} <br>
