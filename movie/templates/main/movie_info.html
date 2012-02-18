@@ -1,6 +1,6 @@
 {% extends "main/base.html" %}
 {% block title %} Information about {{ movie.title|title }}{% endblock %}
-{% block description %} {% endblock %}
+{% block description %}{{ movie.summary}} {% endblock %}
 {% block keywords %} {% endblock %}
 {% block extra-head %}
 	<style>
@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block content %} 
+
 {# MAIN BLOCK TO SHOW ALL INFORMARION #}
 <div class="sidebar left">
   {% block sidebar-left %}
@@ -31,12 +32,14 @@
 </div>
 <div class="container right">
 			<div class="aux-content-widget-2 movie_info_content">
-			{# Movie info #}
-			<div>
-					{# Basic information ablot movie such as name,rating,year, mapp,total vote,totalreview,total vitited users ect#}
-					<div class='movie_photo'>
-					<img src="{{ movie.cover_url}}" >
-					</div>
+				{# Movie info #}
+				<div>
+						{# Basic information ablot movie such as name,rating,year, mapp,total vote,totalreview,total vitited users ect#}
+						<div class='movie_photo'>
+							Basic information ablot movie such as name,rating,year, mapp,total vote,totalreview,total vitited users ect
+							<img src="{{ movie.cover_url}}" >
+						</div>
+				</div>
 			</div>
 			<div class="aux-content-widget-2 movie_info_content">
 			{# Video list #}
