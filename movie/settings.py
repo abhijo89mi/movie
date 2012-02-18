@@ -91,7 +91,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'tracking.middleware.VisitorTrackingMiddleware',
     'tracking.middleware.BannedIPMiddleware',
-    'tracking.middleware.VisitorCleanUpMiddleware'
+    'tracking.middleware.VisitorCleanUpMiddleware',
+    'django.middleware.cache.CacheMiddleware',
 )
 
 ROOT_URLCONF = 'movie.urls'
@@ -157,11 +158,15 @@ LOGGING = {
         },
     }
 }
-
+'''
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'cache_table',
+    }
+}
 AUTH_PROFILE_MODULE = 'front_end.UserProfile'
 #=============== USER TRACKING SYSTEM =================
 
 
 '''
-'''
-
