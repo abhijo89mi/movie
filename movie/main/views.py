@@ -7,6 +7,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.conf import settings
 from models import *
 from form import *
+from datetime import datetime
 from front_end.models import *
 from django.core.mail import send_mail
 from django.contrib.auth import authenticate, login, logout
@@ -41,12 +42,24 @@ def index(request,template=''):
 def home(request,template='main/index.html'):
   if request.user.is_anonymous():
 	return HttpResponseRedirect(reverse('index'))
- 
-  context={}
+  today = datetime.date.today()
+  boxoffice_movies =Boxoffice.objects.order_by('-imdbid__rating')[:2]
+  intheater_movies =Intheaters.objects.order_by('-imdbid__rating')[:2]
+  
+  
+  context={
+    
+    'boxoffice_movies':boxoffice_movies,
+    'intheater_movies':intheater_movies
+  
+  }
   return render_to_response('main/index.html', context, context_instance = RequestContext(request))
 
 def logout_view(request):
   logout(request)
   return HttpResponseRedirect(reverse('index'))
 
-
+def movie_info(request , movie_id):
+  movie=Movie.objects.get(id=movie_id)
+  context={'movie':movie}
+  return render_to_response('main/movie_info.html', context, context_instance = RequestContext(request))
