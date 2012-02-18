@@ -369,9 +369,9 @@ a:hover{text-decoration:underline;}
 #header{ margin:0px auto; padding:0px; width:1100px; clear:both;}
 .logo {margin-top:15px;height:76px;}
 .topLinks{width:266px;}
-.linkLeft{background:url(images/linkLeftBg.png) no-repeat left;width:18px;height:34px;}
-.linkRight{background:url(images/linkRightBg.png) no-repeat left;width:18px;height:34px;}
-ul.links{ background: url(images/linkBg.png) repeat-x; height:34px;float:left;width:230px}
+.linkLeft{/*background:url(images/linkLeftBg.png) no-repeat left ;*/width:18px;height:34px;}
+.linkRight{/*background:url(images/linkRightBg.png) no-repeat left;*/width:18px;height:34px;}
+ul.links{/* background: url(images/linkBg.png) repeat-x; height:34px;*/float:left;width:230px}
 ul.links li{ display:inline; float: left; display: block; line-height:34px; text-align:center; background:url(images/navLine.png) no-repeat right; width:120px; padding-right:5px}
 ul.links li a{color:#fff;}
 ul.links li a:hover{text-decoration:none;}
@@ -578,7 +578,7 @@ div.reviewBox a{color:#1C6EA6;}
 .pagination a:hover{border: 1px solid #1A7191;background-color:#1A7191;color: #ffffff;}
 
 ul.errors{margin:10px;color:red;}
- .footer{ width:1065px; margin:0 auto; padding:20px 10px 20px 25px; background:#506C81 url(images/footer.jpg) repeat-x; min-height:160px; font-family:" Arial" ,Liberation Sans,DejaVu Sans,sans-serif; border-bottom:2px solid #384B59; border-top:2px solid #9FAAB0}
+ .footer{ width:1065px; margin:0 auto; padding:20px 10px 20px 25px;background:#506C81 ;/* url(images/footer.jpg) repeat-x;*/ min-height:160px; font-family:" Arial" ,Liberation Sans,DejaVu Sans,sans-serif; border-bottom:2px solid #384B59; border-top:2px solid #9FAAB0}
 .likeBox{width:295px;min-height:200px;}
 .col{width:200px;min-height:200px;margin-left:22px;}
 .col h3{color:#FBBC00;font-size:15px;}
@@ -590,7 +590,7 @@ ul.errors{margin:10px;color:red;}
  .footer ul li{ display:block; line-height:22px; list-style:none; background:url(images/arrow.gif) no-repeat left; padding-left:12px; font-size:12px}
 .footer ul li a{color:#fff;}
 .footer ul.quickStatistics li{ font-weight:bold; list-style:none; font-size:12px; color:#fff; background:none; padding-left:0px}
-.footerBottom{ width:1060px; margin:0 auto; padding:0px 20px; height:50px; background: url(images/footerBottom.jpg) repeat-x; font-family:" Arial" ,Liberation Sans,DejaVu Sans,sans-serif}
+.footerBottom{ width:1060px; margin:0 auto; padding:0px 20px; height:50px; /*background: url(images/footerBottom.jpg) repeat-x; */font-family:" Arial" ,Liberation Sans,DejaVu Sans,sans-serif}
 .footerLeft{width:70%;}
 .footerLeft p{line-height:50px;font-weight:bold;color:#44596a;font-size:11px;}
 .footerRight{width:143px;text-align:right;position:relative;top:-25px;}

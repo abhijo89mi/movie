@@ -8,11 +8,11 @@
     
     <head>{% load metatag_tags %} {% metatag_populate %}
         <title>{% if metatag.title %}{{ metatag.title }}{%else%}{% block title %}{% endblock %}{% endif %}</title>
-        <meta name="description" content="{{ metatag.description }}"/>
+        <meta name="description" content="{{ metatag.description }} {% block description %}{% endblock %}"/>
         <link rel="icon" type="image/ico" href="{% url index %}favicon.ico" />
-	<link rel="icon" href="{{ MEDIA_URL }}images/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="{{ MEDIA_URL }}images/favicon.ico" type="image/x-icon"> 
-        <meta name="keywords" content="{{ metatag.keywords }}" />{% if metatag.google_pagetrack_category %}
+        <link rel="icon" href="{{ MEDIA_URL }}images/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ MEDIA_URL }}images/favicon.ico" type="image/x-icon"> 
+        <meta name="keywords" content="{{ metatag.keywords }} {% block keywords %}{% endblock %} " />{% if metatag.google_pagetrack_category %}
         <meta name="google-site-verification"content="{{ metatag.google_pagetrack_category }}">{% endif %}
         <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
         <link type="text/css" rel="stylesheet" media="screen" href="{{ MEDIA_URL }}css/search.css">
@@ -33,7 +33,7 @@
             .my_account_link:hover{background-position: 0 -34px;}
             .logout_link{float:right;display:block;width: 130px; height: 34px;background: url("{{ MEDIA_URL }}images/main/buttons/Logout.png") no-repeat 0 0;}
             .logout_link:hover{background-position: 0 -34px;}
-            .edit_account_link{float:right;display:block; margin-top: 15px; width: 130px; height: 34px;background: url("{{ MEDIA_URL }}images/main/buttons/edit.png") no-repeat 0 0;}
+            .edit_account_link{float:right;display:block; margin-top: 15px; width: 56px; height: 17px;background: url("{{ MEDIA_URL }}images/main/buttons/edit.png") no-repeat 0 0;}
             h1 {float: left; font-size: 22px;font-weight:bold; height: 40px; color:#0099ff; line-height: 40px; text-align: center; margin: 0; }
             /*Error box styling*/
             #error { display: none; }

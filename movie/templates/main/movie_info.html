@@ -1,0 +1,22 @@
+{% extends "main/base.html" %}
+{% block title %} Information about {{ movie.title|title }}{% endblock %}
+{% block description %} {% endblock %}
+{% block keywords %} {% endblock %}
+{% block extra-head %}
+	<style>
+		.container {margin-right: 20px; width: 800px; margin-top: 6px;}
+	</style>
+{% endblock %}
+
+{% block content %} 
+{# MAIN BLOCK TO SHOW ALL INFORMARION #}
+<div class="sidebar left">
+  {% block sidebar-left %}
+		<div class="aux-content-widget-2">
+			
+		</div>
+  {% endblock %}
+</div>
+<div class="container right">
+</div>
+{% endblock %}

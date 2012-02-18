@@ -1,21 +1,231 @@
 {% extends "main/index.html" %}
+{% load friends %}
 {% block extra-head %}
 {{ block.super }}
 	<style>
 		
-		.profile_photo{display:block;width: 97px; height: 140px;float:left}
+		.profile_photo{display:block;width: 150px; height: 140px;float:left;margin-left: 10px;}
 		.profile_basic_info{display:block;width: 350px; height: 200px;float:left}
+		
+		#user-pic-box{ display:block; min-height:125px; text-align: center; }
+		#user-stats, .stats{ width: 100%; }
+		#user-stats{ padding-top: 14px;}
+
+		#friend-list, #friend-request-list{ padding: 0 0 10px 0; width: 100%;}
+		.friend-info-pic { width:50px; float: left;}
+		.friend-name { font-size: xx-small;text-align: center !important;text-decoration: none !important;}
+		div.friend-name { font-size: small;text-align: center !important;text-decoration: none !important;}
+		.friend-info { padding: 0 10px; float: left; line-height: 14px; width: 60px; overflow: hidden; }
+		.friend-info span.blue { font-weight: bolder; }
+		.friend-info-box { padding-top: 10px; display: block; }
+		.friend-info-box, .friend-request{ width: 100%; }
+		.friends-count, .stats { padding: 3px 0px; font-weight:800; }
+		.friends-count img, .stats img { vertical-align: middle;}
+		.stats { color: #666666; text-align: center; padding-left: 15px; }
+		.stats-icon { margin-top: -8px; }
+		.stats-title { text-align: left; }
+		.friends-count {font-size: 14px;}
+
+		.splitter_border { background:  url({{ MEDIA_URL }}images/main/loc_border.png) no-repeat scroll transparent; border: 0; width:100%;height:2px;float:left;  }
+		.bottom-spacer{ padding:16px; height:2px;}
+
+		/* buttons */
+		#add_friend_box, #see_more_box_right{padding-right: 0; padding-left: 0; float: left; }
+		#see_more_box_left{padding-right: 47px; padding-left: 47px;}
+		#see_more_box_right{ float: right;}
+		.add_friend_button, .see_more_button{ display:block; float: left; border: 0; margin:0; padding:0; display: block; height: 30px;  cursor: pointer;}
+		.add_friend_button:hover, .see_more_button:hover{background-position: 0 -30px;}
+		.add_friend_button { background: url("{{ MEDIA_URL}}images/main/buttons/orangeButton_AddAsFriend.png") 0 0 no-repeat transparent; width: 180px;}
+		.see_more_button { background: url("{{ MEDIA_URL}}images/main/buttons/orangeButton_SeeMore.png") 0 0 no-repeat transparent; width: 104px;}
+
+		/* pinned deals */
+		.pinned-deals{width:100%; display:block;}
+		.pin-count { color: #ff6600; }
+		.pin-image-box { float: left; width: 25px; padding: 15px 5px 0 13px; }
+		.pin-image { vertical-align: middle; }
+		.deal-review-box { width: 120px; float: right; padding: 9px 2px;}
+		.deal-review-box img { vertical-align: middle; }
+		.address-box, .pinned-deal-address-box { width: 250px; float: left; padding: 9px 4px;}
+
+		.deal-review-box h5, .deal-review-box h3, .address-box h5, .address-box h3 { color: #666; font-size: 13px; }
+		.address-box h5, .address-box h6, .deal-review-box h5 { padding: 0; margin: 0; font-weight: 500; }
+		.user-review { padding-bottom: 15px; }
+		.review-box .address-box { padding-left: 0; }
+
+		/* Review deals*/
+		.user-review, .review-box{ width: 100%; }
+
+		.like_a_fake, .a_fake{color:#0099ff;text-decoration:underline; font-weight: bold; }
+		.like_a_fake:hover, .a_fake:hover{text-decoration:underline; cursor:pointer;}
+		.like_a_fake:visited{color:#0099ff;}
 	</style>
+	<script>
+				var friend_accept_url = '';
+		function friend_request() {
+	    /* Place a asynchronus Ajax call to add friend request ... */
+	    $.ajax({
+				url: '{% url friend_request page_user.id %}',
+				type: 'GET',
+				data: $(this).serialize(),
+				dataType: 'json',
+				success: function(data) {
+						if (data.success ) {
+							window.location.reload(); window.location.reload();
+						} else {
+							error('Server Error', false, 'There was problem retrieving data');
+						}
+				}
+			});	    
+    }
+
+    function friend_accept(url) {
+	    /* Place a asynchronus Ajax call to add friend request ... */
+	    $.ajax({
+				url: friend_accept_url,
+				type: 'GET',
+				data: $(this).serialize(),
+				dataType: 'json',
+				success: function(data) {
+						if (data.success ) {
+							window.location.reload(); window.location.reload();
+						} else {
+							error('Server Error', false, 'There was problem retrieving data');
+						}
+				}
+	    });	    
+    }
+	$(document).ready(function(){
+
+		
+    
+    
+    $("#signup-add-friend").fancybox({
+			'padding'		: 0,
+			'height'		: 390,
+			'width'			: 850, 
+			'autoDimensions'	: false,
+			'opacity'		: true,
+			'overlayShow'		: true,
+			'showCloseButton' 	:true,
+			'hideOnOverlayClick'    : false,
+			'transitionIn'		: 'fade',
+			'transitionOut'		: 'fade',
+			'overlayColor'  	: '#4fb9ff',
+			'type'			:'iframe',
+    });
+
+    $('.add_friend_button').click(function(){
+        {% if not user.is_anonymous %}
+            error('Friend requested...', false,'Friend  request sent. You have to wait for confirmation.');
+        {% endif %}
+    });
+    
+    $('.friend_accept').click(function(){
+			error('Accept Friend request...', false,'Accept the friend request?'); 
+			friend_accept_url = $(this).attr('rel');
+			});
+			
+    {% block error_box_ok %}
+			{% if  not user.is_anonymous %}
+			if ( $('#error-title').html() == 'Friend requested...' ){
+					friend_request();
+			}else if ( $('#error-title').html() == 'Accept Friend request...' ){
+					friend_accept();
+			}
+			{% endif %}
+    
+		{% endblock %}
+	});
+
+</script>
+{% endblock %}
+
+
+{% block sidebar-left %}
+	<div class="aux-content-widget-2">
+		<div class="">
+			{# User Profile Pic #}
+			{% if  page_user == user %}
+			<div class="friend-name">{% if user.first_name %}{{ user.first_name}} {{ user.last_name}} {% else %} {{ user }} {% endif %}</a></div><br>
+			<img src="{{MEDIA_URL}}{{profile.profile_pic}}" class="profile_photo">
+				
+			{% else %}
+			<div class="friend-name">{% if page_user.get_profile.user.first_name%}{{ page_user.get_profile.user.first_name }} {{ page_user.get_profile.user.last_name }} {% else %}{{ page_user.get_profile.user }} {% endif %}</a></div><br>
+				<img src="{{MEDIA_URL}}{{ page_user.get_profile.profile_pic }}" class="profile_photo">
+				
+			{% endif %}
+		</div>
+		<div class="clear"></div>
+		{# Put All user Basic information Such as Recent visited Movie , Friend List , Last Reviewd Movie , Friend Last Reviewed movie etc#}
+		<div id="user-stats">
+			<table class="stats">
+				<tr>
+						<td><img class="stats-icon" src="{{ MEDIA_URL }}images/main/user-icon-24px.png" width="20px" height="20px" /></td>
+						<td><span class="blue">{{ page_user.get_profile.friends.count }}</span></td>
+						<td class="stats-title">&nbsp;Friends</td>
+				</tr>
+				<tr>
+						<td><img class="stats-icon" src="{{ MEDIA_URL }}images/main/pin-small.png" width="20px" height="20px" /></td>
+						<td><span class="blue">{{ page_user.get_profile.viewed_movie.all.count }}</span></td>
+						<td class="stats-title">&nbsp;Viewd Movies</td>
+				</tr>
+				<tr>
+						<td><img class="stats-icon" src="{{ MEDIA_URL }}images/main/single-star.png" width="20px" height="20px" /></td>
+						<td><span class="blue">{{ page_user.businessreview_set.all.count }}</span></td>
+						<td class="stats-title">&nbsp;Reviews</td>
+				</tr>                
+      </table>
+		</div>
+		{#OTHER USER INFORMATION SUCH AS ACCEPT THE USER , REQUEST PENDING INFORMATION #}
+		{% if  page_user != user %}
+        {% if not user|are_friends:page_user %}
+            <div class="clear"></div>
+            <div class="splitter_border"></div>
+        
+            <div id="add_friend_box" class="left-user-column-padding">
+                {% if user|sent_friend_request:page_user %}
+                    <span class="blue">Approval pending</span>
+                {% else %}
+									{% if not user|sent_friend_request:page_user  %}    
+											<div id="add_friend" class="add_friend_button">&nbsp;</div>
+									{% endif %}
+								{% endif %}
+            </div>
+        {% endif %}
+		{% else %}
+        {% for friend in user|friend_requests %}
+            <div class="friend-request">
+                <span class="a_fake friend_accept" rel="{% url friend_accept friend.user_requesting %}">Friend Request from {{ friend.user_requesting }}</span>
+            </div>            
+        {% endfor %}
+		{% endif %}
+	</div>
+
 {%endblock%}
 {% block main-container %}
-<h2> Welcome {{user.first_name}} {{user.last_name}}<a class="edit_account_link" href="{% url edit_profile_page %}" ></a></h2>
+<h2> Welcome {{user.first_name}} {{user.last_name}} {% if  page_user == user %}<a class="edit_account_link" href="{% url edit_profile_page %}" ></a> {% endif %}</h2>
 <div class="aux-content-widget-2">
-	<div class="profile_photo">
-	{# User Profile Pic #}
-	<img src="{{MEDIA_URL}}{{profile.profile_pic}}" class="profile_photo">
-	</div>
-	<div class="profile_basic_info">
-	{# Put All user Basic information Such as Recent visited Movie , Friend List , Last Reviewd Movie , Friend Last Reviewed movie etc#}
-	</div>
+	{# MIDDLE FIRST BLOCK #}
+	
 </div>
 {% endblock %}
+	{% block sidebar_right %}
+		<div class="aux-content-widget-2">
+			<h2>Friends List</h2>
+			{#This will show all friends list with der photo it will show max 10 friends  #}
+			{% if page_user.get_profile.friends.all %}
+			<div class="clear"></div>
+			<div class="splitter_border"></div>
+			<div id="friend-list">
+				{% for friend in page_user.get_profile.friends.all %}
+					<div class="friend-info">
+						<a href="{% url user_page friend.id %}"><img src="{{MEDIA_URL}}{{friend.get_profile.profile_pic}}" class="friend-info-pic"><br>
+						<span class="blue friend-name">{{ friend|display_name }}</a></span>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="clear"></div>
+			{% endif %}
+		</div>
+	{% endblock %}
+

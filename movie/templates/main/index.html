@@ -4,15 +4,44 @@
 <style>
 .container{margin-top: 5px; width: 620px;}
 .submain{margin-top: 15px; margin-left: 5px; border-right-width: 1px; margin-right: 5px;min-height: 200px;}
+.x-small{font-size: x-small ;}
 </style>
 {% endblock %}
 {% block content %}
 
 <div class="sidebar left">
-	  {% block sidebar-left %}
+  {% block sidebar-left %}
   <div class="aux-content-widget-2">
     <h2> Top Box Office </h2>
-    
+    <table width='150px'>
+      <tr>
+	<td>Name</td>
+	<td>Rating</td>
+      <tr>
+     {% for boxoffice_movie in boxoffice_movies %}
+	
+	  <tr>
+	    <td><a class='x-small' href="{% url movie boxoffice_movie.imdbid.id %}">{{ boxoffice_movie.imdbid.title|truncatewords:1|title }}</a></td>
+	    <td>{{ boxoffice_movie.imdbid.rating }}</td>
+	  </tr>
+     {% endfor %}
+    </table>
+  </div>
+  <div class="aux-content-widget-2">
+    <h2> Top Intheater </h2>
+    <table width='150px'>
+      <tr>
+	<td>Name</td>
+	<td>Rating</td>
+      <tr>
+     {% for intheater_movie in intheater_movies %}
+	
+	  <tr>
+	    <td><a class='x-small' href="">{{ intheater_movie.imdbid.title|truncatewords:1|title }}</a></td>
+	    <td>{{ intheater_movie.imdbid.rating }}</td>
+	  </tr>
+     {% endfor %}
+    </table>
   </div>
   {% endblock %}
 </div>
@@ -77,6 +106,7 @@
   {% endblock %}
 </div>
 <div class="sidebar right">
+  {% block sidebar_right %}
   <div class="aux-content-widget-2">
 		<h2> Connect with Muvidb </h2>
 		<div style="overflow: hidden; width: 170px; height: 330px;">
@@ -86,10 +116,7 @@
 		<a href="https://twitter.com/muvidb" class="twitter-follow-button">Follow @muvidb</a>
 		<script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
 	</div>
-  {% block sidebar-right %}
-  <div class="aux-content-widget-2">
-    kghdfkgh
-  </div>
+  
   {% endblock %}
 	
 </div>

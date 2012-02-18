@@ -41,68 +41,85 @@
 <div id="main-div" class="rounded_corner"> 
 	<form name="myform" id="myform" action="{% url edit_profile_page %}" method="POST">{% csrf_token %}
     <div >
-			<form action="." method="post">{% csrf_token %}
-	    <div class="aux-content-widget-2">
-				<iframe src="{% url profile_pic %}" frameborder="0" scrolling="no" class="upload_box" ></iframe>
-				<div class="pbox left">
+      <form action="." method="post">{% csrf_token %}
+      <div class="aux-content-widget-2">
+      <iframe src="{% url profile_pic %}" frameborder="0" scrolling="no" class="upload_box" ></iframe>
+      <div class="pbox left">
         <table class="main_details_table">
-					<tr>
-							<td colspan="2">
-						<h4 class="bottom-border margin_top_spacer">Edit your profile</h4>
-							</td>
-					</tr>
-					<tr>
-							<td><h6>First Name</h6></td>
-							<td><input class="textbox" name="first_name" type="text" value="{% if user.first_name %}{{ user.first_name }}{% endif %}" maxlength="30" /></td>
-					</tr>
-					<tr>
-							<td><h6>Last Name</h6></td>
-							<td><input class="textbox" name="last_name" type="text" value="{% if user.last_name %}{{ user.last_name }}{% endif %}" maxlength="30" /></td>
-					</tr>
-					<tr>
-							<td colspan="2">
-						<h5 class="bottom-border-line">&nbsp;</h5>
-							</td>
-					</tr>
-					<tr>
-							<td><h6>Email</h6></td>
-							<td><input class="textbox" name="email" type="text" value="{% if user.email %}{{ user.email }}{% endif %}" /></td>
-					</tr>
-					<tr>
-							<td colspan="2">
-						<h5 class="bottom-border-line">&nbsp;</h5>
-							</td>
-					</tr>
-					<tr>
-							<td><h6>Gender</h6></td>
-							<td>
-									<input name="gender" type="radio" value="M" {% if user.get_profile.gender = 'M' %}checked=yes{% endif %} /><span class="grey">Male</span>
-									<input name="gender" type="radio" value="F" {% if user.get_profile.gender = 'F' %}checked=yes{% endif %} /><span class="grey">Female</span>
-							</td>
-					</tr>
-					<tr>
-							<td><h6>Birthday</h6></td>
-							<td>
-									<select name="day">
-											<option>Day</option>
-											{% for d in days %}
-													<option {% if user.get_profile.birthday.day == d %}selected=selected{% endif %}>{{ d }}</option>                                
-											{% endfor %}
-									</select>
-									<select name="month">
-											<option>Month</option>
-											{% for m, full_month in months %}
-													<option {% if user.get_profile.birthday.month == forloop.counter %}selected=selected{% endif %} value="{{ m }}">{{ full_month }}</option>
-											{% endfor %}                            
-									</select>
-									<select name="year">
-											<option>Year</option>
-											{% for y in years reversed %}
-													<option {% if user.get_profile.birthday.year == y %}selected=selected{% endif %}>{{ y }}</option>
-											{% endfor %}                                
-									</select>                        
-							</td>
-					</tr>                
+	    <tr>
+	      <td colspan="2">
+		<h4 class="bottom-border margin_top_spacer">Edit your profile</h4>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td><h6>First Name</h6></td>
+	      <td><input class="textbox" name="first_name" type="text" value="{% if user.first_name %}{{ user.first_name }}{% endif %}" maxlength="30" /></td>
+	    </tr>
+	    <tr>
+	      <td><h6>Last Name</h6></td>
+	      <td><input class="textbox" name="last_name" type="text" value="{% if user.last_name %}{{ user.last_name }}{% endif %}" maxlength="30" /></td>
+	    </tr>
+	    <tr>
+	      <td colspan="2">
+	      <h5 class="bottom-border-line">&nbsp;</h5>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td><h6>Email</h6></td>
+	      <td><input class="textbox" name="email" type="text" value="{% if user.email %}{{ user.email }}{% endif %}" /></td>
+	    </tr>
+	    <tr>
+	      <td colspan="2">
+	      <h5 class="bottom-border-line">&nbsp;</h5>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td><h6>Gender</h6></td>
+	      <td>
+		<input name="gender" type="radio" value="M" {% if user.get_profile.gender = 'M' %}checked=yes{% endif %} /><span class="grey">Male</span>
+		<input name="gender" type="radio" value="F" {% if user.get_profile.gender = 'F' %}checked=yes{% endif %} /><span class="grey">Female</span>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td><h6>Birthday</h6></td>
+	      <td>
+		<select name="day">
+		  <option>Day</option>
+		  {% for d in days %}
+				  <option {% if user.get_profile.birthday.day == d %}selected=selected{% endif %}>{{ d }}</option>                                
+		  {% endfor %}
+		</select>
+		<select name="month">
+		  <option>Month</option>
+		  {% for m, full_month in months %}
+				  <option {% if user.get_profile.birthday.month == forloop.counter %}selected=selected{% endif %} value="{{ m }}">{{ full_month }}</option>
+		  {% endfor %}                            
+		</select>
+		<select name="year">
+		  <option>Year</option>
+		  {% for y in years reversed %}
+				  <option {% if user.get_profile.birthday.year == y %}selected=selected{% endif %}>{{ y }}</option>
+		  {% endfor %}                                
+		</select>                        
+	      </td>
+	    </tr>
+	     <tr>
+	      <td colspan="2">
+		<h6 >Country</h4>
+		<select name="country">
+		  <option>Country</option>
+		  {% for y in country  %}
+		      <option {% if user.get_profile.country.name == y.name %}selected=selected{% endif %}>{{ y.name }}</option>
+		  {% endfor %}                                
+		</select> 
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>
+		<h6>City</h6>
+		 <td><input class="textbox" name="city" type="text" value="{% if user.get_profile.city.name %}{{ user.get_profile.city.name }}{% endif %}" maxlength="30" /></td>
+	      </td>
+	    </tr>                
         </table>
         </div>
         <div class="clear"></div>
