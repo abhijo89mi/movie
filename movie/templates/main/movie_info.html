@@ -47,11 +47,19 @@
 						</div>
 						<div class='movie_basic_info'>
 								<h2>{{ movie.title|title }}</h2>
+								<label class='label-div'>Genre(s)</label> :{% for genre in movie.genre.all%} {{ genre }}, {% endfor %} <br>
+								<label class='label-div'>Language(s)</label> :{% for language in movie.languages.all%} {{ language }}, {% endfor %} <br>
+								<label class='label-div'>Countrie(s)</label> :{% for countrie in movie.countries.all%} {{ countrie }}, {% endfor %} <br>
 								<label class='label-div'>Year</label> : {{ movie.year }} <br>
 								<label class='label-div'>Aspect Ratio</label> : {{ movie.aspect_ration }} <br>
 								<label class='label-div'>mpaa</label> : {{ movie.mpaa }} <br>
 								<label class='label-div'>Rating </label> : {{ movie.rating }} <br>
 								<label class='label-div'>Plot Outline</label> : {{ movie.plot_outline }} <br>
+								<label class='label-div'>Writer(s)</label> :{% for writer in movie.writer.all%} {{ writer }}, {% endfor %} <br>
+								<label class='label-div'>Producer(s)</label> :{% for producer in movie.producer.all%} {{ producer }}, {% endfor %} <br>
+								<label class='label-div'>Director(s)</label> :{% for director in movie.director.all%} {{ director }}, {% endfor %} <br>
+								<label class='label-div'>Certificates(s)</label> :{% for certificat in movie.certificates.all%} {{ certificat }}, {% endfor %} <br>
+								
 						</div>
 				</div>
 			</div>

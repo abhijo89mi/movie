@@ -11,10 +11,13 @@ def get_cast_charactor_name(obj):
 	
 @register.filter
 def get_cast_photo(obj):
-	photo_url =obj.photo.all()
-	if not photo_url:
+	try :
+		photo_url =obj.photo.all()[0]
+		if not photo_url:
+			photo_url='no_photo.jpg'
+		else:
+			photo_url=photo_url
+	except :
 		photo_url='no_photo.jpg'
-	else:
-		photo_url=photo_url[0]
 	return photo_url
 	
