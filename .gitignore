@@ -21,4 +21,5 @@ person.py
 video.py
 svideo.py
 movie/media/actors
+movie/media/images/profile_pics/*.*
 

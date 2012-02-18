@@ -92,7 +92,7 @@ MIDDLEWARE_CLASSES = (
     'tracking.middleware.VisitorTrackingMiddleware',
     'tracking.middleware.BannedIPMiddleware',
     'tracking.middleware.VisitorCleanUpMiddleware',
-    'django.middleware.cache.CacheMiddleware',
+
 )
 
 ROOT_URLCONF = 'movie.urls'

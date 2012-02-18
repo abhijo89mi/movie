@@ -158,8 +158,6 @@ class UpdatehistoryAdmin(admin.ModelAdmin):
 # Admin model registration 
 admin.site.register(LogEntry, LogEntryAdmin)
 
-
-
 admin.site.register(Genre, GenreAdmin)
 admin.site.register(Cast, CastAdmin)
 admin.site.register(Movie, MovieAdmin)
