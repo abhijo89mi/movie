@@ -41,10 +41,16 @@ class MovieAdmin(admin.ModelAdmin):
 	
 	ordering = ('id',)
 class Movie_Fetch_StatisticsAdmin(admin.ModelAdmin):
-	list_display = ('id','start_date','end_date','total_count','total_run_count','start_movie_imdbid','end_movie_imdbid')	
+	list_display = ('id','start_date','end_date','total_count','total_run_count','start_movie_imdbid','end_movie_imdbid')
+	date_hierarchy = 'start_date'
+        ordering = ('-id',)
+        search_fields = ('end_movie_imdbid','start_movie_imdbid')
+	
 
 class PersonAdmin(admin.ModelAdmin):
 	list_display = ('id','name','personID',)
+	search_fields = ('name','personID',)
+
 		
 class LanguagesAdmin(admin.ModelAdmin):
 	list_display = ('name','code',)
@@ -67,10 +73,21 @@ class PhotoAdmin(admin.ModelAdmin):
 	def personID(self,obj):
 		return obj.Photo_M2M_Person.all()[0].personID
 	def image(self,obj):
-		return "<img src=\"/media/actors/"+obj.url+"\">"
+		return "<img src=\"/media/person/"+obj.url+"\">"
 	image.allow_tags = True
 
 	list_display = ('image','url','person','personID')
+	
+
+class Person_StatisticsAdmin(admin.ModelAdmin):
+	def person_name(self,obj):
+		return obj.person.name
+	
+	list_display = ('person_name','date','name','note','default_info','biodata','date_of_birth','photo')
+	date_hierarchy = 'date'
+	ordering = ('-date',)
+	search_fields = ('person_name',)
+
 
 # Admin log file
 class LogEntryAdmin(admin.ModelAdmin):

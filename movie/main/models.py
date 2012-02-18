@@ -618,8 +618,7 @@ class Updatehistory(models.Model):
 		verbose_name = 'Updatehistory'
 		verbose_name_plural = 'Updatehistory'
 		db_table = 'Updatehistory'
-
-
+		
 class Person_Statistics(models.Model):
 	date  = models.DateTimeField(null=True, blank=True)
 	person= models.ForeignKey('Person', verbose_name=u'Person')

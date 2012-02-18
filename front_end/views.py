@@ -26,6 +26,8 @@ def sendusermail(email):
 			MuviDB team
 			'''
 	email = EmailMessage('Thank you for subscribing to MuviDB', body, 'noreply@muvidb.com',[email])
+	adminmail=EmailMessage('New User loged in',email,['admin@muvidb.com',])
+	adminmail.send(fail_silently=True)
 	email.send(fail_silently=True)
 	return True
 	
