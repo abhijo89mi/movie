@@ -112,7 +112,10 @@ def edit_profile_page(request):
 		user.email = email
 		user.get_profile().gender = gender
 		country_obj=Countries.objects.get(name=country)
-		city_name,c = City.objects.get_or_create(name=city,country=country_obj,slug=country+'_'+city)
+		if City.objects.filter(name=city):
+			city_name=City.objects.get(name=city)
+		else :
+			city_name,c = City.objects.get_or_create(name=city,country=country_obj,slug=country+'_'+city)
 		user.get_profile().city=city_name
 		
 		
