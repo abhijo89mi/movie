@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from datetime import datetime
 import urllib2, urllib
-import simplejson 
+import json assimplejson 
 import os, sys, getopt, cStringIO
 from imdb import IMDb
 import datetime
