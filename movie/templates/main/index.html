@@ -21,7 +21,7 @@
      {% for boxoffice_movie in boxoffice_movies %}
 	
 	  <tr>
-	    <td><a class='x-small' href="{% url movie boxoffice_movie.imdbid.id %}">{{ boxoffice_movie.imdbid.title|truncatewords:1|title }}</a></td>
+	    <td><a class='x-small' href="{% url movie boxoffice_movie.imdbid.id %}">{{ boxoffice_movie.imdbid.title|truncatewords:5|title }}</a></td>
 	    <td>{{ boxoffice_movie.imdbid.rating }}</td>
 	  </tr>
      {% endfor %}
@@ -37,7 +37,7 @@
      {% for intheater_movie in intheater_movies %}
 	
 	  <tr>
-	    <td><a class='x-small' href="">{{ intheater_movie.imdbid.title|truncatewords:1|title }}</a></td>
+	    <td><a class='x-small' href="">{{ intheater_movie.imdbid.title|truncatewords:5|title }}</a></td>
 	    <td>{{ intheater_movie.imdbid.rating }}</td>
 	  </tr>
      {% endfor %}
@@ -81,19 +81,19 @@
     <div class="clear"></div>
     <div class="aux-content-widget-2 submain">
      {% block sbmain-1%}
-     
+     1
      {% endblock %}
     </div>
     <div class="clear"></div>
     <div class="aux-content-widget-2 submain">
      {% block sbmain-2%}
-     
+     2
      {% endblock %}
     </div>
     <div class="clear"></div>
     <div class="aux-content-widget-2 submain">
      {% block sbmain-3%}
-     
+     3
      {% endblock %}
     </div>
     <div class="clear"></div>
