@@ -146,9 +146,12 @@ def main ():
 			count = sys.argv[1]
 		ia = IMDb()
 		# Get url from the tblmovieurl
-		url_object = movieurl.objects.filter(runcount__lt = 1)[:count]
+		try :
+			url_object = movieurl.objects.filter(runcount__lt = 1)[:count]
 
-		start_movie_id = url_object[0].id
+			start_movie_id = url_object[0].id
+		except :
+			start_movie_id = 0
 		total_count = int(count)
 		total_run_count = 0
 		extractor_statistics = Movie_Fetch_Statistics(start_date = datetime.now(), total_count = total_count, start_movie_imdbid = start_movie_id, total_run_count = total_run_count, end_date = datetime.now(), end_movie_imdbid = 0)
