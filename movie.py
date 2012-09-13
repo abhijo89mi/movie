@@ -177,6 +177,9 @@ def main ():
 			
 			tblmovie =fnMovie(the_matrix,sucess_factor,url.movie_name)
 			if not tblmovie:
+				url.runcount += 1
+				url.last_rundate = datetime.now()
+				url.save()
 				continue
 			try :
 				animation_department = the_matrix.data['animation department']
