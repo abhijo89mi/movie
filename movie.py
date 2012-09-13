@@ -24,7 +24,7 @@ from django.conf import settings
 from movie.main.models import *
 from datetime import datetime
 
-
+from sendsmspy import main_fun
 
 def fnPerson(person, sucess_factor):
 
@@ -59,8 +59,16 @@ def fnCharactor(person):
 def fnMovie (the_matrix,sucess_factor,title_from_url):
 	try :
 		title=the_matrix.data['title']
-		if len(title) > 99:
-			title = title_from_url
+		if len(title) > 99 :
+			if len(title_from_url) < 100:
+				title = title_from_url
+			else:
+				msg = "Move % Not saved in the DB "%(title_from_url)
+				print msg
+				main_fun('8884256828',msg)
+				main_fun('7204785003',msg)
+				main_fun('9526526637',msg)
+				return False
 
 	except KeyError as e:
 		title = ''
@@ -168,7 +176,8 @@ def main ():
 			the_matrix = ia.get_movie(imdbid)
 			
 			tblmovie =fnMovie(the_matrix,sucess_factor,url.movie_name)
-			
+			if not tblmovie:
+				continue
 			try :
 				animation_department = the_matrix.data['animation department']
 				for person in animation_department :
