@@ -13,7 +13,7 @@ class movieurlAdmin(admin.ModelAdmin):
 		return "<a href=%s >%s</a>" %(obj.url,obj.url)
 	Movie_url.allow_tags = True
 	
-	list_display = ('id','imdbid','movie_name','runcount','Movie_url','sucess_factor','run_date','last_rundate',)
+	list_display = ('id','imdbid','movie_name','runcount','Movie_url','sucess_factor','run_date','last_rundate','filter_based_on')
 	search_fields = ['imdbid','url',]
 	date_hierarchy = 'run_date'
 	ordering = ('id',)
@@ -153,7 +153,8 @@ class Person_StatisticsAdmin(admin.ModelAdmin):
 class UpdatehistoryAdmin(admin.ModelAdmin):
 	list_display = ('date','boxoffice','upcoming','intheaters','opening','user','movie','akas','plot','certificates','countries','genres','sound_mix','animation_department','art_department','art_direction','assistant_director','camera_and_electrical_department','cast','casting_department','casting_director','cinematographer','color_info','costume_department','costume_designer','director','distributors','editor','languages','make_up','miscellaneous_companies','miscellaneous_crew','music_department','original_music','producer','production_companies','production_design','production_manager','runtimes','set_decoration','sound_crew','special_effects_companies','special_effects_department','stunt_performer','transportation_department','visual_effects','writer','Video','release_date')
 
-
+class UrllogAdmin(admin.ModelAdmin):
+	list_display =('start_url_id','end_url_id','end_date')
 
 # Admin model registration 
 admin.site.register(LogEntry, LogEntryAdmin)
@@ -171,3 +172,5 @@ admin.site.register(Video, VideoAdmin)
 admin.site.register(Photo, PhotoAdmin)
 admin.site.register(Person_Statistics, Person_StatisticsAdmin)
 admin.site.register(Updatehistory, UpdatehistoryAdmin)
+admin.site.register(Urllog, UrllogAdmin)
+Urllog
