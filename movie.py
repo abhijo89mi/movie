@@ -63,7 +63,7 @@ def fnMovie (the_matrix,sucess_factor,title_from_url):
 			if len(title_from_url) < 100:
 				title = title_from_url
 			else:
-				msg = "Move % Not saved in the DB "%(title_from_url)
+				msg = "Move '%s' Not saved in the DB "%(title_from_url)
 				print msg
 				main_fun('8884256828',msg)
 				main_fun('7204785003',msg)
