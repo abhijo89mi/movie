@@ -55,9 +55,11 @@ def fnCharactor(person):
 	tblCharactor ,Created =Charactor.objects.get_or_create(name=name,roleID=roleID)
 	return tblCharactor
 	
-def fnMovie (the_matrix,sucess_factor):
+def fnMovie (the_matrix,sucess_factor,title_from_url):
 	try :
 		title=the_matrix.data['title']
+		if len(title) > 99:
+			title = title_from_url
 	except KeyError as e:
 		title=''
 		print str(e)
@@ -160,7 +162,7 @@ def main ():
 			print "Get movie information : " , url.movie_name
 			the_matrix = ia.get_movie(imdbid)
 			
-			tblmovie =fnMovie(the_matrix,sucess_factor)
+			tblmovie =fnMovie(the_matrix,sucess_factor,url.movie_name)
 			
 			
 			try :
