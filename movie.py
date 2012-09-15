@@ -32,6 +32,12 @@ def fnPerson(person, sucess_factor):
 	if not name : name = '====ERROR====='
 	try :
 		personID = person.personID
+		try:
+			tblPerson = Person.objects.get(personID = personID)
+			if tblPerson:
+				return tblPerson
+		except:
+			pass
 		note = person.notes
 		default_info = person.default_info
 		biodata = ''
