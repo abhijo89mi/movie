@@ -38,8 +38,8 @@ def fnPerson(person, sucess_factor):
 				return tblPerson
 		except:
 			pass
-		note = person.notes
-		default_info = person.default_info
+		note = unicode(person.notes)
+		default_info = unicode(person.default_info)
 		biodata = ''
 	except KeyError as e:
 		print str(e)
@@ -51,12 +51,12 @@ def fnPerson(person, sucess_factor):
 	return tblPerson
 
 def fnCompany(company):
-	name = company.data['name']
+	name = unicode(company.data['name'])
 	tblCompany , Created = Company.objects.get_or_create(name = name)
 	return tblCompany
 
 def fnCharactor(person):
-	name = person.currentRole
+	name = unicode(person.currentRole)
 	roleID = person.roleID
 	tblCharactor , Created = Charactor.objects.get_or_create(name = name, roleID = roleID)
 	return tblCharactor
@@ -64,7 +64,7 @@ def fnCharactor(person):
 	
 def fnMovie (the_matrix,sucess_factor,title_from_url):
 	try :
-		title=the_matrix.data['title']
+		title= unicode(the_matrix.data['title'])
 		if len(title) > 99 :
 			if len(title_from_url) < 100:
 				title = title_from_url
@@ -157,7 +157,8 @@ def fnMovie (the_matrix,sucess_factor,title_from_url):
 
 
 def main ():
-
+		
+		skiped_move = 0
 		count = 1
 		data_fetched = 0
 		if (len(sys.argv) > 1):
@@ -177,7 +178,13 @@ def main ():
 		for url in url_object :
 			sucess_factor = 0
 			imdbid = url.imdbid.replace('tt', '')
-
+			try:
+				movie = Movie.objects.get(imdbid = imdbid)
+				if movie :
+					skiped_move+=1
+					continue 
+			except:
+				pass
 			print "Get movie information : " , url.movie_name
 			the_matrix = ia.get_movie(imdbid)
 			
@@ -557,6 +564,7 @@ def main ():
 			try:
 				akas = the_matrix.data['akas']
 				for name in akas  :
+					name = unicode(name)
 					tblakas, c = Akas.objects.get_or_create(name = name)
 					tblmovie.akas_id.add(tblakas)
 			except Exception as e:
@@ -566,6 +574,7 @@ def main ():
 			try:
 				plot = the_matrix.data['plot']
 				for name in plot  :
+					name = unicode(name)
 					tblplot, c = Plot.objects.get_or_create(name = name)
 					tblmovie.plot.add(tblplot)
 			except Exception as e:
@@ -576,6 +585,7 @@ def main ():
 				certificates = the_matrix.data['certificates']
 
 				for name in certificates  :
+					name = unicode(name)
 					tblcertificates, c = Certificates.objects.get_or_create(name = name)
 					tblmovie.certificates.add(tblcertificates)
 			except Exception as e:
@@ -596,6 +606,7 @@ def main ():
 				genres = the_matrix.data['genres']
 				for display_name in genres  :
 					name = display_name.replace('-', '_').lower()
+					name = unicode(name)
 					tblgenres, c = Genre.objects.get_or_create(display_name = display_name, name = name)
 					tblmovie.genres.add(tblgenres)
 			except Exception as e:
@@ -659,7 +670,11 @@ def main ():
 			extractor_statistics.end_date = datetime.now()
 			extractor_statistics.end_movie_imdbid = url.id
 			extractor_statistics.save()
-
+			if skiped_move :
+				msg = "%d NNumber of move skiped . Visit www.muvidb.com/admin/ for more information "%(skiped_move)
+				main_fun('8884256828',msg)
+				main_fun('7204785003',msg)
+				main_fun('9526526637',msg)
 
 
 		return 0
