@@ -182,6 +182,9 @@ def main ():
 				movie = Movie.objects.get(imdbid = imdbid)
 				if movie :
 					skiped_move+=1
+					url.runcount += 1
+					url.last_rundate = datetime.now()
+					url.save()
 					continue 
 			except:
 				pass
