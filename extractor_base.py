@@ -91,12 +91,12 @@ class Extractor_utils(ExtractorBase):
 		
 	def fnPerson(self,person):
 	
-		name=person.data['name']
+		name= unicode (person.data['name'])
 		if not name : name ='====ERROR====='
 		try :
 			personID=person.personID
-			note=person.notes
-			default_info=person.default_info
+			note= unicode (person.notes)
+			default_info=unicode (person.default_info)
 			biodata=''
 		except KeyError as e:
 			print str(e)
@@ -110,7 +110,7 @@ class Extractor_utils(ExtractorBase):
 		return tblPerson
 	
 	def fnCompany(self,company):
-		name=company.data['name']
+		name= unicode (company.data['name'])
 		tblCompany ,Created =Company.objects.get_or_create(name=name)
 		return tblCompany
 	
@@ -122,7 +122,7 @@ class Extractor_utils(ExtractorBase):
 	
 	def fnMovie (self,the_matrix):
 			try :
-				title=the_matrix.data['title']
+				title=unicode (the_matrix.data['title'])
 			except KeyError as e:
 				title=''
 				pass
@@ -569,6 +569,7 @@ class Extractor_utils(ExtractorBase):
 		try:
 			akas=the_matrix.data['akas']
 			for name in akas  :
+				name = unicode (name)
 				tblakas,c = Akas.objects.get_or_create(name=name)
 				tblmovie.akas_id.add(tblakas)
 		except Exception as e:
@@ -578,6 +579,7 @@ class Extractor_utils(ExtractorBase):
 		try:
 			plot=the_matrix.data['plot']
 			for name in plot  :
+				name = unicode (name)
 				tblplot,c = Plot.objects.get_or_create(name=name)
 				tblmovie.plot.add(tblplot)
 		except Exception as e:
@@ -588,6 +590,7 @@ class Extractor_utils(ExtractorBase):
 			certificates=the_matrix.data['certificates']
 
 			for name in certificates  :
+				name = unicode (name)
 				tblcertificates,c = Certificates.objects.get_or_create(name=name)
 				tblmovie.certificates.add(tblcertificates)
 		except Exception as e:
@@ -608,6 +611,7 @@ class Extractor_utils(ExtractorBase):
 			genres=the_matrix.data['genres']
 			for display_name in genres  :
 				name=display_name.replace('-','_').lower()
+				name = unicode (name)
 				tblgenres,c = Genre.objects.get_or_create(display_name=display_name,name=name)
 				tblmovie.genres.add(tblgenres)
 		except Exception as e:
