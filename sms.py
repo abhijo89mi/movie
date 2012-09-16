@@ -58,7 +58,8 @@ def main():
 	languages = Languages.objects.count()
 	
 	msg = "Total Move :%s , Person :%s,Company :%s,Genre :%s ,Countries :%s ,Languages :%s, For more information visit www.muvidb.com"%(total_movie,person,company,genre,countries,languages)
-	main_fun('9632928652',msg)
+	main_fun('8884256828',msg)
+	main_fun('7204785003',msg)
 	return 0
 
 if __name__ == '__main__':
