@@ -681,7 +681,7 @@ def main ():
 			extractor_statistics.save()
 			
 		if skiped_move :
-			msg = "%d NNumber of move skiped . Visit www.muvidb.com/admin/ for more information "%(skiped_move)
+			msg = "%d Number of move skiped . Visit www.muvidb.com/admin/ for more information "%(skiped_move)
 			main_fun('8884256828',msg)
 			main_fun('7204785003',msg)
 			main_fun('9526526637',msg)
