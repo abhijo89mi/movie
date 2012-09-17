@@ -103,7 +103,7 @@ def fnMovie (the_matrix,sucess_factor,title_from_url):
 		sucess_factor = sucess_factor + 1
 		pass
 	try :
-		mpaa = the_matrix.data['mpaa']
+		mpaa = unicode(the_matrix.data['mpaa'])
 	except KeyError as e:
 		mpaa = ''
 		print str(e)
@@ -136,23 +136,29 @@ def fnMovie (the_matrix,sucess_factor,title_from_url):
 		print str(e)
 		pass
 	try :
-		plot_outline = the_matrix.data['plot outline']
+		plot_outline = unicode(the_matrix.data['plot outline'])
 	except KeyError as e:
 		plot_outline = ''
 		print str(e)
 		sucess_factor = sucess_factor + 1
 		pass
 	try :
-		summary = the_matrix.summary()
+		summary = unicode(the_matrix.summary())
 	except KeyError as e:
 		print str(e)
 		sucess_factor = sucess_factor + 1
 		pass
 	if title == '':
 		exit(0)
-	tblmovie, created = Movie.objects.get_or_create(title = title, votes = votes, year = year, aspect_ration = aspect_ratio, mpaa = mpaa,
-	rating = rating, imdbid = imdbid, top_250_rank = top_250_rank, cover_url = cover_url, plot_outline = plot_outline, summary = summary)
-
+	try:
+		tblmovie, created = Movie.objects.get_or_create(title = title, votes = votes, year = year, aspect_ration = aspect_ratio, mpaa = mpaa,
+		rating = rating, imdbid = imdbid, top_250_rank = top_250_rank, cover_url = cover_url, plot_outline = plot_outline, summary = summary)
+	except:
+		msg = "%s movie skiped due to the unicode issue "
+		main_fun('8884256828',msg)
+		main_fun('7204785003',msg)
+		main_fun('9526526637',msg)
+		return False
 	return tblmovie
 
 
