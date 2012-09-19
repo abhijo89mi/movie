@@ -154,7 +154,7 @@ def fnMovie (the_matrix,sucess_factor,title_from_url):
 		tblmovie, created = Movie.objects.get_or_create(title = title, votes = votes, year = year, aspect_ration = aspect_ratio, mpaa = mpaa,
 		rating = rating, imdbid = imdbid, top_250_rank = top_250_rank, cover_url = cover_url, plot_outline = plot_outline, summary = summary)
 	except:
-		msg = "%s movie skiped due to the unicode issue ref IMDB ID : %s"%(title,imdbid)
+		msg = "%s movie skiped due to the unicode issue ref IMDB ID : %s For more information visit http://www.muvidb.com/admin/main/movieurl/,Thank you,MuviDB Media Information Center."%(title,imdbid)
 		main_fun('8884256828',msg)
 		main_fun('7204785003',msg)
 		main_fun('9526526637',msg)
