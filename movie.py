@@ -24,7 +24,7 @@ from django.conf import settings
 from movie.main.models import *
 from datetime import datetime
 
-
+from sendsmspy import main_fun
 
 def fnPerson(person, sucess_factor):
 
@@ -32,8 +32,14 @@ def fnPerson(person, sucess_factor):
 	if not name : name = '====ERROR====='
 	try :
 		personID = person.personID
-		note = person.notes
-		default_info = person.default_info
+		try:
+			tblPerson = Person.objects.get(personID = personID)
+			if tblPerson:
+				return tblPerson
+		except:
+			pass
+		note = unicode(person.notes)
+		default_info = unicode(person.default_info)
 		biodata = ''
 	except KeyError as e:
 		print str(e)
@@ -45,19 +51,31 @@ def fnPerson(person, sucess_factor):
 	return tblPerson
 
 def fnCompany(company):
-	name = company.data['name']
+	name = unicode(company.data['name'])
 	tblCompany , Created = Company.objects.get_or_create(name = name)
 	return tblCompany
 
 def fnCharactor(person):
-	name = person.currentRole
+	name = unicode(person.currentRole)
 	roleID = person.roleID
 	tblCharactor , Created = Charactor.objects.get_or_create(name = name, roleID = roleID)
 	return tblCharactor
 
-def fnMovie (the_matrix, sucess_factor):
+	
+def fnMovie (the_matrix,sucess_factor,title_from_url):
 	try :
-		title = the_matrix.data['title']
+		title= unicode(the_matrix.data['title'])
+		if len(title) > 99 :
+			if len(title_from_url) < 100:
+				title = title_from_url
+			else:
+				msg = "Move '%s' Not saved in the DB "%(title_from_url)
+				print msg
+				main_fun('8884256828',msg)
+				main_fun('7204785003',msg)
+				main_fun('9526526637',msg)
+				return False
+
 	except KeyError as e:
 		title = ''
 		print str(e)
@@ -85,7 +103,7 @@ def fnMovie (the_matrix, sucess_factor):
 		sucess_factor = sucess_factor + 1
 		pass
 	try :
-		mpaa = the_matrix.data['mpaa']
+		mpaa = unicode(the_matrix.data['mpaa'])
 	except KeyError as e:
 		mpaa = ''
 		print str(e)
@@ -118,28 +136,35 @@ def fnMovie (the_matrix, sucess_factor):
 		print str(e)
 		pass
 	try :
-		plot_outline = the_matrix.data['plot outline']
+		plot_outline = unicode(the_matrix.data['plot outline'])
 	except KeyError as e:
 		plot_outline = ''
 		print str(e)
 		sucess_factor = sucess_factor + 1
 		pass
 	try :
-		summary = the_matrix.summary()
+		summary = unicode(the_matrix.summary())
 	except KeyError as e:
 		print str(e)
 		sucess_factor = sucess_factor + 1
 		pass
 	if title == '':
 		exit(0)
-	tblmovie, created = Movie.objects.get_or_create(title = title, votes = votes, year = year, aspect_ration = aspect_ratio, mpaa = mpaa,
-	rating = rating, imdbid = imdbid, top_250_rank = top_250_rank, cover_url = cover_url, plot_outline = plot_outline, summary = summary)
-
+	try:
+		tblmovie, created = Movie.objects.get_or_create(title = title, votes = votes, year = year, aspect_ration = aspect_ratio, mpaa = mpaa,
+		rating = rating, imdbid = imdbid, top_250_rank = top_250_rank, cover_url = cover_url, plot_outline = plot_outline, summary = summary)
+	except:
+		msg = "%s movie skiped due to the unicode issue ref IMDB ID : %s For more information visit http://www.muvidb.com/admin/main/movieurl/,Thank you,MuviDB Media Information Center."%(title,imdbid)
+		main_fun('8884256828',msg)
+		main_fun('7204785003',msg)
+		main_fun('9526526637',msg)
+		return False
 	return tblmovie
 
 
 def main ():
-
+		
+		skiped_move = 0
 		count = 1
 		data_fetched = 0
 		if (len(sys.argv) > 1):
@@ -159,13 +184,25 @@ def main ():
 		for url in url_object :
 			sucess_factor = 0
 			imdbid = url.imdbid.replace('tt', '')
-
+			try:
+				movie = Movie.objects.get(imdbid = imdbid)
+				if movie :
+					skiped_move+=1
+					url.runcount += 1
+					url.last_rundate = datetime.now()
+					url.save()
+					continue 
+			except:
+				pass
 			print "Get movie information : " , url.movie_name
 			the_matrix = ia.get_movie(imdbid)
-
-			tblmovie = fnMovie(the_matrix, sucess_factor)
-
-
+			
+			tblmovie =fnMovie(the_matrix,sucess_factor,url.movie_name)
+			if not tblmovie:
+				url.runcount += 1
+				url.last_rundate = datetime.now()
+				url.save()
+				continue
 			try :
 				animation_department = the_matrix.data['animation department']
 				for person in animation_department :
@@ -536,6 +573,7 @@ def main ():
 			try:
 				akas = the_matrix.data['akas']
 				for name in akas  :
+					name = unicode(name)
 					tblakas, c = Akas.objects.get_or_create(name = name)
 					tblmovie.akas_id.add(tblakas)
 			except Exception as e:
@@ -545,6 +583,7 @@ def main ():
 			try:
 				plot = the_matrix.data['plot']
 				for name in plot  :
+					name = unicode(name)
 					tblplot, c = Plot.objects.get_or_create(name = name)
 					tblmovie.plot.add(tblplot)
 			except Exception as e:
@@ -555,6 +594,7 @@ def main ():
 				certificates = the_matrix.data['certificates']
 
 				for name in certificates  :
+					name = unicode(name)
 					tblcertificates, c = Certificates.objects.get_or_create(name = name)
 					tblmovie.certificates.add(tblcertificates)
 			except Exception as e:
@@ -575,6 +615,7 @@ def main ():
 				genres = the_matrix.data['genres']
 				for display_name in genres  :
 					name = display_name.replace('-', '_').lower()
+					name = unicode(name)
 					tblgenres, c = Genre.objects.get_or_create(display_name = display_name, name = name)
 					tblmovie.genres.add(tblgenres)
 			except Exception as e:
@@ -638,7 +679,12 @@ def main ():
 			extractor_statistics.end_date = datetime.now()
 			extractor_statistics.end_movie_imdbid = url.id
 			extractor_statistics.save()
-
+			
+		if skiped_move :
+			msg = "%d Number of move skiped . Visit www.muvidb.com/admin/ for more information "%(skiped_move)
+			main_fun('8884256828',msg)
+			main_fun('7204785003',msg)
+			main_fun('9526526637',msg)
 
 
 		return 0
